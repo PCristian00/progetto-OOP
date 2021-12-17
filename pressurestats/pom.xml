@@ -60,13 +60,8 @@
 				<groupId>org.springframework.experimental</groupId>
 				<artifactId>spring-aot-maven-plugin</artifactId>
 				<version>${spring-native.version}</version>
+
 				<executions>
-					<execution>
-						<id>test-generate</id>
-						<goals>
-							<goal>test-generate</goal>
-						</goals>
-					</execution>
 					<execution>
 						<id>generate</id>
 						<goals>
@@ -74,6 +69,7 @@
 						</goals>
 					</execution>
 				</executions>
+
 			</plugin>
 		</plugins>
 	</build>

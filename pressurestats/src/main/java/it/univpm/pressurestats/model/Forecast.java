@@ -1,4 +1,7 @@
 package it.univpm.pressurestats.model;
+
+import java.util.Objects;
+
 //Statistiche meteo pressione
 public class Forecast {
 	private int pressure;
@@ -45,7 +48,24 @@ public class Forecast {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "pressure=" + pressure + ", visibility=" + visibility + ", dt=" + dt + ", date=" + date;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Forecast other = (Forecast) obj;
+		return Objects.equals(date, other.date) && dt == other.dt && pressure == other.pressure
+				&& visibility == other.visibility;
+	}
+	
+	
 }

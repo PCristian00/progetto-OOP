@@ -1,6 +1,7 @@
 package it.univpm.pressurestats.model;
 //Classe città
 
+import java.util.Objects;
 import java.util.Vector;
 
 public class City {
@@ -77,5 +78,26 @@ public class City {
 	public void setWeather(Vector<Forecast> weather) {
 		this.weather = weather;
 	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", name=" + name + ", country=" + country + ", lat=" + lat + ", lon=" + lon
+				+ ", weather=" + weather;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		City other = (City) obj;
+		return Objects.equals(country, other.country) && id == other.id && lat == other.lat && lon == other.lon
+				&& Objects.equals(name, other.name) && Objects.equals(weather, other.weather);
+	}
+	
+	
 
 }

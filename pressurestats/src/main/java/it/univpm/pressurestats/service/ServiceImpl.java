@@ -75,14 +75,15 @@ public class ServiceImpl implements Service {
 		JSONArray list=(JSONArray) obj.get("list");
 		
 		city.setName((String) cityData.get("country"));
-		city.setId(String.valueOf(cityData.get("id")));
+		city.setId((long) cityData.get("id"));
+		
 	
 		for(int j=0; j<list.size(); j++) {
 			JSONObject listElement=(JSONObject) list.get(j);
 			Forecast singleForecast=new Forecast();
 			
 			singleForecast.setPressure((int)listElement.get("pressure"));
-			singleForecast.setVisibilty((int)listElement.get("visibility"));
+			singleForecast.setVisibility((int)listElement.get("visibility"));
 			singleForecast.setDt((long)listElement.get("dt"));
 			forecasts.add(singleForecast);
 		}

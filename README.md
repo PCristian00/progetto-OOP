@@ -21,7 +21,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/PCristian00/progetto-OOP">
-    <img src="https://user-images.githubusercontent.com/95343580/146957248-3c0f9fb9-a18f-47f8-96f0-a53a7ff629a0.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">PressureStats</h3>

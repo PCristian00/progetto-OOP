@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.service.Service;
 
-//commento controller  
-
+//Perché restController??
 @RestController
 public class Controller {
 	@Autowired

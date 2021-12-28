@@ -9,5 +9,4 @@ public class PressurestatsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PressurestatsApplication.class, args);
 	}
-
 }

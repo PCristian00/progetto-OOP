@@ -1,0 +1,5 @@
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1640688307,"date":"28\/12\/2021 11:45:07"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1640689024,"date":"28\/12\/2021 11:57:04"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1640689024,"date":"28\/12\/2021 11:57:04"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1009,"visibility":10000,"dt":1640689791,"date":"28\/12\/2021 12:09:51"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1008,"visibility":10000,"dt":1640707377,"date":"28\/12\/2021 17:02:57"}],"lon":13.4388,"id":3173006,"lat":43.3674}

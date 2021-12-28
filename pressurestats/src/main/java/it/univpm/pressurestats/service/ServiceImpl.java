@@ -1,69 +1,86 @@
 package it.univpm.pressurestats.service;
 
 import java.net.*;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
 import java.io.*;
+
 import org.json.simple.*;
 import org.json.simple.parser.ParseException;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import it.univpm.pressurestats.model.*;
 
-public class ServiceImpl implements Service {
+//Perché @Service
+@Service
+public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	private String apiKey = "07354f54b9a837406fecf6a8ccd2c217";
-	private String url = "api.openweathermap.org/data/2.5/onecall?";
 	JSONObject forecast = null;
 
 	@Override
 
 	public JSONObject toJSON(City city) {
 		// TODO Auto-generated method stub
-
+		
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		try {
-			long lat = city.getLat();
-			long lon = city.getLon();
-
-			url += "lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=metric&exclude=minutely,hourly,alerts";
-
-			URLConnection openConnection = new URL(url).openConnection();
-			InputStream in = openConnection.getInputStream();
-
-			String data = "";
-			String line = "";
-			try {
-				InputStreamReader inR = new InputStreamReader(in);
-				BufferedReader buf = new BufferedReader(inR);
-
-				while ((line = buf.readLine()) != null) {
-					data += line;
-				}
-			} finally {
-				in.close();
-			}
-			try {
-				forecast = (JSONObject) JSONValue.parseWithException(data);
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
+			String json = ow.writeValueAsString(city);
+			ObjectMapper mapper = new ObjectMapper();
+			Map<String, Object> map = mapper.readValue(json, Map.class);
+			forecast = new JSONObject(map);
+		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		return null;
-
+		return forecast;
 	}
 
 	@Override
-	public JSONObject getJSONForecast(String city) {
-		// TODO Auto-generated method stub
-		return null;
+	public JSONObject getJSONForecast(String id, boolean isObject) {
+		JSONArray ja = new JSONArray();
+		JSONObject jo = new JSONObject();
+		String url = "https://api.openweathermap.org/data/2.5/weather?id=" + id + "&appid=" + apiKey;
+		try {
+			URLConnection openConnection = new URL(url).openConnection();
+			InputStream in = openConnection.getInputStream();
+			
+			String data = "";
+			String line = "";
+			try {
+			   InputStreamReader inR = new InputStreamReader( in );
+			   BufferedReader buf = new BufferedReader( inR );
+			  
+			   while ( ( line = buf.readLine() ) != null ) {
+				   data+= line;
+			   }
+			} finally {
+			   in.close();
+			}
+			if(isObject) {
+				jo = (JSONObject) JSONValue.parseWithException(data); //parse JSON Object
+			} else {
+				ja = (JSONArray) JSONValue.parseWithException(data);	//parse JSON Array
+				System.out.println("JSONArray scaricato: "+ ja);
+				System.out.println("IL JSONArray scaricato ha "+ ja.size()+" elementi:");
+				for(int i=0;i<ja.size();i++) {
+					jo = (JSONObject)ja.get(i);
+				}
+			}
+				
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		saveToFile(jo);
+		return jo;
 	}
 
 	@Override
@@ -71,25 +88,30 @@ public class ServiceImpl implements Service {
 	public City getForecast(JSONObject obj) {
 		City city=new City();
 		Vector<Forecast> forecasts=new Vector<Forecast>();
-		JSONObject cityData=(JSONObject) obj.get("city");
-		JSONArray list=(JSONArray) obj.get("list");
+		JSONObject cityData=(JSONObject) obj.get("main");
+		JSONObject coord = (JSONObject) obj.get("coord");
+		JSONObject sys = (JSONObject) obj.get("sys");
+		Forecast currentForecast=new Forecast();
 		
-		city.setName((String) cityData.get("country"));
-		city.setId((long) cityData.get("id"));
+		currentForecast.setVisibility((long) obj.get("visibility"));
+		currentForecast.setPressure((long) cityData.get("pressure"));
 		
-	
-		for(int j=0; j<list.size(); j++) {
-			JSONObject listElement=(JSONObject) list.get(j);
-			Forecast singleForecast=new Forecast();
-			
-			singleForecast.setPressure((int)listElement.get("pressure"));
-			singleForecast.setVisibility((int)listElement.get("visibility"));
-			singleForecast.setDt((long)listElement.get("dt"));
-			forecasts.add(singleForecast);
-		}
+		city.setLat((double) coord.get("lat"));
+		city.setLon((double) coord.get("lon"));
+		city.setName((String) obj.get("name"));
+		city.setId((long) obj.get("id"));
+		city.setCountry((String) sys.get("country"));
+		
+		Date date = new Date( ((long)obj.get("dt")) * 1000 );
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		
+		currentForecast.setDate(df.format(date));
+		currentForecast.setDt((long)obj.get("dt"));
+		
+		forecasts.add(currentForecast);
 		
 		city.setWeather(forecasts);
-		return null;
+		return city;
 	}
 
 	@Override
@@ -99,13 +121,13 @@ public class ServiceImpl implements Service {
 		String cityName = city.getName();
 		JSONObject obj = new JSONObject();
 		obj = toJSON(city);
-		SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		String today = date.format(new Date());
 		String fileName = cityName + "_" + today;
 		String path = System.getProperty("user.dir") + fileName + ".txt";
 
 		try {
-			PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path)));
+			PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
 			file_output.println(obj.toString());
 			file_output.close();
 		}

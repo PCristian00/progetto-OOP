@@ -5,7 +5,7 @@ import it.univpm.pressurestats.model.City;
 
 public interface Service {
 public abstract JSONObject toJSON(City city);
-public abstract JSONObject getJSONForecast(String city);
+public abstract JSONObject getJSONForecast(String name, boolean isObject);
 public abstract City getForecast(JSONObject forecast);
 public abstract void saveToFile(JSONObject obj);
 }

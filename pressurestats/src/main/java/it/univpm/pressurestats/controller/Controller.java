@@ -14,7 +14,7 @@ import it.univpm.pressurestats.service.Service;
 public class Controller {
 	@Autowired
 	Service service;
-	
+	//TODO non usare /prova
 	@GetMapping(value="/prova")
 	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3173006") String id)
 	{

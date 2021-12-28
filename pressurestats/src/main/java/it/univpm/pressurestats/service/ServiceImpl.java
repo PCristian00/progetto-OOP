@@ -33,6 +33,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		try {
 			String json = ow.writeValueAsString(city);
 			ObjectMapper mapper = new ObjectMapper();
+			@SuppressWarnings("unchecked")
 			Map<String, Object> map = mapper.readValue(json, Map.class);
 			forecast = new JSONObject(map);
 		} catch (JsonProcessingException e) {
@@ -103,7 +104,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		city.setCountry((String) sys.get("country"));
 		
 		Date date = new Date( ((long)obj.get("dt")) * 1000 );
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 		
 		currentForecast.setDate(df.format(date));
 		currentForecast.setDt((long)obj.get("dt"));
@@ -121,9 +122,12 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		String cityName = city.getName();
 		JSONObject obj = new JSONObject();
 		obj = toJSON(city);
-		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-		String today = date.format(new Date());
-		String fileName = cityName + "_" + today;
+		//SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+		//String today = date.format(new Date());
+		String fileName = cityName + "_stats";
+		//+ today;
+		
+		//TODO modificare cartella?
 		String path = System.getProperty("user.dir") + fileName + ".txt";
 
 		try {

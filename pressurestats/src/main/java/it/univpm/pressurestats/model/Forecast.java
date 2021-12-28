@@ -4,8 +4,8 @@ import java.util.Objects;
 
 //Statistiche meteo pressione
 public class Forecast {
-	private int pressure;
-	private int visibility;
+	private long pressure;
+	private long visibility;
 	private long dt;
 	private String date;
 	
@@ -17,19 +17,19 @@ public class Forecast {
 		this.date = null;
 	}
 
-	public int getPressure() {
+	public long getPressure() {
 		return pressure;
 	}
 
-	public void setPressure(int pressure) {
+	public void setPressure(long pressure) {
 		this.pressure = pressure;
 	}
 
-	public int getVisibility() {
+	public long getVisibility() {
 		return visibility;
 	}
 
-	public void setVisibility(int visibility) {
+	public void setVisibility(long visibility) {
 		this.visibility = visibility;
 	}
 

@@ -33,6 +33,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		try {
 			String json = ow.writeValueAsString(city);
 			ObjectMapper mapper = new ObjectMapper();
+			@SuppressWarnings("unchecked")
 			Map<String, Object> map = mapper.readValue(json, Map.class);
 			forecast = new JSONObject(map);
 		} catch (JsonProcessingException e) {

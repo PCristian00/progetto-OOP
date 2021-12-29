@@ -28,7 +28,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	public JSONObject toJSON(City city) {
 		// TODO Auto-generated method stub
-		
+
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		try {
 			String json = ow.writeValueAsString(city);
@@ -51,30 +51,30 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		try {
 			URLConnection openConnection = new URL(url).openConnection();
 			InputStream in = openConnection.getInputStream();
-			
+
 			String data = "";
 			String line = "";
 			try {
-			   InputStreamReader inR = new InputStreamReader( in );
-			   BufferedReader buf = new BufferedReader( inR );
-			  
-			   while ( ( line = buf.readLine() ) != null ) {
-				   data+= line;
-			   }
+				InputStreamReader inR = new InputStreamReader(in);
+				BufferedReader buf = new BufferedReader(inR);
+
+				while ((line = buf.readLine()) != null) {
+					data += line;
+				}
 			} finally {
-			   in.close();
+				in.close();
 			}
-			if(isObject) {
-				jo = (JSONObject) JSONValue.parseWithException(data); //parse JSON Object
+			if (isObject) {
+				jo = (JSONObject) JSONValue.parseWithException(data); // parse JSON Object
 			} else {
-				ja = (JSONArray) JSONValue.parseWithException(data);	//parse JSON Array
-				System.out.println("JSONArray scaricato: "+ ja);
-				System.out.println("IL JSONArray scaricato ha "+ ja.size()+" elementi:");
-				for(int i=0;i<ja.size();i++) {
-					jo = (JSONObject)ja.get(i);
+				ja = (JSONArray) JSONValue.parseWithException(data); // parse JSON Array
+				System.out.println("JSONArray scaricato: " + ja);
+				System.out.println("IL JSONArray scaricato ha " + ja.size() + " elementi:");
+				for (int i = 0; i < ja.size(); i++) {
+					jo = (JSONObject) ja.get(i);
 				}
 			}
-				
+
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -85,32 +85,32 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 
 	@Override
-	
+
 	public City getForecast(JSONObject obj) {
-		City city=new City();
-		Vector<Forecast> forecasts=new Vector<Forecast>();
-		JSONObject cityData=(JSONObject) obj.get("main");
+		City city = new City();
+		Vector<Forecast> forecasts = new Vector<Forecast>();
+		JSONObject cityData = (JSONObject) obj.get("main");
 		JSONObject coord = (JSONObject) obj.get("coord");
 		JSONObject sys = (JSONObject) obj.get("sys");
-		Forecast currentForecast=new Forecast();
-		
+		Forecast currentForecast = new Forecast();
+
 		currentForecast.setVisibility((long) obj.get("visibility"));
 		currentForecast.setPressure((long) cityData.get("pressure"));
-		
+
 		city.setLat((double) coord.get("lat"));
 		city.setLon((double) coord.get("lon"));
 		city.setName((String) obj.get("name"));
 		city.setId((long) obj.get("id"));
 		city.setCountry((String) sys.get("country"));
-		
-		Date date = new Date( ((long)obj.get("dt")) * 1000 );
+
+		Date date = new Date(((long) obj.get("dt")) * 1000);
 		DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-		
+
 		currentForecast.setDate(df.format(date));
-		currentForecast.setDt((long)obj.get("dt"));
-		
+		currentForecast.setDt((long) obj.get("dt"));
+
 		forecasts.add(currentForecast);
-		
+
 		city.setWeather(forecasts);
 		return city;
 	}
@@ -120,24 +120,35 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		// TODO Auto-generated method stub
 		City city = this.getForecast(object);
 		String cityName = city.getName();
-		JSONObject obj = new JSONObject();
-		obj = toJSON(city);
-		//SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-		//String today = date.format(new Date());
-		String fileName = cityName + "_stats";
-		//+ today;
+		//JSONObject obj = new JSONObject();
 		
-		//TODO modificare cartella?
-		String path = System.getProperty("user.dir") + fileName + ".txt";
+		// SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+		// String today = date.format(new Date());
+		String fileName = cityName + "_stats_minute";
+		// + today;
 
-		try {
-			PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-			file_output.println(obj.toString());
-			file_output.close();
-		}
+		// Il file viene salvato nella cartella /src/main/resources/
+		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+		// TODO AGGIUNTA TIMER, VERIFICARE SE CONVIENE FARE UN NUOVO METODO
+		TimerTask tt=new TimerTask() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub				
+				JSONObject obj = toJSON(city);
+				try {
+					PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+					file_output.println(obj.toString());
+					file_output.close();
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}			
+			}			
+};
+
+final long hour=3600000; //ora in millisecondi
+		Timer timer=new Timer();
+		timer.schedule(tt, 0,hour); //ogni ora
 	}
 }

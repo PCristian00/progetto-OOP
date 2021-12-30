@@ -8,6 +8,7 @@ public abstract JSONObject toJSON(City city);
 public abstract JSONObject getJSONForecast(String name, boolean isObject);
 public abstract City getForecast(JSONObject forecast);
 public abstract void saveToFile(JSONObject obj);
+public abstract void saveToFileHourly(JSONObject obj);
 }
 
 

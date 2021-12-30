@@ -80,7 +80,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		saveToFile(jo);
+		//TODO attenzione! Aggiunto "Hourly" a questo
+		saveToFileHourly(jo);
 		return jo;
 	}
 
@@ -128,32 +129,39 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		// String today = date.format(new Date());
 
 		// TODO NOME FILE
-		String fileName = cityName + "_stats_test";
+		String fileName = cityName + "_stats_test3";
 		// + today;
 
 		// Il file viene salvato nella cartella /src/main/resources/
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
 
-		// TODO Il timer funziona, ma semplicemente incolla il primo risultato ogni ora,
-		// piuttosto che rifare la chiamata.
-		
-		TimerTask tt = new TimerTask() {
-			@Override
-			public void run() {
-
-				JSONObject obj = toJSON(city);
+		JSONObject obj = toJSON(city);
+				
 				try {
 					PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
 					file_output.println(obj.toString());
 					file_output.close();
-				} catch (Exception e) {
+				}
+
+				catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
-		};
+		
+	}
 
+	@Override
+	//TODO Nuova metodo, adesso separato dal semplice saveToFile.
+	//PROBLEMA
+	//Riscontra lo stesso problema di prima: la stampa avviene ogni ora ma viene stampata solo la prima rilevazione
+	
+	public void saveToFileHourly(JSONObject obj) {
+		TimerTask tt=new TimerTask() {
+			public void run() {
+				saveToFile(obj);
+			}
+		};		
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();
-		timer.schedule(tt, 0, hour); // ogni ora
+		timer.schedule(tt, 0, hour/12); // ogni 5 minuti
 	}
 }

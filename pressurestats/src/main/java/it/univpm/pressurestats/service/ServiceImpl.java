@@ -80,8 +80,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//TODO attenzione! Aggiunto "Hourly" a questo
-		saveToFileHourly(jo);
+		
+		//TODO rimossa stampa singola temporaneamente: il metodo è stato portato all'esterno
+		//saveToFile(jo);
+		
 		return jo;
 	}
 
@@ -129,7 +131,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		// String today = date.format(new Date());
 
 		// TODO NOME FILE
-		String fileName = cityName + "_stats_test3";
+		String fileName = cityName + "_stats";
 		// + today;
 
 		// Il file viene salvato nella cartella /src/main/resources/
@@ -147,21 +149,28 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 					e.printStackTrace();
 				}
 		
-	}
-
-	@Override
-	//TODO Nuova metodo, adesso separato dal semplice saveToFile.
-	//PROBLEMA
-	//Riscontra lo stesso problema di prima: la stampa avviene ogni ora ma viene stampata solo la prima rilevazione
+	}	
 	
-	public void saveToFileHourly(JSONObject obj) {
+	//TODO Nuova metodo, adesso separato dal semplice saveToFile.
+	//PROBLEMA: Funziona, ma forse è preferibile che riceva un JSONObject anziché id?
+	
+	// IDEA implementabile: personalizzare la fascia oraria passando al metodo un
+	// numero intero che faccia da moltiplicatore ad "hour"
+	
+
+	
+	@Override
+	public void saveToFileHourly(String id) {
+		//String id="3173006";
+		
 		TimerTask tt=new TimerTask() {
 			public void run() {
+				JSONObject obj=it.univpm.pressurestats.service.ServiceImpl.this.getJSONForecast(id,true);
 				saveToFile(obj);
 			}
 		};		
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();
-		timer.schedule(tt, 0, hour/12); // ogni 5 minuti
+		timer.schedule(tt, 0, hour); // ogni ora
 	}
 }

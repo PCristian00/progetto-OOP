@@ -89,7 +89,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	public City getForecast(JSONObject obj) {
 		City city=new City();
 		Vector<Forecast> forecasts=new Vector<Forecast>();
-		JSONObject cityData=(JSONObject) obj.get("main");
+		JSONObject cityData = (JSONObject) obj.get("main");
 		JSONObject coord = (JSONObject) obj.get("coord");
 		JSONObject sys = (JSONObject) obj.get("sys");
 		Forecast currentForecast=new Forecast();
@@ -104,7 +104,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		city.setCountry((String) sys.get("country"));
 		
 		Date date = new Date( ((long)obj.get("dt")) * 1000 );
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 		
 		currentForecast.setDate(df.format(date));
 		currentForecast.setDt((long)obj.get("dt"));
@@ -122,15 +122,12 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		String cityName = city.getName();
 		JSONObject obj = new JSONObject();
 		obj = toJSON(city);
-		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-		String today = date.format(new Date());
-		String fileName = cityName + "_" + today;
-		String path = System.getProperty("user.dir") + fileName + ".txt";
+		String path = System.getProperty("user.dir") + cityName + ".txt";
 
 		try {
-			PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-			file_output.println(obj.toString());
-			file_output.close();
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+			pw.append(obj.toJSONString()+"\n");
+			pw.close();
 		}
 
 		catch (Exception e) {

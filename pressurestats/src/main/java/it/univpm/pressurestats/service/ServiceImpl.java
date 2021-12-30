@@ -17,17 +17,17 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 
 import it.univpm.pressurestats.model.*;
 
-//Perché @Service
+//TODO Forse @Service è preferibile metterlo nell'interfaccia
 @Service
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
+	// TODO Chiave cambiata rispetto a main
 	private String apiKey = "5a32bbb372f0b50deba8939136c59500";
 	JSONObject forecast = null;
 
 	@Override
 
 	public JSONObject toJSON(City city) {
-		// TODO Auto-generated method stub
 
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		try {
@@ -117,40 +117,43 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	@Override
 	public void saveToFile(JSONObject object) {
-		// TODO Auto-generated method stub
+
 		City city = this.getForecast(object);
 		String cityName = city.getName();
-		//JSONObject obj = new JSONObject();
-		
+
+		// TODO Blocco necessario per aggiungere data odierna al nome del file,
+		// cancellare se non usato in versione finale
+
 		// SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		// String today = date.format(new Date());
-		
-		//TODO NOME FILE
-		String fileName = cityName + "_stats_t";
+
+		// TODO NOME FILE
+		String fileName = cityName + "_stats_test";
 		// + today;
 
 		// Il file viene salvato nella cartella /src/main/resources/
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
 
-		// TODO AGGIUNTA TIMER, VERIFICARE SE CONVIENE FARE UN NUOVO METODO
-		TimerTask tt=new TimerTask() {
+		// TODO Il timer funziona, ma semplicemente incolla il primo risultato ogni ora,
+		// piuttosto che rifare la chiamata.
+		
+		TimerTask tt = new TimerTask() {
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub				
+
 				JSONObject obj = toJSON(city);
 				try {
 					PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
 					file_output.println(obj.toString());
 					file_output.close();
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 					e.printStackTrace();
-				}			
-			}			
-};
+				}
+			}
+		};
 
-final long hour=3600000; //ora in millisecondi
-		Timer timer=new Timer();
-		timer.schedule(tt, 0,hour); //ogni ora
+		final long hour = 3600000; // ora in millisecondi
+		Timer timer = new Timer();
+		timer.schedule(tt, 0, hour); // ogni ora
 	}
 }

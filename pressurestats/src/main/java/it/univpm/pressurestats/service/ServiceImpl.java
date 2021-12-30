@@ -21,7 +21,7 @@ import it.univpm.pressurestats.model.*;
 @Service
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
-	private String apiKey = "07354f54b9a837406fecf6a8ccd2c217";
+	private String apiKey = "5a32bbb372f0b50deba8939136c59500";
 	JSONObject forecast = null;
 
 	@Override
@@ -124,7 +124,9 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		
 		// SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		// String today = date.format(new Date());
-		String fileName = cityName + "_stats_minute";
+		
+		//TODO NOME FILE
+		String fileName = cityName + "_stats_t";
 		// + today;
 
 		// Il file viene salvato nella cartella /src/main/resources/

@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.service.Service;
-import it.univpm.pressurestats.statistics.OneDayStatistics;
+import it.univpm.pressurestats.statistics.Statistics;
 
 //Perché restController??
 @RestController
 public class Controller {
 	@Autowired
 	Service service;
-	OneDayStatistics statistics = new OneDayStatistics();
+	Statistics statistics = new Statistics();
 	
 	@GetMapping(value="/prova")
 	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3173006") String id)
@@ -24,8 +24,9 @@ public class Controller {
 	}
 	
 	@GetMapping(value="/stats")
-	public ResponseEntity<Object> getStatistics()
+	public ResponseEntity<Object> getStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "date") String date)
 	{
-		return new ResponseEntity<>(statistics.oneDayWeather("Montecassiano", "30-12-2021", true), HttpStatus.OK);
+		return new ResponseEntity<>(statistics.OneDay(city, date), HttpStatus.OK);
 	}
 }

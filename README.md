@@ -29,7 +29,7 @@
   <p align="center">
     Applicazione Java che calcola statistiche di visibilità e pressione di una città data.
     <br />
-    <a href="https://github.com/PCristian00/progetto-OOP/docs/index.html"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/PCristian00/progetto-OOP/pressurestats/doc/index.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/PCristian00/progetto-OOP">View Demo</a>

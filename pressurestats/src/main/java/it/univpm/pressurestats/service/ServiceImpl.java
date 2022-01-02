@@ -18,6 +18,14 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import it.univpm.pressurestats.model.*;
 
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
+
+/**
+ * Questa classe e' l'implementazione dell'interfaccia Service. Contiene i
+ * metodi utilizzati dal controller.
+ * 
+ * @author Pietroniro Cristian
+ * @author Settimi Diego
+ */
 @Service
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
@@ -80,10 +88,11 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		//TODO rimossa stampa singola temporaneamente: il metodo è stato portato all'esterno
-		//saveToFile(jo);
-		
+
+		// TODO rimossa stampa singola temporaneamente: il metodo è stato portato
+		// all'esterno
+		// saveToFile(jo);
+
 		return jo;
 	}
 
@@ -138,37 +147,36 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
 
 		JSONObject obj = toJSON(city);
-				
-				try {
-					PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-					file_output.println(obj.toString());
-					file_output.close();
-				}
 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
-		
-	}	
-	
-	//TODO Nuova metodo, adesso separato dal semplice saveToFile.
-	//PROBLEMA: Funziona, ma forse è preferibile che riceva un JSONObject anziché id?
-	
+		try {
+			PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+			file_output.println(obj.toString());
+			file_output.close();
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	// TODO Nuova metodo, adesso separato dal semplice saveToFile.
+	// PROBLEMA: Funziona, ma forse è preferibile che riceva un JSONObject anziché
+	// id?
+
 	// IDEA implementabile: personalizzare la fascia oraria passando al metodo un
 	// numero intero che faccia da moltiplicatore ad "hour"
-	
 
-	
 	@Override
 	public void saveToFileHourly(String id) {
-		//String id="3173006";
-		
-		TimerTask tt=new TimerTask() {
+		// String id="3173006";
+
+		TimerTask tt = new TimerTask() {
 			public void run() {
-				JSONObject obj=it.univpm.pressurestats.service.ServiceImpl.this.getJSONForecast(id,true);
+				JSONObject obj = it.univpm.pressurestats.service.ServiceImpl.this.getJSONForecast(id, true);
 				saveToFile(obj);
 			}
-		};		
+		};
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();
 		timer.schedule(tt, 0, hour); // ogni ora

@@ -9,11 +9,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.service.Service;
 
+/**
+ * La classe Controller processa le varie richieste, prepara il modello e
+ * restituisce una risposta.
+ * 
+ * @author Pietroniro Cristian
+ * @author Settimi Diego
+ * 
+ */
 
 @RestController
 public class Controller {
 	@Autowired
 	Service service;
+
+	/**
+	 * Rotta di tipo GET che mostra le informazioni attuali su pressione e
+	 * visibilita'. I dati vengono stampati su schermo e salvati in un file di
+	 * testo.
+	 * 
+	 * @param id rappresenta la citta' di cui si richiedono le previsioni.
+	 * @return le previsioni meteo su pressione e visibilità della città richiesta e
+	 *         le informazioni generali sulla citta'.
+	 */
 
 	@GetMapping(value = "/current")
 	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3173006") String id) {
@@ -23,7 +41,13 @@ public class Controller {
 		return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 	}
 
-	// TODO nuova rotta per salvare un nuovo dato ogni ora
+	/**
+	 * Rotta di tipo GET che, se lasciata in esecuzione, salva ogni ora le
+	 * informazioni attuali su pressione e visibilita'
+	 * 
+	 * @param id rappresenta la citta' di cui si richiedono le previsioni.
+	 * @return "Il salvataggio avverra' ogni ora, lasciare programma in esecuzione."
+	 */
 	@GetMapping(value = "/hourly")
 	public String saveToFileHourly(@RequestParam(name = "id", defaultValue = "3173006") String id) {
 		service.saveToFileHourly(id);

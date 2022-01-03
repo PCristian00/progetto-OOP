@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.service.Service;
+import it.univpm.pressurestats.statistics.MoreDaysStatistics;
+import it.univpm.pressurestats.statistics.OneDayStatistics;
 
 /**
  * La classe Controller processa le varie richieste, prepara il modello e
@@ -22,6 +24,9 @@ import it.univpm.pressurestats.service.Service;
 public class Controller {
 	@Autowired
 	Service service;
+	
+	OneDayStatistics statistics;
+	MoreDaysStatistics more = new MoreDaysStatistics();
 
 	/**
 	 * Rotta di tipo GET che mostra le informazioni attuali su pressione e
@@ -55,6 +60,24 @@ public class Controller {
 		// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
 		// /current)
 		return "Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.";
+
+
+	
+	
+		
+	@GetMapping(value="/stats")
+	public ResponseEntity<Object> getStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "date") String date)
+	{
+		statistics = new OneDayStatistics(city, date);
+		return new ResponseEntity<>(statistics.OneDay(city, date), HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/stats/days")
+	public ResponseEntity<Object> getMoreDaysStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+														@RequestParam(name = "days", defaultValue = "1") int days)
+	{
+		return new ResponseEntity<>(more.MoreDays(city, days), HttpStatus.OK);
 
 	}
 }

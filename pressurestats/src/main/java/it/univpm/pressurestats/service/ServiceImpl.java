@@ -99,8 +99,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	@Override
 
 	public City getForecast(JSONObject obj) {
+
 		City city = new City();
 		Vector<Forecast> forecasts = new Vector<Forecast>();
+
 		JSONObject cityData = (JSONObject) obj.get("main");
 		JSONObject coord = (JSONObject) obj.get("coord");
 		JSONObject sys = (JSONObject) obj.get("sys");
@@ -115,8 +117,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		city.setId((long) obj.get("id"));
 		city.setCountry((String) sys.get("country"));
 
-		Date date = new Date(((long) obj.get("dt")) * 1000);
+		
+		Date date = new Date( ((long)obj.get("dt")) * 1000 );
 		DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+		
 
 		currentForecast.setDate(df.format(date));
 		currentForecast.setDt((long) obj.get("dt"));
@@ -148,10 +152,11 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 		JSONObject obj = toJSON(city);
 
+
 		try {
-			PrintWriter file_output = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-			file_output.println(obj.toString());
-			file_output.close();
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+			pw.append(obj.toJSONString()+"\n");
+			pw.close();
 		}
 
 		catch (Exception e) {
@@ -180,5 +185,25 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();
 		timer.schedule(tt, 0, hour); // ogni ora
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONArray readFile(String city, String day) {
+		// TODO Auto-generated method stub
+		JSONArray ja = new JSONArray();
+		String data = "";
+		String nome_file = System.getProperty("user.dir") + city + ".txt";
+		
+		try {
+			BufferedReader buff =  new BufferedReader(new FileReader(nome_file));
+			while((data = buff.readLine()) != null)
+				ja.add((JSONObject) JSONValue.parseWithException(data));
+			buff.close();
+		} catch (ParseException | IOException e) {
+			e.printStackTrace();
+		}
+		return ja;
 	}
 }

@@ -1,5 +1,6 @@
 package it.univpm.pressurestats.service;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import it.univpm.pressurestats.model.City;
 
@@ -11,6 +12,7 @@ import it.univpm.pressurestats.model.City;
  * @author Settimi Diego
  */
 public interface Service {
+
 	/**
 	 * COMPLETARE
 	 * 
@@ -21,11 +23,11 @@ public interface Service {
 	/**
 	 * Questo metodo va a prendere da OpenWeather le previsioni meteo di una citta'.
 	 * 
-	 * @param id       id della citta' da cercare
+	 * @param name       nome della citta' da cercare
 	 * @param isObject COMPLETARE
 	 * @return un JSONObject contenente le previsioni meteo complete.
 	 */
-	public abstract JSONObject getJSONForecast(String id, boolean isObject);
+	public abstract JSONObject getJSONForecast(String name, boolean isObject);
 	/**
 	 * Questo metodo utilizza getJSONForecast per prendere le informazioni di
 	 * visibilita' e pressione utilizzate per le statistiche.
@@ -44,7 +46,6 @@ public interface Service {
 	 *               getJSONForecast(String id, boolean isObject)
 	 */
 	public abstract void saveToFile(JSONObject obj);
-
 	/**
 	 * Questo metodo salva ogni ora su un file i dati delle previsioni utili
 	 * richiamando getJSONForecast(String id, boolean isObject) e
@@ -54,4 +55,6 @@ public interface Service {
 	 */
 //TODO aggiunta nuova operazione, valutare cambio di argomento
 	public abstract void saveToFileHourly(String id);
+	
+	public abstract JSONArray readFile(String city, String day);
 }

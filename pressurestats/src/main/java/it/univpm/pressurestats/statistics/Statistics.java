@@ -21,7 +21,7 @@ public class Statistics {
 	
 	public Statistics(String city, String date)
 	{
-		this.stats = od.readFile(city, date);
+		this.stats = od.readFile(city);
 		this.vispre = new JSONArray();
 		this.weather = new JSONObject();
 		this.pressureobj = new JSONObject();

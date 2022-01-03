@@ -1,27 +1,39 @@
 package it.univpm.pressurestats.statistics;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import org.json.simple.JSONObject;
 
 
-public class OneDayStatistics extends Statistics{
-	
-	public OneDayStatistics(String city, String day)
-	{
-		super(city, day);
-	}
+public class OneDayStatistics {
 	
 	@SuppressWarnings("unchecked")
-	public JSONObject OneDay(String city, String day)
+	public JSONObject OneDay(String city, int numDays)
 	{
-		JSONObject object = new JSONObject();
+		JSONObject object;
+		JSONObject statistics = new JSONObject();
 		
-		object.put("city", city);
-		object.put("date", day);
+		statistics.put("city", city);
 		
-		object.put("average", avg());
-		object.put("variance", variance());
-		object.put("maxMin", MaxMin());
+		for(int i = 0; i<numDays; i++)
+		{
+			Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.DATE, -i);
+			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+			String day = df.format(cal.getTime());
+			
+			Statistics stats = new Statistics(city, day);
+			object = new JSONObject();
+			
+			object.put("average", stats.avg());
+			object.put("variance", stats.variance());
+			object.put("maxMin", stats.MaxMin());
+			
+			statistics.put(day, object);
+		}
 		
-		return object;
+		return statistics;
 	}
 }

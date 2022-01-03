@@ -134,4 +134,24 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			e.printStackTrace();
 		}
 	}
+	
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONArray readFile(String city, String day) {
+		// TODO Auto-generated method stub
+		JSONArray ja = new JSONArray();
+		String data = "";
+		String nome_file = System.getProperty("user.dir") + city + ".txt";
+		
+		try {
+			BufferedReader buff =  new BufferedReader(new FileReader(nome_file));
+			while((data = buff.readLine()) != null)
+				ja.add((JSONObject) JSONValue.parseWithException(data));
+			buff.close();
+		} catch (ParseException | IOException e) {
+			e.printStackTrace();
+		}
+		return ja;
+	}
 }

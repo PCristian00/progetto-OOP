@@ -3,13 +3,15 @@ package it.univpm.pressurestats.statistics;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import it.univpm.pressurestats.service.ServiceImpl;
+
 public class Statistics {
 	
 	@SuppressWarnings("unchecked")
 	public JSONObject OneDay(String city, String day)
 	{
-		OneDayStatistics od = new OneDayStatistics();
-		JSONArray stats = od.oneDayWeather(city, day);
+		ServiceImpl od = new ServiceImpl();
+		JSONArray stats = od.readFile(city, day);
 		JSONArray vispre = new JSONArray();
 		JSONObject weather = new JSONObject();
 		JSONObject pressureobj = new JSONObject();

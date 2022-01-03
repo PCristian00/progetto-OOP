@@ -60,10 +60,15 @@ public class Controller {
 		// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
 		// /current)
 		return "Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.";
-
-
+	}
 	
-	
+	/**
+	 * Rotta di tipo GET che, restituisce le statistiche giornaliere di una citta'.
+	 * 
+	 * @param city rappresenta la citta' di cui si richiedono le statistiche.
+	 * @param date Il giorno di cui si vogliono ricevere statistiche
+	 * @return Le statistiche per un giorno
+	 */
 		
 	@GetMapping(value="/stats")
 	public ResponseEntity<Object> getStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
@@ -72,6 +77,15 @@ public class Controller {
 		statistics = new OneDayStatistics(city, date);
 		return new ResponseEntity<>(statistics.OneDay(city, date), HttpStatus.OK);
 	}
+	
+	/**
+	 * Rotta di tipo GET che, restituisce le statistiche per piu' giorni di una
+	 * citta'.
+	 * 
+	 * @param city rappresenta la citta' di cui si richiedono le statistiche.
+	 * @param days Il numero di giorni di cui si vogliono ricevere statistiche
+	 * @return Le statistiche per piu' giorni
+	 */
 	
 	@GetMapping(value = "/stats/days")
 	public ResponseEntity<Object> getMoreDaysStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,

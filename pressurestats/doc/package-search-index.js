@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.univpm.pressurestats"},{"l":"it.univpm.pressurestats.controller"},{"l":"it.univpm.pressurestats.model"},{"l":"it.univpm.pressurestats.service"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.univpm.pressurestats"},{"l":"it.univpm.pressurestats.controller"},{"l":"it.univpm.pressurestats.model"},{"l":"it.univpm.pressurestats.service"},{"l":"it.univpm.pressurestats.statistics"}];updateSearchResults();

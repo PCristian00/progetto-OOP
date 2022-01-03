@@ -20,32 +20,36 @@ public interface Service {
 	 * @return Un JSONObject (forecast) contenente le previsioni
 	 */
 	public abstract JSONObject toJSON(City city);
+
 	/**
 	 * Questo metodo va a prendere da OpenWeather le previsioni meteo di una citta'.
 	 * 
-	 * @param name       nome della citta' da cercare
+	 * @param name     nome della citta' da cercare
 	 * @param isObject COMPLETARE
 	 * @return un JSONObject contenente le previsioni meteo complete.
 	 */
 	public abstract JSONObject getJSONForecast(String name, boolean isObject);
+
 	/**
 	 * Questo metodo utilizza getJSONForecast per prendere le informazioni di
 	 * visibilita' e pressione utilizzate per le statistiche.
 	 * 
 	 * @param forecast JSONObject contenente le previsioni restituito da
-	 *            getJSONForecast(String id, boolean isObject)
+	 *                 getJSONForecast(String id, boolean isObject)
 	 * @return un oggetto di tipo City che contiene tutte le informazioni richieste
 	 *         e anche le informazioni sulla citta'.
 	 */
 	public abstract City getForecast(JSONObject forecast);
+
 	/**
 	 * Questo metodo richiama getForecast(JSONObject obj) e salva i dati su un file
 	 * di testo (salvato in /src/main/resources/)
 	 * 
 	 * @param obj JSONObject contenente le previsioni restituito da
-	 *               getJSONForecast(String id, boolean isObject)
+	 *            getJSONForecast(String id, boolean isObject)
 	 */
 	public abstract void saveToFile(JSONObject obj);
+
 	/**
 	 * Questo metodo salva ogni ora su un file i dati delle previsioni utili
 	 * richiamando getJSONForecast(String id, boolean isObject) e
@@ -55,6 +59,13 @@ public interface Service {
 	 */
 //TODO aggiunta nuova operazione, valutare cambio di argomento
 	public abstract void saveToFileHourly(String id);
-	
+
+	/**
+	 * Questo metodo legge dati da un file
+	 * 
+	 * @param city citta' di cui leggere i dati
+	 * @param day  giorno di cui leggere i dati
+	 * @return JSONArray contenente i dati letti
+	 */
 	public abstract JSONArray readFile(String city, String day);
 }

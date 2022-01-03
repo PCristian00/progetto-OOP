@@ -117,10 +117,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		city.setId((long) obj.get("id"));
 		city.setCountry((String) sys.get("country"));
 
-		
-		Date date = new Date( ((long)obj.get("dt")) * 1000 );
+		Date date = new Date(((long) obj.get("dt")) * 1000);
 		DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-		
 
 		currentForecast.setDate(df.format(date));
 		currentForecast.setDt((long) obj.get("dt"));
@@ -152,10 +150,9 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 		JSONObject obj = toJSON(city);
 
-
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-			pw.append(obj.toJSONString()+"\n");
+			pw.append(obj.toJSONString() + "\n");
 			pw.close();
 		}
 
@@ -186,7 +183,6 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		Timer timer = new Timer();
 		timer.schedule(tt, 0, hour); // ogni ora
 	}
-	
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -194,11 +190,13 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		// TODO Auto-generated method stub
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + city + ".txt";
-		
+
+		// TODO I file vengono letti nella cartella
+		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + ".txt";
+
 		try {
-			BufferedReader buff =  new BufferedReader(new FileReader(nome_file));
-			while((data = buff.readLine()) != null)
+			BufferedReader buff = new BufferedReader(new FileReader(nome_file));
+			while ((data = buff.readLine()) != null)
 				ja.add((JSONObject) JSONValue.parseWithException(data));
 			buff.close();
 		} catch (ParseException | IOException e) {

@@ -29,4 +29,10 @@ public class Controller {
 	{
 		return new ResponseEntity<>(statistics.OneDay(city, days), HttpStatus.OK);
 	}
+	
+	@GetMapping(value = "/hourlyStats")
+	public ResponseEntity<Object> getHourlyStatistics()
+	{
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 }

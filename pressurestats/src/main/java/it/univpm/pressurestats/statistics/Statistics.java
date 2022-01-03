@@ -6,30 +6,71 @@ import org.json.simple.JSONObject;
 import it.univpm.pressurestats.service.ServiceImpl;
 
 public class Statistics {
+	ServiceImpl od = new ServiceImpl();
+	
+	private JSONArray stats = new JSONArray();
+	private JSONArray vispre = new JSONArray();
+	
+	private JSONObject weather = new JSONObject();
+	private JSONObject pressureobj = new JSONObject();
+	
+	private long pressureavg;
+	private long visibilityavg;
+	
+	private String day;
+	
+	public Statistics(String city, String date)
+	{
+		this.stats = od.readFile(city, date);
+		this.vispre = new JSONArray();
+		this.weather = new JSONObject();
+		this.pressureobj = new JSONObject();
+		this.pressureavg = 0;
+		this.visibilityavg = 0;
+		this.day = date;
+	}
 	
 	@SuppressWarnings("unchecked")
-	public JSONObject OneDay(String city, String day)
+	public JSONObject avg()
 	{
-		ServiceImpl od = new ServiceImpl();
-		JSONArray stats = od.readFile(city, day);
-		JSONArray vispre = new JSONArray();
-		JSONObject weather = new JSONObject();
-		JSONObject pressureobj = new JSONObject();
 		JSONObject average = new JSONObject();
-		JSONObject variance = new JSONObject();
-		JSONObject maxmin = new JSONObject();
-		JSONObject object = new JSONObject();
 		
 		long visibility = 0;
 		long pressure = 0;
-		long pressureavg = 0;
-		long visibilityavg = 0;
+		
+		int j = 0;
+		
+		for(int i = 0; i<stats.size(); i++)
+		{
+			weather = (JSONObject) stats.get(i);
+			vispre = (JSONArray) weather.get("weather");
+			pressureobj = (JSONObject) vispre.get(0);
+			if(pressureobj.get("date").toString().substring(0, 10).equals(day))
+			{
+				visibility += (long) pressureobj.get("visibility");
+				pressure += (long) pressureobj.get("pressure");
+				j++;
+			}
+		}
+		
+		pressureavg = pressure/j;
+		visibilityavg = visibility/j;
+		
+		average.put("pressureAvg", pressureavg);
+		average.put("visibilityAvg", visibilityavg);
+		
+		return average;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public JSONObject MaxMin()
+	{
+		JSONObject maxMin = new JSONObject();
+		
 		long visibilitymin = 0;
 		long visibilitymax = 0;
 		long pressuremax = 0;
 		long pressuremin = 0;
-		long pressurevar = 0;
-		long visibilityvar = 0;
 		
 		int j = 0;
 		
@@ -46,16 +87,12 @@ public class Statistics {
 					visibilitymax = (long) pressureobj.get("visibility");
 					visibilitymin = (long) pressureobj.get("visibility");
 				}
-				
-				
-				visibility += (long) pressureobj.get("visibility");
+
 				if(visibilitymax < (long) pressureobj.get("visibility"))
 					visibilitymax = (long) pressureobj.get("visibility");
 				else if (visibilitymin > (long) pressureobj.get("visibility"))
 					visibilitymin = (long) pressureobj.get("visibility");
 				
-				
-				pressure += (long) pressureobj.get("pressure");
 				if(pressuremax < (long) pressureobj.get("pressure"))
 					pressuremax = (long) pressureobj.get("pressure");
 				else if (pressuremin > (long) pressureobj.get("pressure"))
@@ -65,11 +102,25 @@ public class Statistics {
 			}
 		}
 		
-		pressureavg = pressure/j;
-		visibilityavg = visibility/j;
+		maxMin.put("pressureMax", pressuremax);
+		maxMin.put("pressureMin", pressuremin);
+		maxMin.put("visibilityMax", visibilitymax);
+		maxMin.put("visibilityMin", visibilitymin);
 		
-		visibility = 0;
-		pressure = 0;
+		return maxMin;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public JSONObject variance()
+	{
+		JSONObject variance = new JSONObject();
+		
+		long visibility = 0;
+		long pressure = 0;
+		long pressurevar = 0;
+		long visibilityvar = 0;
+		
+		int j = 0;
 		
 		for(int i = 0; i<stats.size(); i++)
 		{
@@ -80,30 +131,16 @@ public class Statistics {
 			{
 				visibility += Math.pow((((long) pressureobj.get("visibility")) - visibilityavg), 2);
 				pressure += Math.pow((((long) pressureobj.get("pressure")) - pressureavg), 2);
+				j++;
 			}
 		}
 		
 		pressurevar = pressure/j;
 		visibilityvar = visibility/j;
 		
-		object.put("city", city);
-		object.put("date", day);
-		
-		average.put("pressureAvg", pressureavg);
-		average.put("visibilityAvg", visibilityavg);
-		
 		variance.put("pressureVariance", pressurevar);
 		variance.put("visibilityVariance", visibilityvar);
 		
-		maxmin.put("pressureMax", pressuremax);
-		maxmin.put("pressureMin", pressuremin);
-		maxmin.put("visibilityMax", visibilitymax);
-		maxmin.put("visibilityMin", visibilitymin);
-		
-		object.put("average", average);
-		object.put("variance", variance);
-		object.put("maxMin", maxmin);
-		
-		return object;
+		return variance;
 	}
 }

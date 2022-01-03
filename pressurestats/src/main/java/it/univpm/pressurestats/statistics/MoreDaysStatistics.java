@@ -6,7 +6,9 @@ import java.util.Calendar;
 
 import org.json.simple.JSONObject;
 
-public class MoreDaysStatistics extends Statistics{
+public class MoreDaysStatistics{
+	
+	OneDayStatistics od;
 	
 	@SuppressWarnings("unchecked")
 	public JSONObject MoreDays(String city, int numDays)
@@ -20,10 +22,10 @@ public class MoreDaysStatistics extends Statistics{
 			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 			String day = df.format(cal.getTime());
 			
-			statsMoreDays.put(day, OneDay(city, day));
+			od = new OneDayStatistics(city, day);
+			
+			statsMoreDays.put(day, od.OneDay(city, day));
 		}
-		
-		
 		
 		return statsMoreDays;
 	}

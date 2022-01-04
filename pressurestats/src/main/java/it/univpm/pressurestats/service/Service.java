@@ -12,7 +12,6 @@ import it.univpm.pressurestats.model.City;
  * @author Settimi Diego
  */
 public interface Service {
-
 	/**
 	 * COMPLETARE
 	 * 
@@ -64,8 +63,7 @@ public interface Service {
 	 * Questo metodo legge dati da un file
 	 * 
 	 * @param city citta' di cui leggere i dati
-	 * @param day  giorno di cui leggere i dati
 	 * @return JSONArray contenente i dati letti
 	 */
-	public abstract JSONArray readFile(String city, String day);
+	public abstract JSONArray readFile(String city);
 }

@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.service.Service;
-import it.univpm.pressurestats.statistics.MoreDaysStatistics;
-import it.univpm.pressurestats.statistics.OneDayStatistics;
+import it.univpm.pressurestats.statistics.Statistics;
 
 /**
  * La classe Controller processa le varie richieste, prepara il modello e
@@ -24,6 +23,7 @@ import it.univpm.pressurestats.statistics.OneDayStatistics;
 public class Controller {
 	@Autowired
 	Service service;
+
 	
 	OneDayStatistics statistics;
 	MoreDaysStatistics more = new MoreDaysStatistics();
@@ -43,6 +43,7 @@ public class Controller {
 		// TODO Portata all'esterno il metodo saveToFile per evitare ripetizioni in
 		// saveToFileHourly (vedere getJSONForecast)
 		service.saveToFile((service.getJSONForecast(id, true)));
+
 		return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 	}
 
@@ -53,7 +54,7 @@ public class Controller {
 	 * @param id rappresenta la citta' di cui si richiedono le previsioni.
 	 * @return "Il salvataggio avverra' ogni ora, lasciare programma in esecuzione."
 	 */
-	@GetMapping(value = "/hourly")
+	@GetMapping(value = "/hourlySave")
 	public String saveToFileHourly(@RequestParam(name = "id", defaultValue = "3173006") String id) {
 		service.saveToFileHourly(id);
 
@@ -62,6 +63,7 @@ public class Controller {
 		return "Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.";
 	}
 	
+
 	/**
 	 * Rotta di tipo GET che, restituisce le statistiche giornaliere di una citta'.
 	 * 
@@ -69,13 +71,14 @@ public class Controller {
 	 * @param date Il giorno di cui si vogliono ricevere statistiche
 	 * @return Le statistiche per un giorno
 	 */
-		
-	@GetMapping(value="/stats")
-	public ResponseEntity<Object> getStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
-												@RequestParam(name = "date") String date)
+	
+	@GetMapping(value="/oneDay")
+	public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+
+	@RequestParam(name = "date") String date)
 	{
-		statistics = new OneDayStatistics(city, date);
-		return new ResponseEntity<>(statistics.OneDay(city, date), HttpStatus.OK);
+		statistics = new Statistics(city, date);
+		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 	
 	/**
@@ -87,11 +90,21 @@ public class Controller {
 	 * @return Le statistiche per piu' giorni
 	 */
 	
-	@GetMapping(value = "/stats/days")
-	public ResponseEntity<Object> getMoreDaysStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
-														@RequestParam(name = "days", defaultValue = "1") int days)
+	@GetMapping(value="/moreDays")
+	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "days") int days)
 	{
-		return new ResponseEntity<>(more.MoreDays(city, days), HttpStatus.OK);
-
+		statistics = new Statistics(city, days);
+		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+	}
+	
+	@GetMapping(value="/hourly")
+	public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "date") String date,
+												@RequestParam(name = "from") int from,
+												@RequestParam(name = "to") int to)
+	{
+		statistics = new Statistics(city, date, from, to);
+		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 }

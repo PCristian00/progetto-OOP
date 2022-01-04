@@ -186,7 +186,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public JSONArray readFile(String city, String day) {
+	public JSONArray readFile(String city) {
 		// TODO Auto-generated method stub
 		JSONArray ja = new JSONArray();
 		String data = "";

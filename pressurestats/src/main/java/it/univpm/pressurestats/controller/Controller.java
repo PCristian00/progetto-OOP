@@ -23,16 +23,10 @@ public class Controller {
 		return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/dailyStats")
-	public ResponseEntity<Object> getMoreDaysStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
-														@RequestParam(name = "days", defaultValue = "1") int days)
+	@GetMapping(value="/stats")
+	public ResponseEntity<Object> getStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "date") String date)
 	{
-		return new ResponseEntity<>(statistics.OneDay(city, days), HttpStatus.OK);
-	}
-	
-	@GetMapping(value = "/hourlyStats")
-	public ResponseEntity<Object> getHourlyStatistics()
-	{
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(statistics.OneDay(city, date), HttpStatus.OK);
 	}
 }

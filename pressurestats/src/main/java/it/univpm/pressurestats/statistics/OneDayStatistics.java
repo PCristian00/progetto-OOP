@@ -1,39 +1,32 @@
 package it.univpm.pressurestats.statistics;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
+import org.json.simple.JSONValue;
+import org.json.simple.parser.ParseException;
 
 public class OneDayStatistics {
-	
+
 	@SuppressWarnings("unchecked")
-	public JSONObject OneDay(String city, int numDays)
+	public JSONArray oneDayWeather(String city, String day)
 	{
-		JSONObject object;
-		JSONObject statistics = new JSONObject();
+		JSONArray ja = new JSONArray();
+		String data = "";
+		String nome_file = System.getProperty("user.dir") + city + ".txt";
 		
-		statistics.put("city", city);
-		
-		for(int i = 0; i<numDays; i++)
-		{
-			Calendar cal = Calendar.getInstance();
-			cal.add(Calendar.DATE, -i);
-			DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-			String day = df.format(cal.getTime());
-			
-			Statistics stats = new Statistics(city, day);
-			object = new JSONObject();
-			
-			object.put("average", stats.avg());
-			object.put("variance", stats.variance());
-			object.put("maxMin", stats.MaxMin());
-			
-			statistics.put(day, object);
+		try {
+			BufferedReader buff =  new BufferedReader(new FileReader(nome_file));
+			while((data = buff.readLine()) != null)
+				if(data.substring(0, 0).equals(day))
+					ja.add((JSONObject) JSONValue.parseWithException(data));
+			buff.close();
+		} catch (ParseException | IOException e) {
+			e.printStackTrace();
 		}
-		
-		return statistics;
+		return ja;
 	}
 }

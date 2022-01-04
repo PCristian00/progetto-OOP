@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.service.Service;
-import it.univpm.pressurestats.statistics.OneDayStatistics;
+import it.univpm.pressurestats.statistics.Statistics;
 
 //Perché restController??
 @RestController
 public class Controller {
 	@Autowired
 	Service service;
-	OneDayStatistics statistics = new OneDayStatistics();
+	Statistics statistics;
 	
 	@GetMapping(value="/prova")
 	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3173006") String id)
@@ -23,10 +23,29 @@ public class Controller {
 		return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 	}
 	
-	@GetMapping(value="/stats")
-	public ResponseEntity<Object> getStatistics(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+	@GetMapping(value="/oneDay")
+	public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
 												@RequestParam(name = "date") String date)
 	{
-		return new ResponseEntity<>(statistics.OneDay(city, date), HttpStatus.OK);
+		statistics = new Statistics(city, date);
+		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+	}
+	
+	@GetMapping(value="/moreDays")
+	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "days") int days)
+	{
+		statistics = new Statistics(city, days);
+		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+	}
+	
+	@GetMapping(value="/hourly")
+	public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+												@RequestParam(name = "date") String date,
+												@RequestParam(name = "from") int from,
+												@RequestParam(name = "to") int to)
+	{
+		statistics = new Statistics(city, date, from, to);
+		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 }

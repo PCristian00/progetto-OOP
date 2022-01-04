@@ -5,11 +5,38 @@ import org.json.simple.JSONObject;
 
 public class Statistics {
 	
-	@SuppressWarnings("unchecked")
-	public JSONObject OneDay(String city, String day)
+	private JSONArray stats;
+	private Filters od;
+	private String city;
+	private String date;
+	
+	public Statistics(String city, String day)
 	{
-		OneDayStatistics od = new OneDayStatistics();
-		JSONArray stats = od.oneDayWeather(city, day);
+		od = new Filters();
+		stats = od.oneDayWeather(city, day);
+		this.date = day;
+		this.city = city;
+	}
+	
+	public Statistics(String city, String day, int from, int to)
+	{
+		od = new Filters();
+		stats = od.hourly(city, day, from, to);
+		this.date = day;
+		this.city = city;
+	}
+	
+	public Statistics(String city, int numDays)
+	{
+		od = new Filters();
+		stats = od.moreDayWeather(city, numDays);
+		this.city = city;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public JSONObject stats()
+	{
 		JSONArray vispre = new JSONArray();
 		JSONObject weather = new JSONObject();
 		JSONObject pressureobj = new JSONObject();
@@ -36,31 +63,28 @@ public class Statistics {
 			weather = (JSONObject) stats.get(i);
 			vispre = (JSONArray) weather.get("weather");
 			pressureobj = (JSONObject) vispre.get(0);
-			if(pressureobj.get("date").toString().substring(0, 10).equals(day))
-			{
-				if(j == 0) {
-					pressuremax = (long) pressureobj.get("pressure");
-					pressuremin = (long) pressureobj.get("pressure");
-					visibilitymax = (long) pressureobj.get("visibility");
-					visibilitymin = (long) pressureobj.get("visibility");
-				}
-				
-				
-				visibility += (long) pressureobj.get("visibility");
-				if(visibilitymax < (long) pressureobj.get("visibility"))
-					visibilitymax = (long) pressureobj.get("visibility");
-				else if (visibilitymin > (long) pressureobj.get("visibility"))
-					visibilitymin = (long) pressureobj.get("visibility");
-				
-				
-				pressure += (long) pressureobj.get("pressure");
-				if(pressuremax < (long) pressureobj.get("pressure"))
-					pressuremax = (long) pressureobj.get("pressure");
-				else if (pressuremin > (long) pressureobj.get("pressure"))
-					pressuremin = (long) pressureobj.get("pressure");
-				
-				j++;
+			if(j == 0) {
+				pressuremax = (long) pressureobj.get("pressure");
+				pressuremin = (long) pressureobj.get("pressure");
+				visibilitymax = (long) pressureobj.get("visibility");
+				visibilitymin = (long) pressureobj.get("visibility");
 			}
+			
+			
+			visibility += (long) pressureobj.get("visibility");
+			if(visibilitymax < (long) pressureobj.get("visibility"))
+				visibilitymax = (long) pressureobj.get("visibility");
+			else if (visibilitymin > (long) pressureobj.get("visibility"))
+				visibilitymin = (long) pressureobj.get("visibility");
+			
+			
+			pressure += (long) pressureobj.get("pressure");
+			if(pressuremax < (long) pressureobj.get("pressure"))
+				pressuremax = (long) pressureobj.get("pressure");
+			else if (pressuremin > (long) pressureobj.get("pressure"))
+				pressuremin = (long) pressureobj.get("pressure");
+			
+			j++;
 		}
 		
 		pressureavg = pressure/j;
@@ -74,18 +98,15 @@ public class Statistics {
 			weather = (JSONObject) stats.get(i);
 			vispre = (JSONArray) weather.get("weather");
 			pressureobj = (JSONObject) vispre.get(0);
-			if(pressureobj.get("date").toString().substring(0, 10).equals(day))
-			{
-				visibility += Math.pow((((long) pressureobj.get("visibility")) - visibilityavg), 2);
-				pressure += Math.pow((((long) pressureobj.get("pressure")) - pressureavg), 2);
-			}
+			visibility += Math.pow((((long) pressureobj.get("visibility")) - visibilityavg), 2);
+			pressure += Math.pow((((long) pressureobj.get("pressure")) - pressureavg), 2);
 		}
 		
 		pressurevar = pressure/j;
 		visibilityvar = visibility/j;
 		
 		object.put("city", city);
-		object.put("date", day);
+		object.put("date", date);
 		
 		average.put("pressureAvg", pressureavg);
 		average.put("visibilityAvg", visibilityavg);

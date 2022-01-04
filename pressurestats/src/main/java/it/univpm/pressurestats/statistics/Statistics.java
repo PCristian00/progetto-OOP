@@ -60,7 +60,13 @@ public class Statistics {
 		this.city = city;
 	}
 	
-	
+	/**
+	 * Metodo che calcola statistiche.
+	 * 
+	 * 
+	 * 
+	 * @return Un JSONObject contenente statistiche
+	 */
 	@SuppressWarnings("unchecked")
 	public JSONObject stats()
 	{

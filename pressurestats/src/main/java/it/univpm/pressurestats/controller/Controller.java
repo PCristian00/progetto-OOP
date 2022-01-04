@@ -23,10 +23,7 @@ import it.univpm.pressurestats.statistics.Statistics;
 public class Controller {
 	@Autowired
 	Service service;
-
-	
-	OneDayStatistics statistics;
-	MoreDaysStatistics more = new MoreDaysStatistics();
+	Statistics statistics;	
 
 	/**
 	 * Rotta di tipo GET che mostra le informazioni attuali su pressione e
@@ -98,12 +95,21 @@ public class Controller {
 		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 	
-	@GetMapping(value="/hourly")
-	public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
-												@RequestParam(name = "date") String date,
-												@RequestParam(name = "from") int from,
-												@RequestParam(name = "to") int to)
-	{
+	/**
+	 * Rotta di tipo GET che, restituisce le statistiche per piu' ore di un giorno di una
+	 * citta'.
+	 * 
+	 * @param city rappresenta la citta' di cui si richiedono le statistiche.
+	 * @param date Il giorno di cui si vogliono ricevere statistiche
+	 * @param from prima ora
+	 * @param to ultima ora
+	 * @return Le statistiche per piu' ore
+	 */
+	@GetMapping(value = "/hourly")
+	public ResponseEntity<Object> getStatisticsHourly(
+			@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
+			@RequestParam(name = "to") int to) {
 		statistics = new Statistics(city, date, from, to);
 		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}

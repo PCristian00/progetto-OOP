@@ -31,7 +31,7 @@ public class Filters {
 	public JSONArray oneDayWeather(String city, String day) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + city + ".txt";
+		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
 
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));
@@ -56,7 +56,7 @@ public class Filters {
 	public JSONArray moreDayWeather(String city, int numDays) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + city + ".txt";
+		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
 		String day;
 
 		try {
@@ -91,7 +91,7 @@ public class Filters {
 	public JSONArray hourly(String city, String day, int from, int to) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + city + ".txt";
+		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
 		String hour;
 
 		try {

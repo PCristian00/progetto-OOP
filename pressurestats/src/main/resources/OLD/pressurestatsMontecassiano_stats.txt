@@ -1,0 +1,1 @@
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1021,"visibility":10000,"dt":1640874207,"date":"30-12-2021 15:23:27"}],"lon":13.4388,"id":3173006,"lat":43.3674}

@@ -1,0 +1,10 @@
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1022,"visibility":10000,"dt":1640878566,"date":"30-12-2021 16:36:06"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1024,"visibility":9000,"dt":1640878566,"date":"30-12-2021 18:36:06"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1025,"visibility":10000,"dt":1640948077,"date":"31-12-2021 11:54:37"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1025,"visibility":10000,"dt":1640948118,"date":"31-12-2021 11:55:18"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1025,"visibility":10000,"dt":1640948077,"date":"01-01-2022 11:54:37"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1025,"visibility":10000,"dt":1640948118,"date":"01-01-2022 11:55:18"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1025,"visibility":10000,"dt":1640948077,"date":"02-01-2022 11:54:37"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1025,"visibility":10000,"dt":1640948118,"date":"02-01-2022 11:55:18"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1020,"visibility":10000,"dt":1641200612,"date":"03-01-2022 10:03:32"}],"lon":13.4388,"id":3173006,"lat":43.3674}
+{"country":"IT","name":"Montecassiano","weather":[{"pressure":1020,"visibility":10000,"dt":1641200612,"date":"03-01-2022 10:03:32"}],"lon":13.4388,"id":3173006,"lat":43.3674}

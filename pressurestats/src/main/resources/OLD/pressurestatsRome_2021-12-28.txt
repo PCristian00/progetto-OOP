@@ -1,0 +1,1 @@
+{"country":"IT","name":"Rome","weather":[{"pressure":1009,"visibility":10000,"dt":1640689494,"date":"28\/12\/2021 12:04:54"}],"lon":12.4839,"id":3169070,"lat":41.8947}

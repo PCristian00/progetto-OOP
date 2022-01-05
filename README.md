@@ -58,13 +58,13 @@
        <!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
         <li><a href="#installation">Installation</a></li>
       </ul>
-    </li>    
+    </li>
     <li>
       <a href="#usage">Usage</a>
-    <u1>
-      <l1><a href="#rotte">Rotte</a></l1>
-    </u1>
-      </li>
+      <ul>
+        <li><a href="#rotte">Rotte</a></li>
+      </ul>
+    </li>    
     <!--<li><a href="#roadmap">Roadmap</a></li>-->
     <!-- <li><a href="#contributing">Contributing</a></li>-->
     <li><a href="#license">License</a></li>

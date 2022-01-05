@@ -31,7 +31,7 @@ public class Filters {
 	public JSONArray oneDayWeather(String city, String day) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
+		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt"; 
 
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));

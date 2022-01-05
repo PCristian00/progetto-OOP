@@ -45,25 +45,30 @@
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
-  <ol>
+  <ol>    
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
-    </li>
+    </li>    
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+       <!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
         <li><a href="#installation">Installation</a></li>
       </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    </li>    
+    <li>
+      <a href="#usage">Usage</a>
+    <u1>
+      <l1><a href="#rotte">Rotte</a></l1>
+    </u1>
+      </li>
+    <!--<li><a href="#roadmap">Roadmap</a></li>-->
+    <!-- <li><a href="#contributing">Contributing</a></li>-->
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <!--<li><a href="#contact">Contact</a></li>-->
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -76,6 +81,20 @@
 ### PressureStats
 Progetto Programmazione ad Oggetti
 di [Settimi Diego](https://github.com/Diego7imi) e [Pietroniro Cristian](https://github.com/PCristian00)
+
+PressureStats permette di salvare dati su pressione e visibilità di una città su un file di testo.<p>
+Tale salvataggio viene eseguito una sola volta oppure in automatico ogni ora.<p>
+I dati raccolti possono poi essere elaborati per ricavare statistiche su pressione e visibilità della città:
+* Pressione massima, minima, media
+* Visibilità massima, minima, media
+* Varianza Pressione
+* Varianza Visibilità
+
+Le statistiche possono quindi essere mostrate in vari filtri:
+* Giornaliere: Mostra le statistiche di un intero giorno scelto dall'utente
+* Più giorni: Mostra le statistiche per una fascia di giorno scelti dall'utente
+* Orarie: Mostra le statistiche comprese tra due ore (di un giorno) scelte dall'utente.
+
 
 <!--
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `PCristian00`, `progetto-OOP`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `PressureStats`, `Applicazione Java che calcola statistiche di visibilità e pressione di una città data.`
@@ -100,8 +119,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 -->
-### Prerequisites
-<!--
+
+<!--### Prerequisites
 This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
@@ -109,19 +128,15 @@ This is an example of how to list things you need to use the software and how to
   ```
 -->
 ### Installation
-<!--
-1. Get a free API Key at [https://example.com](https://example.com)
+
+1. Get a free API Key at [https://openweathermap.org/api](https://openweathermap.org/api)
 2. Clone the repo
    ```sh
    git clone https://github.com/PCristian00/progetto-OOP.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Enter your API in `ServiceImpl.java`
+   ```java
+   private String apiKey = 'ENTER YOUR API';
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -136,11 +151,22 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+-->
+### Rotte
+Le rotte definite sono le seguenti:
 
+N° | Tipo | Rotta | Descrizione
+----- | ------------ | -------------------- | ----------------------
+[1](#1) | ` GET ` | `/current?id=6542126` | *Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data*
+[2](#2) | ` GET ` | `/hourlySave?id=6542126` | *Finché è in esecuzione, salva ogni ora su un file i  dati attuali di pressione e visibilità di una città data.*
+[3](#3) | ` GET ` | `/oneDay?city=Ancona&?date=05-01-2022` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.*
+[4](#4) | ` GET ` | `/moreDays?city=Ancona&?days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per i giorni scelti.*
+[5](#5) | ` GET ` | `/hourly?city=Ancona&?date=05-01-2022&from=10&to=13` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
-## Roadmap
+<!--## Roadmap
 <!--
 - [] Feature 1
 - [] Feature 2
@@ -154,7 +180,7 @@ See the [open issues](https://github.com/PCristian00/progetto-OOP/issues) for a 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+<!--## Contributing
 <!--
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -181,7 +207,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+<!--## Contact
 <!--
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 

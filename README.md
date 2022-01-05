@@ -199,8 +199,8 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
 ## License
-<!--
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+Distribuito con licenza MIT. Vedi `LICENSE.txt` per maggiori informazioni.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

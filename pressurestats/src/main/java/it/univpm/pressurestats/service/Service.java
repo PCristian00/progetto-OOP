@@ -2,6 +2,8 @@ package it.univpm.pressurestats.service;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.model.City;
 
 /**
@@ -38,7 +40,7 @@ public interface Service {
 	 * @return un oggetto di tipo City che contiene tutte le informazioni richieste
 	 *         e anche le informazioni sulla citta'.
 	 */
-	public abstract City getForecast(JSONObject forecast);
+	public abstract City getForecast(JSONObject forecast) throws ItalianCityNotFoundException;
 
 	/**
 	 * Questo metodo richiama getForecast(JSONObject obj) e salva i dati su un file
@@ -47,7 +49,7 @@ public interface Service {
 	 * @param obj JSONObject contenente le previsioni restituito da
 	 *            getJSONForecast(String id, boolean isObject)
 	 */
-	public abstract void saveToFile(JSONObject obj);
+	public abstract void saveToFile(JSONObject obj) throws ItalianCityNotFoundException;
 
 	/**
 	 * Questo metodo salva ogni ora su un file i dati delle previsioni utili

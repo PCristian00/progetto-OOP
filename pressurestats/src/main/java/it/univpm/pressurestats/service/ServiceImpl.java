@@ -15,6 +15,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
+import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.model.*;
 
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
@@ -98,7 +99,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	@Override
 
-	public City getForecast(JSONObject obj) {
+	public City getForecast(JSONObject obj) throws ItalianCityNotFoundException {
 
 		City city = new City();
 		Vector<Forecast> forecasts = new Vector<Forecast>();
@@ -115,6 +116,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		city.setLon((double) coord.get("lon"));
 		city.setName((String) obj.get("name"));
 		city.setId((long) obj.get("id"));
+		if(!((String) sys.get("country")).equals("IT"))
+			throw new ItalianCityNotFoundException("La città non è italiana");
 		city.setCountry((String) sys.get("country"));
 
 		Date date = new Date(((long) obj.get("dt")) * 1000);
@@ -130,7 +133,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 
 	@Override
-	public void saveToFile(JSONObject object) {
+	public void saveToFile(JSONObject object) throws ItalianCityNotFoundException{
 
 		City city = this.getForecast(object);
 		String cityName = city.getName();
@@ -176,7 +179,12 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		TimerTask tt = new TimerTask() {
 			public void run() {
 				JSONObject obj = it.univpm.pressurestats.service.ServiceImpl.this.getJSONForecast(id, true);
-				saveToFile(obj);
+				try {
+					saveToFile(obj);
+				} catch (ItalianCityNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		};
 		final long hour = 3600000; // ora in millisecondi

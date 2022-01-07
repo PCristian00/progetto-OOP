@@ -89,17 +89,12 @@ public class Controller {
 	 * @throws ItalianCityNotFoundException 
 	 */
 	@GetMapping(value = "/hourlySave")
-	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id){
-			try {
-				service.saveToFileHourly(id);
+	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException{
+			service.saveToFileHourly(id);
 
-				// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
-				// /current)
-				return new ResponseEntity<>("Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.", HttpStatus.OK);
-			} catch (ItalianCityNotFoundException e) {
-				// TODO Auto-generated catch block
-				return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-			}
+			// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
+			// /current)
+			return new ResponseEntity<>("Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.", HttpStatus.OK);
 	}
 	
 
@@ -138,12 +133,7 @@ public class Controller {
 	@GetMapping(value="/moreDays")
 	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
 												@RequestParam(name = "days") int days)
-	{
-
-		statistics = new Statistics(city, days);
-		
-		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
-
+	{		
 		try {
 			statistics = new Statistics(city, days);
 			//TODO aggiunto salvataggio (Funzionante)

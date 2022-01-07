@@ -179,7 +179,14 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		TimerTask tt = new TimerTask() {
 			public void run(){
 				//JSONObject obj = ;
-				saveToFile(getJSONForecast(id, true));
+				
+					try {
+						saveToFile(getJSONForecast(id, true));
+					} catch (ItalianCityNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
 			}
 		};
 		final long hour = 3600000; // ora in millisecondi

@@ -1,3 +1,0 @@
-{"country":"IT","name":"Rome","weather":[{"pressure":999,"visibility":7000,"dt":1641398720,"date":"05-01-2022 17:05:20"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Rome","weather":[{"pressure":1000,"visibility":7000,"dt":1641402600,"date":"05-01-2022 18:10:00"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Rome","weather":[{"pressure":1000,"visibility":8000,"dt":1641405085,"date":"05-01-2022 18:51:25"}],"lon":12.4839,"id":3169070,"lat":41.8947}

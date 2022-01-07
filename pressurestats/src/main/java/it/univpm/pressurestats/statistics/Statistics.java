@@ -1,5 +1,10 @@
 package it.univpm.pressurestats.statistics;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -10,7 +15,7 @@ import org.json.simple.JSONObject;
  * @author Settimi Diego
  */
  
-public class Statistics {
+public class Statistics{
 	
 	private JSONArray stats;
 	private Filters od;
@@ -159,4 +164,24 @@ public class Statistics {
 		
 		return object;
 	}
+
+	public void saveToFile(JSONObject object) {
+
+		String fileName = this.city+ "_stats_"+this.date;
+		// Il file viene salvato nella cartella /src/main/resources/
+		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
+	
+		try {
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+			pw.append(object.toJSONString() + "\n");
+			pw.close();
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	
 }

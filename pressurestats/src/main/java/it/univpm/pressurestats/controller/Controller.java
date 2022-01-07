@@ -43,6 +43,32 @@ public class Controller {
 
 		return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 	}
+	
+	//TODO ROTTA BOZZA:Togliere da programma finale o rimediare
+			//TODO A volte questa rotta chiama contemporaneamente per due città diverse e inserisce i dati nel file sbagliato
+			//TODO ricontrollare SEMPRE i dati ottenuti dopo l'utilizzo
+	@GetMapping(value = "/multiSave")
+	public String saveToFileHourly() {
+		
+		
+		//ROMA
+		service.saveToFileHourly("3169070");
+		
+		//NAPOLI
+		service.saveToFileHourly("3172395");
+				
+		//MILANO
+		service.saveToFileHourly("6542283");
+				
+		//ANCONA
+		service.saveToFileHourly("6542126");
+				
+		//PALERMO
+		service.saveToFileHourly("2523920");
+
+		
+		return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione.";
+	}
 
 	/**
 	 * Rotta di tipo GET che, se lasciata in esecuzione, salva ogni ora le
@@ -75,6 +101,8 @@ public class Controller {
 	@RequestParam(name = "date") String date)
 	{
 		statistics = new Statistics(city, date);
+		//TODO aggiunto salvataggio (Funzionante)
+		statistics.saveToFile(statistics.stats());
 		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 	
@@ -92,6 +120,8 @@ public class Controller {
 												@RequestParam(name = "days") int days)
 	{
 		statistics = new Statistics(city, days);
+		//TODO aggiunto salvataggio (Funzionante)
+				statistics.saveToFile(statistics.stats());
 		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 	
@@ -111,6 +141,8 @@ public class Controller {
 			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
 			@RequestParam(name = "to") int to) {
 		statistics = new Statistics(city, date, from, to);
+		//TODO aggiunto salvataggio (Funzionante)
+				statistics.saveToFile(statistics.stats());
 		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 	}
 }

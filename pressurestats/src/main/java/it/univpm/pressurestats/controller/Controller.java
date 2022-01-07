@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.service.Service;
 import it.univpm.pressurestats.statistics.Statistics;
 
@@ -33,10 +34,11 @@ public class Controller {
 	 * @param id rappresenta la citta' di cui si richiedono le previsioni. Valore di default: 3169070 (Rome,IT)
 	 * @return le previsioni meteo su pressione e visibilità della città richiesta e
 	 *         le informazioni generali sulla citta'.
+	 * @throws ItalianCityNotFoundException 
 	 */
 
 	@GetMapping(value = "/current")
-	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) {
+	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException {
 		// TODO Portata all'esterno il metodo saveToFile per evitare ripetizioni in
 		// saveToFileHourly (vedere getJSONForecast)
 		service.saveToFile((service.getJSONForecast(id, true)));

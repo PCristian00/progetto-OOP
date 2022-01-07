@@ -4,7 +4,9 @@ import java.net.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.io.*;
 
 import org.json.simple.*;
@@ -133,7 +135,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 
 	@Override
-	public void saveToFile(JSONObject object) throws ItalianCityNotFoundException{
+	public void saveToFile(JSONObject object) throws ItalianCityNotFoundException {
 
 		City city = this.getForecast(object);
 		String cityName = city.getName();
@@ -174,17 +176,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	@Override
 	public void saveToFileHourly(String id) {
-		// String id="3173006";
-
 		TimerTask tt = new TimerTask() {
-			public void run() {
-				JSONObject obj = it.univpm.pressurestats.service.ServiceImpl.this.getJSONForecast(id, true);
-				try {
-					saveToFile(obj);
-				} catch (ItalianCityNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			public void run(){
+				//JSONObject obj = ;
+				saveToFile(getJSONForecast(id, true));
 			}
 		};
 		final long hour = 3600000; // ora in millisecondi

@@ -57,6 +57,7 @@ public interface Service {
 	 * saveToFile(JSONObject object)
 	 * 
 	 * @param id id della citta' di cui salvare i dati ogni ora
+	 * @throws ItalianCityNotFoundException 
 	 */
 //TODO aggiunta nuova operazione, valutare cambio di argomento
 	public abstract void saveToFileHourly(String id);

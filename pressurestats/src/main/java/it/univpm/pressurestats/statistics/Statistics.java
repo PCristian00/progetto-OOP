@@ -3,6 +3,10 @@ package it.univpm.pressurestats.statistics;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
+import it.univpm.pressurestats.exception.DayNotFoundException;
+import it.univpm.pressurestats.exception.WrongHoursPeriodException;
+
 /**
  * Questa classe permette di calcolare le statistiche.
  * 
@@ -38,8 +42,11 @@ public class Statistics {
 	 * @param day giorno di cui calcolare statistiche
 	 *	@param from ora da cui partire
 	 *	@param to ora a cui arrivare
+	 * @throws WrongHoursPeriodException 
+	 * @throws CityStatisticsNotFoundException 
+	 * @throws DayNotFoundException 
 	 */	
-	public Statistics(String city, String day, int from, int to)
+	public Statistics(String city, String day, int from, int to) throws WrongHoursPeriodException, CityStatisticsNotFoundException, DayNotFoundException
 	{
 		od = new Filters();
 		stats = od.hourly(city, day, from, to);

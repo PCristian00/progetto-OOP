@@ -12,6 +12,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
+import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
+import it.univpm.pressurestats.exception.DayNotFoundException;
+import it.univpm.pressurestats.exception.WrongHoursPeriodException;
+
 /**
  * Questa classe gestisce i filtri.
  * 
@@ -86,13 +90,18 @@ public class Filters {
 	 * @param from prima ora
 	 * @param to   ultima ora
 	 * @return Le statistiche di piu' ore in un JSONArray.
+	 * @throws WrongHoursPeriodException 
+	 * @throws CityStatisticsNotFoundException 
+	 * @throws DayNotFoundException 
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONArray hourly(String city, String day, int from, int to) {
+	public JSONArray hourly(String city, String day, int from, int to) throws WrongHoursPeriodException, CityStatisticsNotFoundException, DayNotFoundException {
 		JSONArray ja = new JSONArray();
 		String data = "";
 		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
 		String hour;
+		
+		if(from < 0 || to > 24 || from > to) throw new WrongHoursPeriodException("Inserire un periodo corretto");
 
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));
@@ -102,9 +111,12 @@ public class Filters {
 					if (Integer.parseInt(hour) >= from && Integer.parseInt(hour) <= to)
 						ja.add((JSONObject) JSONValue.parseWithException(data));
 				}
+				else throw new DayNotFoundException("Giorno non presente");
 			buff.close();
-		} catch (ParseException | IOException e) {
-			e.printStackTrace();
+		} catch (IOException e) {
+			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");
+		} catch (ParseException e1) {
+			e1.printStackTrace();
 		}
 		return ja;
 	}

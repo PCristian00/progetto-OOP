@@ -8,6 +8,10 @@ import java.io.PrintWriter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
+import it.univpm.pressurestats.exception.DayNotFoundException;
+import it.univpm.pressurestats.exception.WrongHoursPeriodException;
+
 /**
  * Questa classe permette di calcolare le statistiche.
  * 
@@ -30,8 +34,10 @@ public class Statistics{
 	 * 
 	 * @param city citta' di cui calcolare statitische
 	 * @param day giorno di cui calcolare statistiche
+	 * @throws DayNotFoundException 
+	 * @throws CityStatisticsNotFoundException 
 	 */
-	public Statistics(String city, String day)
+	public Statistics(String city, String day) throws DayNotFoundException, CityStatisticsNotFoundException
 	{
 		od = new Filters();
 		stats = od.oneDayWeather(city, day);
@@ -46,8 +52,11 @@ public class Statistics{
 	 * @param day giorno di cui calcolare statistiche
 	 *	@param from ora da cui partire
 	 *	@param to ora a cui arrivare
+	 * @throws WrongHoursPeriodException 
+	 * @throws CityStatisticsNotFoundException 
+	 * @throws DayNotFoundException 
 	 */	
-	public Statistics(String city, String day, int from, int to)
+	public Statistics(String city, String day, int from, int to) throws WrongHoursPeriodException, CityStatisticsNotFoundException, DayNotFoundException
 	{
 		od = new Filters();
 		stats = od.hourly(city, day, from, to);
@@ -60,8 +69,9 @@ public class Statistics{
 	 * 
 	 * @param city citta' di cui calcolare statitische
 	 * @param numDays numero di giorni di cui calcolare statistiche
+	 * @throws CityStatisticsNotFoundException 
 	 */
-	public Statistics(String city, int numDays)
+	public Statistics(String city, int numDays) throws CityStatisticsNotFoundException
 	{
 		od = new Filters();
 		stats = od.moreDayWeather(city, numDays);

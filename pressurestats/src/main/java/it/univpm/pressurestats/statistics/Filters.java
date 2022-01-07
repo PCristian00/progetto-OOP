@@ -12,6 +12,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
+import it.univpm.pressurestats.service.ServiceImpl;
+
 /**
  * Questa classe gestisce i filtri.
  * 
@@ -31,8 +33,8 @@ public class Filters {
 	public JSONArray oneDayWeather(String city, String day) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_data.txt"; 
-
+		//String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_data.txt"; 
+		String nome_file=ServiceImpl.dir+city+ServiceImpl.f_type;
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));
 			while ((data = buff.readLine()) != null)
@@ -56,7 +58,8 @@ public class Filters {
 	public JSONArray moreDayWeather(String city, int numDays) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_data.txt";
+		//String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_data.txt";
+		String nome_file=ServiceImpl.dir+city+ServiceImpl.f_type;
 		String day;
 
 		try {
@@ -91,7 +94,8 @@ public class Filters {
 	public JSONArray hourly(String city, String day, int from, int to) {
 		JSONArray ja = new JSONArray();
 		String data = "";
-		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_data.txt";
+		//String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_data.txt";
+		String nome_file=ServiceImpl.dir+city+ServiceImpl.f_type;
 		String hour;
 
 		try {

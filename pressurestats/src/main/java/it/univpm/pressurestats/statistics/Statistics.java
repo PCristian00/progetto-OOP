@@ -16,7 +16,10 @@ import org.json.simple.JSONObject;
  */
  
 public class Statistics{
-	
+	/*Cartella in cui sono salvate i file
+	static String dir=System.getProperty("user.dir") + "/src/main/resources/";
+	static String end="_stats.txt";
+	*/
 	private JSONArray stats;
 	private Filters od;
 	private String city;
@@ -170,7 +173,7 @@ public class Statistics{
 		String fileName = this.city+ "_stats_"+this.date;
 		// Il file viene salvato nella cartella /src/main/resources/
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
-	
+	//String path=dir+this.city+end;
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
 			pw.append(object.toJSONString() + "\n");

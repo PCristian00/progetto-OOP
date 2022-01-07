@@ -32,7 +32,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	// TODO Chiave cambiata rispetto a main
 	private String apiKey = "5a32bbb372f0b50deba8939136c59500";
 	JSONObject forecast = null;
-
+	
+	//TODO Impostazioni del salvataggio file, usate anche in Filters
+	public static String dir=System.getProperty("user.dir") + "/src/main/resources/";
+	public static String f_type="_data.txt";
 	@Override
 
 	public JSONObject toJSON(City city) {
@@ -133,7 +136,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	public void saveToFile(JSONObject object) {
 
 		City city = this.getForecast(object);
-		String cityName = city.getName();
+		//String cityName = city.getName();
 
 		// TODO Blocco necessario per aggiungere data odierna al nome del file,
 		// cancellare se non usato in versione finale
@@ -141,13 +144,13 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		// SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		// String today = date.format(new Date());
 
-		// TODO NOME FILE cambiato (prima era _stats)
-		String fileName = cityName + "_data";
+		
+		//String fileName = cityName + "_data";
 		// + today;
 
 		// Il file viene salvato nella cartella /src/main/resources/
-		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
-
+		//String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
+		String path=dir+city.getName()+f_type;
 		JSONObject obj = toJSON(city);
 
 		try {
@@ -193,7 +196,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 		
 		//TODO forse cambia nome_file per rispecchiare la scrittura
-		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + ".txt";
+		String nome_file = dir+city+f_type;
 
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));

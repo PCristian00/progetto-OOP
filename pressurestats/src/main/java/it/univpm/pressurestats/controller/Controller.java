@@ -62,19 +62,44 @@ public class Controller {
 		
 		
 		//ROMA
-		service.saveToFileHourly("3169070");
+		try {
+			service.saveToFileHourly("3169070");
+		} catch (ItalianCityNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//NAPOLI
-		service.saveToFileHourly("3172395");
+		try {
+			service.saveToFileHourly("3172395");
+		} catch (ItalianCityNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
 		//MILANO
-		service.saveToFileHourly("6542283");
+		try {
+			service.saveToFileHourly("6542283");
+		} catch (ItalianCityNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
 		//ANCONA
-		service.saveToFileHourly("6542126");
+		try {
+			service.saveToFileHourly("6542126");
+		} catch (ItalianCityNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 				
 		//PALERMO
-		service.saveToFileHourly("2523920");
+		try {
+			service.saveToFileHourly("2523920");
+		} catch (ItalianCityNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		
 		return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione.";
@@ -84,20 +109,22 @@ public class Controller {
 	 * Rotta di tipo GET che, se lasciata in esecuzione, salva ogni ora le
 	 * informazioni attuali su pressione e visibilita'
 	 *
-	 * @param id rappresenta la citta' di cui si richiedono le previsioni.  Valore di default: 3169070 (Rome,IT)
+	 * @param id rappresenta la citta' di cui si richiedono le previsioni. Valore di
+	 *           default: 3169070 (Rome,IT)
 	 * @return "Il salvataggio avverra' ogni ora, lasciare programma in esecuzione."
-	 * @throws ItalianCityNotFoundException 
+	 * @throws ItalianCityNotFoundException
 	 */
 	@GetMapping(value = "/hourlySave")
-	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException{
+	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id) {
+		
+		try {
 			service.saveToFileHourly(id);
-
-			// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
-			// /current)
-			return new ResponseEntity<>("Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.", HttpStatus.OK);
+			return new ResponseEntity<>("Il salvataggio avverrà ogni ora.\n"+service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
+		} catch (ItalianCityNotFoundException e2) {
+			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 	
-
 	/**
 	 * Rotta di tipo GET che, restituisce le statistiche giornaliere di una citta'.
 	 * 

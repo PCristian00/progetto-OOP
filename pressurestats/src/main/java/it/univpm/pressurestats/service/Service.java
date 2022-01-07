@@ -60,7 +60,7 @@ public interface Service {
 	 * @throws ItalianCityNotFoundException 
 	 */
 //TODO aggiunta nuova operazione, valutare cambio di argomento
-	public abstract void saveToFileHourly(String id);
+	public abstract void saveToFileHourly(String id) throws ItalianCityNotFoundException;
 
 	/**
 	 * Questo metodo legge dati da un file

@@ -175,19 +175,23 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	// numero intero che faccia da moltiplicatore ad "hour"
 
 	@Override
-	public void saveToFileHourly(String id) {
+	public void saveToFileHourly(String id) throws ItalianCityNotFoundException {
 		TimerTask tt = new TimerTask() {
 			public void run(){
-				//JSONObject obj = ;
-				
-					try {
-						saveToFile(getJSONForecast(id, true));
-					} catch (ItalianCityNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+								
+					
+						
+			try {
+				saveToFile(getJSONForecast(id, true));
+			} catch (ItalianCityNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+						
+					
 					}
 
-			}
+			
 		};
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();

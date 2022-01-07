@@ -1,0 +1,13 @@
+{"country":"IT","name":"Milan","weather":[{"pressure":1019,"visibility":10000,"dt":1641499304,"date":"06-01-2022 21:01:44"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1020,"visibility":10000,"dt":1641503317,"date":"06-01-2022 22:08:37"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1021,"visibility":10000,"dt":1641506702,"date":"06-01-2022 23:05:02"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1021,"visibility":8000,"dt":1641509778,"date":"06-01-2022 23:56:18"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1021,"visibility":10000,"dt":1641513936,"date":"07-01-2022 01:05:36"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1020,"visibility":10000,"dt":1641517300,"date":"07-01-2022 02:01:40"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1022,"visibility":10000,"dt":1641543457,"date":"07-01-2022 09:17:37"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1022,"visibility":10000,"dt":1641546966,"date":"07-01-2022 10:16:06"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1021,"visibility":10000,"dt":1641550653,"date":"07-01-2022 11:17:33"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1020,"visibility":10000,"dt":1641553824,"date":"07-01-2022 12:10:24"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1018,"visibility":10000,"dt":1641561465,"date":"07-01-2022 14:17:45"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1018,"visibility":10000,"dt":1641564991,"date":"07-01-2022 15:16:31"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1017,"visibility":10000,"dt":1641567817,"date":"07-01-2022 16:03:37"}],"lon":9.192,"id":6542283,"lat":45.4642}

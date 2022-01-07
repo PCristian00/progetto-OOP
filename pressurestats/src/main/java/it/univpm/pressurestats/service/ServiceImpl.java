@@ -141,8 +141,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		// SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		// String today = date.format(new Date());
 
-		// TODO NOME FILE
-		String fileName = cityName + "_stats";
+		// TODO NOME FILE cambiato (prima era _stats)
+		String fileName = cityName + "_data";
 		// + today;
 
 		// Il file viene salvato nella cartella /src/main/resources/
@@ -191,7 +191,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		JSONArray ja = new JSONArray();
 		String data = "";
 
-		// TODO I file vengono letti nella cartella
+		
+		//TODO forse cambia nome_file per rispecchiare la scrittura
 		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + ".txt";
 
 		try {

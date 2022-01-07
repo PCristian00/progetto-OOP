@@ -1,1 +1,0 @@
-{"country":"GB","name":"London","weather":[{"pressure":1004,"visibility":10000,"dt":1641316748,"date":"04-01-2022 18:19:08"}],"lon":-0.1257,"id":2643743,"lat":51.5085}

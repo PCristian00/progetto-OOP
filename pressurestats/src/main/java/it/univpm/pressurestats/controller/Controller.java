@@ -30,13 +30,13 @@ public class Controller {
 	 * visibilita'. I dati vengono stampati su schermo e salvati in un file di
 	 * testo.
 	 * 
-	 * @param id rappresenta la citta' di cui si richiedono le previsioni.
+	 * @param id rappresenta la citta' di cui si richiedono le previsioni. Valore di default: 3169070 (Rome,IT)
 	 * @return le previsioni meteo su pressione e visibilità della città richiesta e
 	 *         le informazioni generali sulla citta'.
 	 */
 
 	@GetMapping(value = "/current")
-	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3173006") String id) {
+	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) {
 		// TODO Portata all'esterno il metodo saveToFile per evitare ripetizioni in
 		// saveToFileHourly (vedere getJSONForecast)
 		service.saveToFile((service.getJSONForecast(id, true)));
@@ -47,12 +47,12 @@ public class Controller {
 	/**
 	 * Rotta di tipo GET che, se lasciata in esecuzione, salva ogni ora le
 	 * informazioni attuali su pressione e visibilita'
-	 * 
-	 * @param id rappresenta la citta' di cui si richiedono le previsioni.
+	 *
+	 * @param id rappresenta la citta' di cui si richiedono le previsioni.  Valore di default: 3169070 (Rome,IT)
 	 * @return "Il salvataggio avverra' ogni ora, lasciare programma in esecuzione."
 	 */
 	@GetMapping(value = "/hourlySave")
-	public String saveToFileHourly(@RequestParam(name = "id", defaultValue = "3173006") String id) {
+	public String saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id) {
 		service.saveToFileHourly(id);
 
 		// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
@@ -70,7 +70,7 @@ public class Controller {
 	 */
 	
 	@GetMapping(value="/oneDay")
-	public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+	public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Rome") String city,
 
 	@RequestParam(name = "date") String date)
 	{
@@ -88,7 +88,7 @@ public class Controller {
 	 */
 	
 	@GetMapping(value="/moreDays")
-	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
 												@RequestParam(name = "days") int days)
 	{
 		statistics = new Statistics(city, days);
@@ -107,7 +107,7 @@ public class Controller {
 	 */
 	@GetMapping(value = "/hourly")
 	public ResponseEntity<Object> getStatisticsHourly(
-			@RequestParam(name = "city", defaultValue = "Montecassiano") String city,
+			@RequestParam(name = "city", defaultValue = "Rome") String city,
 			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
 			@RequestParam(name = "to") int to) {
 		statistics = new Statistics(city, date, from, to);

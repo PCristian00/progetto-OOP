@@ -26,8 +26,10 @@ public class Statistics {
 	 * 
 	 * @param city citta' di cui calcolare statitische
 	 * @param day giorno di cui calcolare statistiche
+	 * @throws DayNotFoundException 
+	 * @throws CityStatisticsNotFoundException 
 	 */
-	public Statistics(String city, String day)
+	public Statistics(String city, String day) throws DayNotFoundException, CityStatisticsNotFoundException
 	{
 		od = new Filters();
 		stats = od.oneDayWeather(city, day);
@@ -59,8 +61,9 @@ public class Statistics {
 	 * 
 	 * @param city citta' di cui calcolare statitische
 	 * @param numDays numero di giorni di cui calcolare statistiche
+	 * @throws CityStatisticsNotFoundException 
 	 */
-	public Statistics(String city, int numDays)
+	public Statistics(String city, int numDays) throws CityStatisticsNotFoundException
 	{
 		od = new Filters();
 		stats = od.moreDayWeather(city, numDays);

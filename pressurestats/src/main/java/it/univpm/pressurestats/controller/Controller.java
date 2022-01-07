@@ -90,8 +90,12 @@ public class Controller {
 
 	@RequestParam(name = "date") String date)
 	{
-		statistics = new Statistics(city, date);
-		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+		try {
+			statistics = new Statistics(city, date);
+			return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+		} catch (CityStatisticsNotFoundException | DayNotFoundException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	/**
@@ -107,8 +111,12 @@ public class Controller {
 	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
 												@RequestParam(name = "days") int days)
 	{
-		statistics = new Statistics(city, days);
-		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+		try {
+			statistics = new Statistics(city, days);
+			return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
+		} catch (CityStatisticsNotFoundException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	/**

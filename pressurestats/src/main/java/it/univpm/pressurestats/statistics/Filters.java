@@ -30,9 +30,11 @@ public class Filters {
 	 * @param city citta' scelta
 	 * @param day  giorno di cui filtrare statistiche
 	 * @return Le statistiche di un giorno in un JSONArray.
+	 * @throws DayNotFoundException 
+	 * @throws CityStatisticsNotFoundException 
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONArray oneDayWeather(String city, String day) {
+	public JSONArray oneDayWeather(String city, String day) throws DayNotFoundException, CityStatisticsNotFoundException {
 		JSONArray ja = new JSONArray();
 		String data = "";
 		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt"; 
@@ -43,8 +45,11 @@ public class Filters {
 				if (data.contains(day))
 					ja.add((JSONObject) JSONValue.parseWithException(data));
 			buff.close();
-		} catch (ParseException | IOException e) {
-			e.printStackTrace();
+			if(ja.size() == 0) throw new DayNotFoundException("Giorno non presente nelle statistiche");
+		} catch (IOException e) {
+			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");
+		} catch (ParseException e1) {
+			e1.printStackTrace();
 		}
 		return ja;
 	}
@@ -55,9 +60,10 @@ public class Filters {
 	 * @param city    citta' scelta
 	 * @param numDays numeri di giorni di cui filtrare statistiche
 	 * @return Le statistiche di piu' giorni in un JSONArray.
+	 * @throws CityStatisticsNotFoundException 
 	 */
 	@SuppressWarnings("unchecked")
-	public JSONArray moreDayWeather(String city, int numDays) {
+	public JSONArray moreDayWeather(String city, int numDays) throws CityStatisticsNotFoundException {
 		JSONArray ja = new JSONArray();
 		String data = "";
 		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
@@ -75,8 +81,11 @@ public class Filters {
 						ja.add((JSONObject) JSONValue.parseWithException(data));
 				}
 			buff.close();
-		} catch (ParseException | IOException e) {
-			e.printStackTrace();
+		} catch (IOException e) {
+			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");
+		}
+		catch (ParseException e1) {
+			e1.printStackTrace();
 		}
 		return ja;
 	}
@@ -101,7 +110,7 @@ public class Filters {
 		String nome_file = System.getProperty("user.dir") + "/src/main/resources/" + city + "_stats.txt";
 		String hour;
 		
-		if(from < 0 || to > 24 || from > to) throw new WrongHoursPeriodException("Inserire un periodo corretto");
+		if(from < 0 || to > 24 || from > to) throw new WrongHoursPeriodException("Inserire un periodo orario corretto (0-24)");
 
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));
@@ -111,7 +120,7 @@ public class Filters {
 					if (Integer.parseInt(hour) >= from && Integer.parseInt(hour) <= to)
 						ja.add((JSONObject) JSONValue.parseWithException(data));
 				}
-				else throw new DayNotFoundException("Giorno non presente");
+				else throw new DayNotFoundException("Giorno non presente nelle statistiche");
 			buff.close();
 		} catch (IOException e) {
 			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");

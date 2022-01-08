@@ -130,9 +130,9 @@ public class Filters {
 					hour = data.substring(data.indexOf(day) + 11, data.indexOf(day) + 13);
 					if (Integer.parseInt(hour) >= from && Integer.parseInt(hour) <= to)
 						ja.add((JSONObject) JSONValue.parseWithException(data));
-				} else
-					throw new DayNotFoundException("Giorno non presente nelle statistiche");
+				}
 			buff.close();
+			if (ja.size() == 0) throw new DayNotFoundException("Giorno non presente nelle statistiche");
 		} catch (IOException e) {
 			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");
 		} catch (ParseException e1) {

@@ -68,33 +68,43 @@ public class Controller {
 	@GetMapping(value = "/multiSave")
 	public String saveToFileHourly() throws ItalianCityNotFoundException{		
 		//ROMA		
-			service.saveToFileHourly("3169070");			
+			service.saveToFileHourly("3169070",1);			
 		//NAPOLI		
-			service.saveToFileHourly("3172395");	
+			service.saveToFileHourly("3172395",1);	
 		//MILANO
-			service.saveToFileHourly("6542283");				
+			service.saveToFileHourly("6542283",1);				
 		//ANCONA		
-			service.saveToFileHourly("6542126");				
+			service.saveToFileHourly("6542126",1);				
 		//PALERMO		
-			service.saveToFileHourly("2523920");		
+			service.saveToFileHourly("2523920",1);		
 		return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione.";
 	}
 
 	/**
-	 * Se lasciata in esecuzione, salva ogni ora le
-	 * informazioni attuali su pressione e visibilità
+	 * Se lasciata in esecuzione, salva con una frequenza impostata dall'utente le informazioni attuali su
+	 * pressione e visibilità
 	 *
-	 * @param id rappresenta la città di cui si richiedono le previsioni. Valore di
-	 *           default: 3169070 (Rome,IT)
-	 * @return "Il salvataggio avverrà ogni ora, lasciare programma in esecuzione."
+	 * @param id         rappresenta la città di cui si richiedono le previsioni.
+	 *                   Valore di default: 3169070 (Rome,IT)
+	 * @param multiplier moltiplicatore dell'ora (Esempio: 0,5 salva i dati ogni 30
+	 *                   minuti, 2 ogni 2 ore)
+	 * @return Un messaggio di riepilogo con la frequenza e la prima misurazione
 	 * 
 	 */
 	@GetMapping(value = "/hourlySave")
-	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id) {
-		
+	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
+			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) {
+		String msg;
 		try {
-			service.saveToFileHourly(id);
-			return new ResponseEntity<>("Il salvataggio avverrà ogni ora.\n"+service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
+
+			service.saveToFileHourly(id, multiplier);
+			if (multiplier != 1)
+				msg = multiplier + " ore";
+			else
+				msg = "ora";
+
+			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
+					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 		} catch (ItalianCityNotFoundException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}

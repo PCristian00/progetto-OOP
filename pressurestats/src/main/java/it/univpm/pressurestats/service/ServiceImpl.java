@@ -173,20 +173,22 @@ public JSONObject toJSON(City city) {
 	}
 	
 	@Override
-	public void saveToFileHourly(String id) throws ItalianCityNotFoundException {
+	public void saveToFileHourly(String id,double multiplier) throws ItalianCityNotFoundException {
+		//Se il moltiplicatore è negativo o zero lo imposta a 1
+		//TODO migliorare (stampa errore o simile)
+		if(multiplier<=0) multiplier=1;
 		TimerTask tt = new TimerTask() {
 			public void run(){						
 			try {
 				saveToFile(getJSONForecast(id, true));
 			} catch (ItalianCityNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 				}	
 		};
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();
-		timer.schedule(tt, 0, hour); // ogni ora
+		timer.schedule(tt, 0, (long) (multiplier*hour)); // ogni ora
 	}
 
 	@SuppressWarnings("unchecked")

@@ -61,7 +61,7 @@ public interface Service {
 	 * @param id id della città di cui salvare i dati ogni ora
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
-	public abstract void saveToFileHourly(String id) throws ItalianCityNotFoundException;
+	public abstract void saveToFileHourly(String id, double multiplier) throws ItalianCityNotFoundException;
 
 	/**
 	 * Legge dati da un file salvato in precedenza

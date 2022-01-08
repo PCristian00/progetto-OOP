@@ -57,12 +57,14 @@ public class Controller {
 			//TODO ricontrollare SEMPRE i dati ottenuti dopo l'utilizzo
 	
 	/**
-	 * Se lasciata in esecuzione, salva ogni ora le
+	 * Se lasciata in esecuzione, salva con una frequenza impostata dall'utente le
 	 * informazioni attuali su pressione e visibilita' di 5 città non scelte dall'utente.
 	 *
 	 *Questa rotta presenta ancora problemi, ricontrollare il risultato finale.
 	 * 
-	 * @return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione."
+	 * @param multiplier moltiplicatore dell'ora (Esempio: 0,5 salva i dati ogni 30
+	 *                   minuti, 2 ogni 2 ore)
+	 * @return Un messaggio di riepilogo con la frequenza
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
 	@GetMapping(value = "/multiSave")

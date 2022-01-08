@@ -11,8 +11,13 @@
 {"country":"IT","name":"Ancona","weather":[{"pressure":1019,"visibility":10000,"dt":1641557870,"date":"07-01-2022 13:17:50"}],"lon":13.5101,"id":6542126,"lat":43.5982}
 {"country":"IT","name":"Ancona","weather":[{"pressure":1018,"visibility":10000,"dt":1641561299,"date":"07-01-2022 14:14:59"}],"lon":13.5101,"id":6542126,"lat":43.5982}
 {"country":"IT","name":"Ancona","weather":[{"pressure":1017,"visibility":10000,"dt":1641565070,"date":"07-01-2022 15:17:50"}],"lon":13.5101,"id":6542126,"lat":43.5982}
-{"country":"IT","name":"Ancona","weather":[{"pressure":1017,"visibility":10000,"dt":1641565070,"date":"07-01-2022 15:17:50"}],"lon":13.5101,"id":6542126,"lat":43.5982}
 {"country":"IT","name":"Ancona","weather":[{"pressure":1018,"visibility":10000,"dt":1641567807,"date":"07-01-2022 16:03:27"}],"lon":13.5101,"id":6542126,"lat":43.5982}
 {"country":"IT","name":"Ancona","weather":[{"pressure":1018,"visibility":10000,"dt":1641579286,"date":"07-01-2022 19:14:46"}],"lon":13.5101,"id":6542126,"lat":43.5982}
 {"country":"IT","name":"Ancona","weather":[{"pressure":1016,"visibility":10000,"dt":1641628457,"date":"08-01-2022 08:54:17"}],"lon":13.5101,"id":6542126,"lat":43.5982}
 {"country":"IT","name":"Ancona","weather":[{"pressure":1016,"visibility":10000,"dt":1641633834,"date":"08-01-2022 10:23:54"}],"lon":13.5101,"id":6542126,"lat":43.5982}
+{"country":"IT","name":"Ancona","weather":[{"pressure":1016,"visibility":10000,"dt":1641637879,"date":"08-01-2022 11:31:19"}],"lon":13.5101,"id":6542126,"lat":43.5982}
+{"country":"IT","name":"Ancona","weather":[{"pressure":1015,"visibility":10000,"dt":1641641479,"date":"08-01-2022 12:31:19"}],"lon":13.5101,"id":6542126,"lat":43.5982}
+{"country":"IT","name":"Ancona","weather":[{"pressure":1015,"visibility":10000,"dt":1641644912,"date":"08-01-2022 13:28:32"}],"lon":13.5101,"id":6542126,"lat":43.5982}
+{"country":"IT","name":"Ancona","weather":[{"pressure":1014,"visibility":10000,"dt":1641648679,"date":"08-01-2022 14:31:19"}],"lon":13.5101,"id":6542126,"lat":43.5982}
+{"country":"IT","name":"Ancona","weather":[{"pressure":1014,"visibility":10000,"dt":1641652279,"date":"08-01-2022 15:31:19"}],"lon":13.5101,"id":6542126,"lat":43.5982}
+

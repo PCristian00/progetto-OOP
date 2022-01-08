@@ -70,7 +70,8 @@ public class Controller {
 	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a zero)
 	 */
 	@GetMapping(value = "/multiSave")
-	public String saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException{		
+	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException{		
+		try {
 		//ROMA		
 			service.saveToFileHourly("3169070",multiplier);			
 		//NAPOLI		
@@ -87,7 +88,10 @@ public class Controller {
 				msg = multiplier + " ore";
 			else
 				msg = "ora";
-		return "Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.";
+		return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.",HttpStatus.OK);
+		}catch(ItalianCityNotFoundException | WrongMultiplyException e2) {
+			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 
 	/**
@@ -116,7 +120,7 @@ public class Controller {
 
 			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
 					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (ItalianCityNotFoundException e2) {
+		} catch (ItalianCityNotFoundException |WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}

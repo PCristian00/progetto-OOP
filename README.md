@@ -51,6 +51,9 @@
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
+      <ul>
+        <li><a href="#uml">UML</a></li>
+      </ul>
     </li>    
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -111,6 +114,15 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+### UML
+<img src="controller_pkg.svg" alt="controller_pkg">
+<img src="model_pkg.svg" alt="model_pkg">
+<img src="service_pkg.svg" alt="service_pkg">
+<img src="statistics_pkg.svg" alt="statistics_pkg">
+<img src="exception_pkg.svg" alt="exception_pkg">
+<img src="use_case.svg" alt="use_case">
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started

@@ -57,27 +57,35 @@ public class Controller {
 			//TODO ricontrollare SEMPRE i dati ottenuti dopo l'utilizzo
 	
 	/**
-	 * Se lasciata in esecuzione, salva ogni ora le
+	 * Se lasciata in esecuzione, salva con una frequenza impostata dall'utente le
 	 * informazioni attuali su pressione e visibilita' di 5 città non scelte dall'utente.
 	 *
 	 *Questa rotta presenta ancora problemi, ricontrollare il risultato finale.
 	 * 
-	 * @return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione."
+	 * @param multiplier moltiplicatore dell'ora (Esempio: 0,5 salva i dati ogni 30
+	 *                   minuti, 2 ogni 2 ore)
+	 * @return Un messaggio di riepilogo con la frequenza
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
 	@GetMapping(value = "/multiSave")
-	public String saveToFileHourly() throws ItalianCityNotFoundException{		
+	public String saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException{		
 		//ROMA		
-			service.saveToFileHourly("3169070",1);			
+			service.saveToFileHourly("3169070",multiplier);			
 		//NAPOLI		
-			service.saveToFileHourly("3172395",1);	
+			service.saveToFileHourly("3172395",multiplier);	
 		//MILANO
-			service.saveToFileHourly("6542283",1);				
+			service.saveToFileHourly("6542283",multiplier);				
 		//ANCONA		
-			service.saveToFileHourly("6542126",1);				
+			service.saveToFileHourly("6542126",multiplier);				
 		//PALERMO		
-			service.saveToFileHourly("2523920",1);		
-		return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione.";
+			service.saveToFileHourly("2523920",multiplier);
+			
+			String msg;
+			if (multiplier != 1)
+				msg = multiplier + " ore";
+			else
+				msg = "ora";
+		return "Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.";
 	}
 
 	/**

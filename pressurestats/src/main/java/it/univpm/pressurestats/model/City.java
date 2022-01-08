@@ -19,8 +19,7 @@ public class City {
 	private Vector<Forecast> weather;
 
 	/**
-	 * Costruttore dell'oggetto.
-	 * 
+	 * Costruttore dell'oggetto.	 * 
 	 */
 	public City() {
 		this.id = 0;
@@ -36,7 +35,6 @@ public class City {
 	 * 
 	 * @param name nome della città
 	 */
-
 	public City(String name) {
 		this.id = 0;
 		this.name = name;
@@ -172,7 +170,6 @@ public class City {
 	 * @return true || false
 	 */
 	@Override
-
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -184,5 +181,4 @@ public class City {
 		return Objects.equals(country, other.country) && id == other.id && lat == other.lat && lon == other.lon
 				&& Objects.equals(name, other.name) && Objects.equals(weather, other.weather);
 	}
-
 }

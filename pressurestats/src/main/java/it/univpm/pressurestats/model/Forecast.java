@@ -10,7 +10,6 @@ import java.util.Objects;
  * @author Settimi Diego
  * 
  */
-
 public class Forecast {
 	private long pressure;
 	private long visibility;
@@ -21,7 +20,6 @@ public class Forecast {
 	 * Costruttore dell'oggetto.
 	 * 
 	 */
-
 	public Forecast() {
 		super();
 		this.pressure = 0;
@@ -132,5 +130,4 @@ public class Forecast {
 		return Objects.equals(date, other.date) && dt == other.dt && pressure == other.pressure
 				&& visibility == other.visibility;
 	}
-
 }

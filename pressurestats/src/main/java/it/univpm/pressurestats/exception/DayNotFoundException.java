@@ -7,8 +7,11 @@ package it.univpm.pressurestats.exception;
  * @author Settimi Diego
  * 
  */
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class DayNotFoundException extends Exception {
+	
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * Messaggio di errore
 	 * 

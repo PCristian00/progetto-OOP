@@ -20,7 +20,7 @@ import it.univpm.pressurestats.model.*;
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
 
 /**
- * Questa classe e' l'implementazione dell'interfaccia Service. Contiene i
+ * Questa classe è l'implementazione dell'interfaccia Service. Contiene i
  * metodi utilizzati dal controller.
  * 
  * @author Pietroniro Cristian
@@ -30,16 +30,35 @@ import it.univpm.pressurestats.model.*;
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	// TODO Chiave cambiata rispetto a main
+	
+	/**
+	 * API Key
+	 * 
+	 */
 	private String apiKey = "5a32bbb372f0b50deba8939136c59500";
+	
+	/**
+	 * Rappresenta la previsione
+	 * 
+	 */
 	JSONObject forecast = null;
 	
 	//TODO Impostazioni del salvataggio file, usate anche in Filters
+	
+	/**
+	 * Percorso di salvataggio del file
+	 * 
+	 */
 	public static String dir=System.getProperty("user.dir") + "/src/main/resources/";
+	/**
+	 * Suffisso nome file ed estensione
+	 * 
+	 */
 	public static String f_type="_data.txt";
-	@Override
-
-	public JSONObject toJSON(City city) {
-
+	
+	@Override	
+public JSONObject toJSON(City city) {
+		
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		try {
 			String json = ow.writeValueAsString(city);
@@ -137,21 +156,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	@Override
 	public void saveToFile(JSONObject object) throws ItalianCityNotFoundException {
 
-		City city = this.getForecast(object);
-		//String cityName = city.getName();
-
-		// TODO Blocco necessario per aggiungere data odierna al nome del file,
-		// cancellare se non usato in versione finale
-
-		// SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-		// String today = date.format(new Date());
-
-		
-		//String fileName = cityName + "_data";
-		// + today;
-
-		// Il file viene salvato nella cartella /src/main/resources/
-		//String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
+		City city = this.getForecast(object);		
 		String path=dir+city.getName()+f_type;
 		JSONObject obj = toJSON(city);
 
@@ -166,21 +171,18 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		}
 
 	}
-
-	// TODO Nuova metodo, adesso separato dal semplice saveToFile.
-	// PROBLEMA: Funziona, ma forse è preferibile che riceva un JSONObject anziché
-	// id?
-
-	// IDEA implementabile: personalizzare la fascia oraria passando al metodo un
-	// numero intero che faccia da moltiplicatore ad "hour"
-
+	
 	@Override
-	public void saveToFileHourly(String id) {
+	public void saveToFileHourly(String id) throws ItalianCityNotFoundException {
 		TimerTask tt = new TimerTask() {
-			public void run(){
-				//JSONObject obj = ;
+			public void run(){						
+			try {
 				saveToFile(getJSONForecast(id, true));
+			} catch (ItalianCityNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+				}	
 		};
 		final long hour = 3600000; // ora in millisecondi
 		Timer timer = new Timer();
@@ -190,13 +192,9 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	@SuppressWarnings("unchecked")
 	@Override
 	public JSONArray readFile(String city) {
-		// TODO Auto-generated method stub
 		JSONArray ja = new JSONArray();
 		String data = "";
-
-		
-		//TODO forse cambia nome_file per rispecchiare la scrittura
-		String nome_file = dir+city+f_type;
+		String nome_file = dir + city + f_type;
 
 		try {
 			BufferedReader buff = new BufferedReader(new FileReader(nome_file));

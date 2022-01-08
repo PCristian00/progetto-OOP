@@ -1,16 +1,35 @@
 package it.univpm.pressurestats.exception;
 
-public class DayNotFoundException extends Exception{
-	
+/**
+ * Eccezione lanciata se il giorno non è stato trovato.
+ * 
+ * @author Pietroniro Cristian
+ * @author Settimi Diego
+ * 
+ */
+@SuppressWarnings("serial")
+public class DayNotFoundException extends Exception {
+	/**
+	 * Messaggio di errore
+	 * 
+	 */
 	private String message;
-	
-	public DayNotFoundException(String message)
-	{
+
+	/**
+	 * Costruttore della classe.
+	 * 
+	 * @param message messaggio di errore
+	 */
+	public DayNotFoundException(String message) {
 		this.message = message;
 	}
 
-	public String getMessage() 
-	{
+	/**
+	 * Restituisce la stringa di errore dell'eccezione.
+	 * 
+	 * @return il messaggio di errore
+	 */
+	public String getMessage() {
 		return message;
 	}
 }

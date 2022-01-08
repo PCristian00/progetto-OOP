@@ -1,11 +1,10 @@
 package it.univpm.pressurestats.model;
-//Classe città
 
 import java.util.Objects;
 import java.util.Vector;
 
 /**
- * La classe City contiene le proprieta' della citta' e le relative previsioni.
+ * La classe City contiene le proprietà della città e le relative previsioni.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
@@ -20,8 +19,7 @@ public class City {
 	private Vector<Forecast> weather;
 
 	/**
-	 * Costruttore dell'oggetto.
-	 * 
+	 * Costruttore dell'oggetto.	 * 
 	 */
 	public City() {
 		this.id = 0;
@@ -33,11 +31,10 @@ public class City {
 	}
 
 	/**
-	 * Costruttore dell'oggetto con nome come argomento.
+	 * Costruttore dell'oggetto con nome come parametro.
 	 * 
-	 * @param name nome della citta'
+	 * @param name nome della città
 	 */
-
 	public City(String name) {
 		this.id = 0;
 		this.name = name;
@@ -48,7 +45,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce id della citta'
+	 * Restituisce id della città
 	 * 
 	 * @return id
 	 */
@@ -57,7 +54,7 @@ public class City {
 	}
 
 	/**
-	 * Imposta nuovo id della citta'
+	 * Imposta nuovo id della città
 	 * 
 	 * @param id nuovo id
 	 */
@@ -66,7 +63,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce nome della citta'
+	 * Restituisce nome della città
 	 * 
 	 * @return name
 	 */
@@ -75,7 +72,7 @@ public class City {
 	}
 
 	/**
-	 * Imposta nuovo id della citta'
+	 * Imposta nuovo nome della città
 	 * 
 	 * @param name nuovo nome
 	 */
@@ -84,7 +81,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce nazione della citta'
+	 * Restituisce nazione della città
 	 * 
 	 * @return country
 	 */
@@ -93,7 +90,7 @@ public class City {
 	}
 
 	/**
-	 * Imposta nuova nazione della citta'
+	 * Imposta nuova nazione della città
 	 * 
 	 * @param country nuova nazione
 	 */
@@ -102,7 +99,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce latitudine della citta'
+	 * Restituisce latitudine della città
 	 * 
 	 * @return lat
 	 */
@@ -111,7 +108,7 @@ public class City {
 	}
 
 	/**
-	 * Imposta nuova latitudine della citta'
+	 * Imposta nuova latitudine della città
 	 * 
 	 * @param lat nuova latitudine
 	 */
@@ -120,7 +117,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce longitudine della citta'
+	 * Restituisce longitudine della città
 	 * 
 	 * @return lon
 	 */
@@ -129,7 +126,7 @@ public class City {
 	}
 
 	/**
-	 * Imposta nuova longitudine della citta'
+	 * Imposta nuova longitudine della città
 	 * 
 	 * @param lon nuova longitudine
 	 */
@@ -138,7 +135,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce previsioni meteo della citta'
+	 * Restituisce previsioni meteo della città
 	 * 
 	 * @return weather
 	 */
@@ -147,7 +144,7 @@ public class City {
 	}
 
 	/**
-	 * Imposta nuove previsioni meteo della citta'
+	 * Imposta nuove previsioni meteo della città
 	 * 
 	 * @param weather nuove previsioni meteo
 	 */
@@ -156,7 +153,7 @@ public class City {
 	}
 
 	/**
-	 * Restituisce la citta' sotto forma di Stringa
+	 * Restituisce la città sotto forma di Stringa
 	 * 
 	 * @return String city
 	 */
@@ -167,13 +164,12 @@ public class City {
 	}
 
 	/**
-	 * Confronta una citta' con un'altra
+	 * Confronta una città con un'altra
 	 * 
-	 * @param obj la citta' con cui confrontare
+	 * @param obj la città con cui confrontare
 	 * @return true || false
 	 */
 	@Override
-
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -185,5 +181,4 @@ public class City {
 		return Objects.equals(country, other.country) && id == other.id && lat == other.lat && lon == other.lon
 				&& Objects.equals(name, other.name) && Objects.equals(weather, other.weather);
 	}
-
 }

@@ -20,10 +20,7 @@ import it.univpm.pressurestats.exception.WrongHoursPeriodException;
  */
  
 public class Statistics{
-	/*Cartella in cui sono salvate i file
-	static String dir=System.getProperty("user.dir") + "/src/main/resources/";
-	static String end="_stats.txt";
-	*/
+	
 	private JSONArray stats;
 	private Filters od;
 	private String city;
@@ -34,8 +31,8 @@ public class Statistics{
 	 * 
 	 * @param city citta' di cui calcolare statitische
 	 * @param day giorno di cui calcolare statistiche
-	 * @throws DayNotFoundException 
-	 * @throws CityStatisticsNotFoundException 
+	 * @throws DayNotFoundException eccezione lanciata se il giorno non è stato trovato
+	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate
 	 */
 	public Statistics(String city, String day) throws DayNotFoundException, CityStatisticsNotFoundException
 	{
@@ -52,9 +49,9 @@ public class Statistics{
 	 * @param day giorno di cui calcolare statistiche
 	 *	@param from ora da cui partire
 	 *	@param to ora a cui arrivare
-	 * @throws WrongHoursPeriodException 
-	 * @throws CityStatisticsNotFoundException 
-	 * @throws DayNotFoundException 
+	 * @throws WrongHoursPeriodException eccezione lanciata se il range orario non è corretto
+	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate.
+	 * @throws DayNotFoundException eccezione lanciata se il giorno non è stato trovato
 	 */	
 	public Statistics(String city, String day, int from, int to) throws WrongHoursPeriodException, CityStatisticsNotFoundException, DayNotFoundException
 	{
@@ -69,7 +66,7 @@ public class Statistics{
 	 * 
 	 * @param city citta' di cui calcolare statitische
 	 * @param numDays numero di giorni di cui calcolare statistiche
-	 * @throws CityStatisticsNotFoundException 
+	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate.
 	 */
 	public Statistics(String city, int numDays) throws CityStatisticsNotFoundException
 	{
@@ -177,7 +174,13 @@ public class Statistics{
 		
 		return object;
 	}
-
+	/**
+	 * Metodo che salva le statistiche calcolate su un file di testo.
+	 * 
+	 * @param object JSONObject contenente i dati da salvare
+	 * 
+	 * 
+	 */
 	public void saveToFile(JSONObject object) {
 
 		String fileName = this.city+ "_stats_"+this.date;

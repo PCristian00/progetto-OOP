@@ -1,6 +1,6 @@
 package it.univpm.pressurestats.controller;
 
-import javax.naming.event.NamespaceChangeListener;
+//import javax.naming.event.NamespaceChangeListener;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,6 @@ import it.univpm.pressurestats.statistics.Statistics;
  * @author Settimi Diego
  * 
  */
-
 @RestController
 public class Controller {
 	@Autowired
@@ -32,16 +31,15 @@ public class Controller {
 	Statistics statistics;	
 
 	/**
-	 * Rotta di tipo GET che mostra le informazioni attuali su pressione e
-	 * visibilita'. I dati vengono stampati su schermo e salvati in un file di
+	 * Mostra le informazioni attuali su pressione e
+	 * visibilità. I dati vengono stampati su schermo e salvati in un file di
 	 * testo.
 	 * 
-	 * @param id rappresenta la citta' di cui si richiedono le previsioni. Valore di default: 3169070 (Rome,IT)
+	 * @param id rappresenta la città di cui si richiedono le previsioni. Valore di default: 3169070 (Rome,IT)
 	 * @return le previsioni meteo su pressione e visibilità della città richiesta e
-	 *         le informazioni generali sulla citta'.
-	 * @throws ItalianCityNotFoundException 
+	 *         le informazioni generali sulla città.
+	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
-
 	@GetMapping(value = "/current")
 	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException {
 		// TODO Portata all'esterno il metodo saveToFile per evitare ripetizioni in
@@ -55,62 +53,61 @@ public class Controller {
 	}
 	
 	//TODO ROTTA BOZZA:Togliere da programma finale o rimediare
-			//TODO A volte questa rotta chiama contemporaneamente per due città diverse e inserisce i dati nel file sbagliato
+		//TODO A volte questa rotta chiama contemporaneamente per due città diverse e inserisce i dati nel file sbagliato
 			//TODO ricontrollare SEMPRE i dati ottenuti dopo l'utilizzo
+	
+	/**
+	 * Se lasciata in esecuzione, salva ogni ora le
+	 * informazioni attuali su pressione e visibilita' di 5 città non scelte dall'utente.
+	 *
+	 *Questa rotta presenta ancora problemi, ricontrollare il risultato finale.
+	 * 
+	 * @return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione."
+	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
+	 */
 	@GetMapping(value = "/multiSave")
-	public String saveToFileHourly() {
-		
-		
-		//ROMA
-		service.saveToFileHourly("3169070");
-		
-		//NAPOLI
-		service.saveToFileHourly("3172395");
-				
+	public String saveToFileHourly() throws ItalianCityNotFoundException{		
+		//ROMA		
+			service.saveToFileHourly("3169070");			
+		//NAPOLI		
+			service.saveToFileHourly("3172395");	
 		//MILANO
-		service.saveToFileHourly("6542283");
-				
-		//ANCONA
-		service.saveToFileHourly("6542126");
-				
-		//PALERMO
-		service.saveToFileHourly("2523920");
-
-		
+			service.saveToFileHourly("6542283");				
+		//ANCONA		
+			service.saveToFileHourly("6542126");				
+		//PALERMO		
+			service.saveToFileHourly("2523920");		
 		return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione.";
 	}
 
 	/**
-	 * Rotta di tipo GET che, se lasciata in esecuzione, salva ogni ora le
-	 * informazioni attuali su pressione e visibilita'
+	 * Se lasciata in esecuzione, salva ogni ora le
+	 * informazioni attuali su pressione e visibilità
 	 *
-	 * @param id rappresenta la citta' di cui si richiedono le previsioni.  Valore di default: 3169070 (Rome,IT)
-	 * @return "Il salvataggio avverra' ogni ora, lasciare programma in esecuzione."
-	 * @throws ItalianCityNotFoundException 
+	 * @param id rappresenta la città di cui si richiedono le previsioni. Valore di
+	 *           default: 3169070 (Rome,IT)
+	 * @return "Il salvataggio avverrà ogni ora, lasciare programma in esecuzione."
+	 * 
 	 */
 	@GetMapping(value = "/hourlySave")
-	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id){
-			try {
-				service.saveToFileHourly(id);
-
-				// TODO trovare messaggio migliore o fare return di ResponseEntity (vedi
-				// /current)
-				return new ResponseEntity<>("Il salvataggio avverrà ogni ora, lasciare programma in esecuzione.", HttpStatus.OK);
-			} catch (ItalianCityNotFoundException e) {
-				// TODO Auto-generated catch block
-				return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-			}
+	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id) {
+		
+		try {
+			service.saveToFileHourly(id);
+			return new ResponseEntity<>("Il salvataggio avverrà ogni ora.\n"+service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
+		} catch (ItalianCityNotFoundException e2) {
+			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 	
-
 	/**
-	 * Rotta di tipo GET che, restituisce le statistiche giornaliere di una citta'.
+	 * Restituisce e salva le statistiche giornaliere di una città.
 	 * 
-	 * @param city rappresenta la citta' di cui si richiedono le statistiche.
+	 * @param city rappresenta la città di cui si richiedono le statistiche. Valore di
+	 *           default: Rome,IT
 	 * @param date Il giorno di cui si vogliono ricevere statistiche
 	 * @return Le statistiche per un giorno
-	 */
-	
+	 */	
 	@GetMapping(value="/oneDay")
 	public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Rome") String city,
 
@@ -127,23 +124,18 @@ public class Controller {
 	}
 	
 	/**
-	 * Rotta di tipo GET che, restituisce le statistiche per piu' giorni di una
-	 * citta'.
+	 * Restituisce e salva le statistiche per più giorni di una
+	 * città.
 	 * 
-	 * @param city rappresenta la citta' di cui si richiedono le statistiche.
+	 * @param city rappresenta la città di cui si richiedono le statistiche.Valore di
+	 *           default: Rome,IT
 	 * @param days Il numero di giorni di cui si vogliono ricevere statistiche
-	 * @return Le statistiche per piu' giorni
+	 * @return Le statistiche per più giorni
 	 */
-	
 	@GetMapping(value="/moreDays")
 	public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
 												@RequestParam(name = "days") int days)
-	{
-
-		statistics = new Statistics(city, days);
-		
-		return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
-
+	{		
 		try {
 			statistics = new Statistics(city, days);
 			//TODO aggiunto salvataggio (Funzionante)
@@ -156,29 +148,27 @@ public class Controller {
 	}
 	
 	/**
-	 * Rotta di tipo GET che, restituisce le statistiche per piu' ore di un giorno di una
-	 * citta'.
+	 * Restituisce e salva le statistiche per più ore di un giorno di una città.
 	 * 
-	 * @param city rappresenta la citta' di cui si richiedono le statistiche.
+	 * @param city rappresenta la città di cui si richiedono le statistiche. Valore
+	 *             di default: Rome,IT
 	 * @param date Il giorno di cui si vogliono ricevere statistiche
 	 * @param from prima ora
-	 * @param to ultima ora
-	 * @return Le statistiche per piu' ore
-	 * @throws CityStatisticsNotFoundException 
+	 * @param to   ultima ora
+	 * @return Le statistiche per più ore
+	 * 
 	 */
 	@GetMapping(value = "/hourly")
-	public ResponseEntity<Object> getStatisticsHourly(
-			@RequestParam(name = "city", defaultValue = "Rome") String city,
+	public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Rome") String city,
 			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
 
-			@RequestParam(name = "to") int to){
+			@RequestParam(name = "to") int to) {
 		try {
 			statistics = new Statistics(city, date, from, to);
-			//TODO aggiunto salvataggio (Funzionante)
-				statistics.saveToFile(statistics.stats());
+			// TODO aggiunto salvataggio (Funzionante)
+			statistics.saveToFile(statistics.stats());
 			return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 		} catch (WrongHoursPeriodException | CityStatisticsNotFoundException | DayNotFoundException e) {
-			// TODO Auto-generated catch block
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}

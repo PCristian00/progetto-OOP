@@ -1,16 +1,35 @@
 package it.univpm.pressurestats.exception;
 
-public class CityStatisticsNotFoundException extends Exception{
-
+/**
+ * Eccezione lanciata se le statistiche della città non sono state trovate.
+ * 
+ * @author Pietroniro Cristian
+ * @author Settimi Diego
+ * 
+ */
+@SuppressWarnings("serial")
+public class CityStatisticsNotFoundException extends Exception {
+	/**
+	 * Messaggio di errore
+	 * 
+	 */
 	private String message;
-	
-	public CityStatisticsNotFoundException(String message)
-	{
+
+	/**
+	 * Costruttore della classe.
+	 * 
+	 * @param message messaggio di errore
+	 */
+	public CityStatisticsNotFoundException(String message) {
 		this.message = message;
 	}
-	
-	public String getMessage()
-	{
+
+	/**
+	 * Restituisce la stringa di errore dell'eccezione.
+	 * 
+	 * @return il messaggio di errore
+	 */
+	public String getMessage() {
 		return message;
 	}
 }

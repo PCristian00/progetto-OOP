@@ -3,14 +3,13 @@ package it.univpm.pressurestats.model;
 import java.util.Objects;
 
 /**
- * La classe Forecast contiene i dati di pressione, visibilita' e la data della
+ * La classe Forecast contiene i dati di pressione, visibilità e la data della
  * loro misurazione.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
  * 
  */
-
 public class Forecast {
 	private long pressure;
 	private long visibility;
@@ -21,7 +20,6 @@ public class Forecast {
 	 * Costruttore dell'oggetto.
 	 * 
 	 */
-
 	public Forecast() {
 		super();
 		this.pressure = 0;
@@ -49,7 +47,7 @@ public class Forecast {
 	}
 
 	/**
-	 * Restituisce visibilita'
+	 * Restituisce visibilità
 	 * 
 	 * @return visibility
 	 */
@@ -58,9 +56,9 @@ public class Forecast {
 	}
 
 	/**
-	 * Imposta nuovo valore di visibilita'
+	 * Imposta nuovo valore di visibilità
 	 * 
-	 * @param visibility nuovo valore di visibilita'
+	 * @param visibility nuovo valore di visibilità
 	 */
 	public void setVisibility(long visibility) {
 		this.visibility = visibility;
@@ -132,5 +130,4 @@ public class Forecast {
 		return Objects.equals(date, other.date) && dt == other.dt && pressure == other.pressure
 				&& visibility == other.visibility;
 	}
-
 }

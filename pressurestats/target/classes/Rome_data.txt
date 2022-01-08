@@ -15,4 +15,5 @@
 {"country":"IT","name":"Rome","weather":[{"pressure":1014,"visibility":10000,"dt":1641560916,"date":"07-01-2022 14:08:36"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1013,"visibility":10000,"dt":1641564925,"date":"07-01-2022 15:15:25"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1014,"visibility":10000,"dt":1641576316,"date":"07-01-2022 18:25:16"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-
+{"country":"IT","name":"Rome","weather":[{"pressure":1011,"visibility":10000,"dt":1641628377,"date":"08-01-2022 08:52:57"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641633607,"date":"08-01-2022 10:20:07"}],"lon":12.4839,"id":3169070,"lat":41.8947}

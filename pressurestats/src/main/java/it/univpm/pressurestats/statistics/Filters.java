@@ -29,13 +29,13 @@ import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 public class Filters {	
 	
 	/**
-	 * Questo metodo prepara un JSONArray delle statistiche di un solo giorno di una citta'.
+	 * Prepara un JSONArray delle statistiche di un solo giorno di una città.
 	 * 
-	 * @param city citta' scelta
+	 * @param city città scelta
 	 * @param day  giorno di cui filtrare statistiche
 	 * @return Le statistiche di un giorno in un JSONArray.
-	 * @throws DayNotFoundException 
-	 * @throws CityStatisticsNotFoundException 
+	 * @throws DayNotFoundException eccezione lanciata se il giorno non è stato trovato
+	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate
 	 */
 	@SuppressWarnings("unchecked")
 	public JSONArray oneDayWeather(String city, String day) throws DayNotFoundException, CityStatisticsNotFoundException {
@@ -59,12 +59,12 @@ public class Filters {
 	}
 
 	/**
-	 * Questo metodo prepara un JSONArray delle statistiche di piu' giorni.
+	 * Prepara un JSONArray delle statistiche di più giorni.
 	 * 
-	 * @param city    citta' scelta
+	 * @param city    città scelta
 	 * @param numDays numeri di giorni di cui filtrare statistiche
-	 * @return Le statistiche di piu' giorni in un JSONArray.
-	 * @throws CityStatisticsNotFoundException 
+	 * @return Le statistiche di più giorni in un JSONArray.
+	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate
 	 */
 	@SuppressWarnings("unchecked")
 	public JSONArray moreDayWeather(String city, int numDays) throws CityStatisticsNotFoundException {
@@ -96,17 +96,17 @@ public class Filters {
 	}
 
 	/**
-	 * Questo metodo prepara un JSONArray delle statistiche orarie di un giorno di
-	 * una citta'.
+	 * Prepara un JSONArray delle statistiche orarie di un giorno di
+	 * una città.
 	 * 
-	 * @param city citta' scelta
+	 * @param city città scelta
 	 * @param day  giorno di cui filtrare statistiche
 	 * @param from prima ora
 	 * @param to   ultima ora
-	 * @return Le statistiche di piu' ore in un JSONArray.
-	 * @throws WrongHoursPeriodException 
-	 * @throws CityStatisticsNotFoundException 
-	 * @throws DayNotFoundException 
+	 * @return Le statistiche di più ore in un JSONArray.
+	 * @throws WrongHoursPeriodException eccezione lanciata se il range orario non è corretto
+	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate
+	 * @throws DayNotFoundException eccezione lanciata se il giorno non è stato trovato
 	 */
 	@SuppressWarnings("unchecked")
 	public JSONArray hourly(String city, String day, int from, int to) throws WrongHoursPeriodException, CityStatisticsNotFoundException, DayNotFoundException {
@@ -133,6 +133,7 @@ public class Filters {
 		} catch (ParseException e1) {
 			e1.printStackTrace();
 		}
+		
 		return ja;
 	}
 }

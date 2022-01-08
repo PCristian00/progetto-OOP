@@ -7,7 +7,7 @@ import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.model.City;
 
 /**
- * Questa classe è l'interfaccia di ServiceImpl e contiene i metodi richiamati
+ * Questa è l'interfaccia contenente i metodi implementati da ServiceImpl e richiamati
  * dal Controller.
  * 
  * @author Pietroniro Cristian
@@ -15,57 +15,59 @@ import it.univpm.pressurestats.model.City;
  */
 public interface Service {
 	/**
-	 * COMPLETARE
+	 * Converte l'oggetto di tipo City in un JSONObject. 
 	 * 
-	 * @param city citta' di cui si vogliono sapere le previsioni
+	 * @param city città di cui si vogliono sapere le previsioni
 	 * @return Un JSONObject (forecast) contenente le previsioni
 	 */
 	public abstract JSONObject toJSON(City city);
 
 	/**
-	 * Questo metodo va a prendere da OpenWeather le previsioni meteo di una citta'.
+	 * Scarica da OpenWeather le previsioni meteo di una città data..
 	 * 
-	 * @param name     nome della citta' da cercare
-	 * @param isObject COMPLETARE
+	 * @param name     nome della città da cercare
+	 * @param isObject controllo di tipo Boolean (COMPLETARE)
 	 * @return un JSONObject contenente le previsioni meteo complete.
 	 */
 	public abstract JSONObject getJSONForecast(String name, boolean isObject);
 
 	/**
-	 * Questo metodo utilizza getJSONForecast per prendere le informazioni di
-	 * visibilita' e pressione utilizzate per le statistiche.
+	 * Utilizza getJSONForecast per prendere le informazioni di
+	 * visibilità e pressione utilizzate per le statistiche.
 	 * 
 	 * @param forecast JSONObject contenente le previsioni restituito da
 	 *                 getJSONForecast(String id, boolean isObject)
 	 * @return un oggetto di tipo City che contiene tutte le informazioni richieste
-	 *         e anche le informazioni sulla citta'.
+	 *         e anche le informazioni sulla città.
+	 *         @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
 	public abstract City getForecast(JSONObject forecast) throws ItalianCityNotFoundException;
 
 	/**
-	 * Questo metodo richiama getForecast(JSONObject obj) e salva i dati su un file
+	 * Richiama getForecast(JSONObject obj) e salva i dati su un file
 	 * di testo (salvato in /src/main/resources/)
 	 * 
 	 * @param obj JSONObject contenente le previsioni restituito da
 	 *            getJSONForecast(String id, boolean isObject)
+	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
 	public abstract void saveToFile(JSONObject obj) throws ItalianCityNotFoundException;
 
 	/**
-	 * Questo metodo salva ogni ora su un file i dati delle previsioni utili
+	 * Salva ogni ora su un file i dati delle previsioni utili
 	 * richiamando getJSONForecast(String id, boolean isObject) e
 	 * saveToFile(JSONObject object)
 	 * 
-	 * @param id id della citta' di cui salvare i dati ogni ora
-	 * @throws ItalianCityNotFoundException 
+	 * @param id id della città di cui salvare i dati ogni ora
+	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
 //TODO aggiunta nuova operazione, valutare cambio di argomento
 	public abstract void saveToFileHourly(String id) throws ItalianCityNotFoundException;
 
 	/**
-	 * Questo metodo legge dati da un file
+	 * Legge dati da un file salvato in precedenza
 	 * 
-	 * @param city citta' di cui leggere i dati
+	 * @param city città di cui leggere i dati
 	 * @return JSONArray contenente i dati letti
 	 */
 	public abstract JSONArray readFile(String city);

@@ -20,7 +20,7 @@ import it.univpm.pressurestats.model.*;
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
 
 /**
- * Questa classe e' l'implementazione dell'interfaccia Service. Contiene i
+ * Questa classe è l'implementazione dell'interfaccia Service. Contiene i
  * metodi utilizzati dal controller.
  * 
  * @author Pietroniro Cristian
@@ -30,11 +30,30 @@ import it.univpm.pressurestats.model.*;
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 	// TODO Chiave cambiata rispetto a main
+	
+	/**
+	 * API Key
+	 * 
+	 */
 	private String apiKey = "5a32bbb372f0b50deba8939136c59500";
+	
+	/**
+	 * Rappresenta la previsione
+	 * 
+	 */
 	JSONObject forecast = null;
 	
 	//TODO Impostazioni del salvataggio file, usate anche in Filters
+	
+	/**
+	 * Percorso di salvataggio del file
+	 * 
+	 */
 	public static String dir=System.getProperty("user.dir") + "/src/main/resources/";
+	/**
+	 * Suffisso nome file ed estensione
+	 * 
+	 */
 	public static String f_type="_data.txt";
 	@Override
 

@@ -67,7 +67,7 @@ public class Controller {
 	 *                   minuti, 2 ogni 2 ore)
 	 * @return Un messaggio di riepilogo con la frequenza
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
-	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a zero)
+	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa
 	 */
 	@GetMapping(value = "/multiSave")
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException{		
@@ -103,7 +103,7 @@ public class Controller {
 	 * @param multiplier moltiplicatore dell'ora (Esempio: 0,5 salva i dati ogni 30
 	 *                   minuti, 2 ogni 2 ore)
 	 * @return Un messaggio di riepilogo con la frequenza e la prima misurazione
-	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a zero)
+	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa
 	 * 
 	 */
 	@GetMapping(value = "/hourlySave")

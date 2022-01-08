@@ -175,7 +175,7 @@ public JSONObject toJSON(City city) {
 	
 	@Override
 	public void saveToFileHourly(String id,double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException {
-	if(multiplier<=0) throw new WrongMultiplyException("Moltiplicatore non ammesso");
+	if(multiplier<=0.02) throw new WrongMultiplyException("Moltiplicatore non ammesso.");
 	
 		TimerTask tt = new TimerTask() {
 			public void run(){						

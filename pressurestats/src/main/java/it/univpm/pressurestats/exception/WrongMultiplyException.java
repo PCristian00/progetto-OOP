@@ -1,6 +1,7 @@
 package it.univpm.pressurestats.exception;
 /**
- * Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a zero).
+ * Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).
+ * Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego

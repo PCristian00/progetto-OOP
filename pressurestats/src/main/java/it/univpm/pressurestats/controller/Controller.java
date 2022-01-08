@@ -66,18 +66,24 @@ public class Controller {
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
 	 */
 	@GetMapping(value = "/multiSave")
-	public String saveToFileHourly() throws ItalianCityNotFoundException{		
+	public String saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException{		
 		//ROMA		
-			service.saveToFileHourly("3169070",1);			
+			service.saveToFileHourly("3169070",multiplier);			
 		//NAPOLI		
-			service.saveToFileHourly("3172395",1);	
+			service.saveToFileHourly("3172395",multiplier);	
 		//MILANO
-			service.saveToFileHourly("6542283",1);				
+			service.saveToFileHourly("6542283",multiplier);				
 		//ANCONA		
-			service.saveToFileHourly("6542126",1);				
+			service.saveToFileHourly("6542126",multiplier);				
 		//PALERMO		
-			service.saveToFileHourly("2523920",1);		
-		return "Raccolta oraria molteplici dati, ricontrollare file finali, lasciare in esecuzione applicazione.";
+			service.saveToFileHourly("2523920",multiplier);
+			
+			String msg;
+			if (multiplier != 1)
+				msg = multiplier + " ore";
+			else
+				msg = "ora";
+		return "Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.";
 	}
 
 	/**

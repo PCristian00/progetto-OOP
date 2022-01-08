@@ -4,6 +4,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
+import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.City;
 
 /**
@@ -60,8 +61,9 @@ public interface Service {
 	 * 
 	 * @param id id della città di cui salvare i dati ogni ora
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
+	 * @throws WrongMultiplyException 
 	 */
-	public abstract void saveToFileHourly(String id, double multiplier) throws ItalianCityNotFoundException;
+	public abstract void saveToFileHourly(String id, double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException;
 
 	/**
 	 * Legge dati da un file salvato in precedenza

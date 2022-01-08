@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
+import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.*;
 
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
@@ -173,10 +174,9 @@ public JSONObject toJSON(City city) {
 	}
 	
 	@Override
-	public void saveToFileHourly(String id,double multiplier) throws ItalianCityNotFoundException {
-		//Se il moltiplicatore è negativo o zero lo imposta a 1
-		//TODO migliorare (stampa errore o simile)
-		if(multiplier<=0) multiplier=1;
+	public void saveToFileHourly(String id,double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException {
+	if(multiplier<=0) throw new WrongMultiplyException("Moltiplicatore non ammesso");
+	
 		TimerTask tt = new TimerTask() {
 			public void run(){						
 			try {

@@ -3,24 +3,6 @@
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1018,"visibility":10000,"dt":1641217230,"date":"03-01-2022 14:40:30"}],"lon":13.4388,"id":3173006,"lat":43.3674}
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1018,"visibility":10000,"dt":1641220829,"date":"03-01-2022 15:40:29"}],"lon":13.4388,"id":3173006,"lat":43.3674}
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1018,"visibility":10000,"dt":1641224429,"date":"03-01-2022 16:40:29"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-<<<<<<< HEAD
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641316830,"date":"04-01-2022 18:20:30"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641319037,"date":"04-01-2022 18:57:17"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641322637,"date":"04-01-2022 19:57:17"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641326237,"date":"04-01-2022 20:57:17"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1009,"visibility":10000,"dt":1641329837,"date":"04-01-2022 21:57:17"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1009,"visibility":10000,"dt":1641338143,"date":"05-01-2022 00:15:43"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1009,"visibility":10000,"dt":1641338143,"date":"05-01-2022 00:15:43"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1004,"visibility":10000,"dt":1641367268,"date":"05-01-2022 08:21:08"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1004,"visibility":10000,"dt":1641370870,"date":"05-01-2022 09:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1003,"visibility":10000,"dt":1641374470,"date":"05-01-2022 10:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1003,"visibility":10000,"dt":1641378070,"date":"05-01-2022 11:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1002,"visibility":10000,"dt":1641381670,"date":"05-01-2022 12:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1001,"visibility":10000,"dt":1641385270,"date":"05-01-2022 13:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1000,"visibility":10000,"dt":1641388870,"date":"05-01-2022 14:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":1000,"visibility":10000,"dt":1641392470,"date":"05-01-2022 15:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-{"country":"IT","name":"Montecassiano","weather":[{"pressure":999,"visibility":10000,"dt":1641396070,"date":"05-01-2022 16:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
-=======
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641316830,"date":"04-01-2022 18:20:30"}],"lon":13.4388,"id":3173006,"lat":43.3674}
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641319037,"date":"04-01-2022 18:57:17"}],"lon":13.4388,"id":3173006,"lat":43.3674}
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1010,"visibility":10000,"dt":1641322637,"date":"04-01-2022 19:57:17"}],"lon":13.4388,"id":3173006,"lat":43.3674}
@@ -38,4 +20,4 @@
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1000,"visibility":10000,"dt":1641392470,"date":"05-01-2022 15:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":999,"visibility":10000,"dt":1641396070,"date":"05-01-2022 16:21:10"}],"lon":13.4388,"id":3173006,"lat":43.3674}
 {"country":"IT","name":"Montecassiano","weather":[{"pressure":1000,"visibility":10000,"dt":1641397735,"date":"05-01-2022 16:48:55"}],"lon":13.4388,"id":3173006,"lat":43.3674}
->>>>>>> branch 'main' of https://github.com/PCristian00/progetto-OOP.git
+

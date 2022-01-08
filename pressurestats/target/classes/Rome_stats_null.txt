@@ -1,0 +1,1 @@
+{"date":null,"maxMin":{"visibilityMin":10000,"visibilityMax":10000,"pressureMax":1014,"pressureMin":1010},"average":{"visibilityAvg":10000,"pressureAvg":1011},"city":"Rome","variance":{"visibilityVariance":0,"pressureVariance":3}}

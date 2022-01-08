@@ -53,7 +53,7 @@ public class Controller {
 	}
 	
 	//TODO ROTTA BOZZA:Togliere da programma finale o rimediare
-		//TODO A volte questa rotta chiama contemporaneamente per due città diverse e inserisce i dati nel file sbagliato
+		//TODO A volte questa rotta chiama contemporaneamente per due città diverse e inserisce i dati nel file sbagliato (Aggiunge righe vuote)
 			//TODO ricontrollare SEMPRE i dati ottenuti dopo l'utilizzo
 	
 	/**
@@ -122,6 +122,8 @@ public class Controller {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	//TODO Data nel json è sempre null (da risolvere)
 	
 	/**
 	 * Restituisce e salva le statistiche per più giorni di una

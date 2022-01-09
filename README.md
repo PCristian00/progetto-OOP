@@ -239,21 +239,21 @@ N° | Tipo | Rotta | Descrizione
 5 | ` GET ` | `/moreDays?city=Ancona&?days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per i giorni scelti.*
 6 | ` GET ` | `/hourly?city=Ancona&?date=05-01-2022&from=10&to=13` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
 
-Per le rotte 2 e 3 è possibile modificare la frequenza di salvataggio attraverso la variabile <b>Multiplier</b>.<p>
+Per le rotte `2` e `3` è possibile modificare la frequenza di salvataggio attraverso la variabile <b>Multiplier</b>.<p>
 Il valore assegnato a Multiplier viene moltiplicato ad una costante Hour che contiene il valore di 1 ora espresso in millisecondi.<p>
-Sono ammessi tutti i valori superiori a 0.02 ma è consigliabile inserire un valore di almeno 0.17 (corrispondente a circa 10 minuti) in quanto OpenWeather aggiorna i propri dati con questa frequenza con un'API gratuita.<p>
+Sono ammessi tutti i valori superiori a `0.02` ma è consigliabile inserire un valore di almeno `0.17` (corrispondente a circa 10 minuti) in quanto OpenWeather aggiorna i propri dati con questa frequenza con un'API gratuita.<p>
 Di seguito sono riportati esempi di modifiche di frequenza:
   
 Valore | Frequenza di salvataggio |
 :----: | :----------: |
-  0.02 | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) |
- 0.1 | ogni 6 minuti | 
-0.17 | ogni 10 minuti circa | 
-0.5 | ogni 30 minuti |
-1 | ogni ora (valore default) |
-1.5 | ogni ora e 30 minuti |
-3 | ogni 3 ore |
-10 | ogni 10 ore |
+  `0.02` | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) |
+ `0.1` | ogni 6 minuti | 
+`0.17` | ogni 10 minuti circa | 
+`0.5` | ogni 30 minuti |
+`1` | ogni ora (valore default) |
+`1.5` | ogni ora e 30 minuti |
+`3` | ogni 3 ore |
+`10` | ogni 10 ore |
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->

@@ -28,10 +28,11 @@ import it.univpm.pressurestats.statistics.Statistics;
 @RestController
 
 public class Controller {
-	@Autowired	
+	
 	/**
 	 * Interfaccia Service usata per le operazioni di raccolta e salvataggio dati.
-	 */	
+	 */
+	@Autowired
 	Service service;
 	/**
 	 * Oggetto Statitstics usata per le operazioni di generazione e salvataggio statistiche.
@@ -39,8 +40,7 @@ public class Controller {
 	Statistics statistics;
 	/**
 	 * Costruttore dell'oggetto.
-	 */
-	
+	 */	
 	public Controller() {
 		
 	}

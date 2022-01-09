@@ -55,13 +55,14 @@ public interface Service {
 	public abstract void saveToFile(JSONObject obj) throws ItalianCityNotFoundException;
 
 	/**
-	 * Salva ogni ora su un file i dati delle previsioni utili
+	 * Salva ogni tot ore su un file i dati delle previsioni utili
 	 * richiamando getJSONForecast(String id, boolean isObject) e
 	 * saveToFile(JSONObject object)
 	 * 
-	 * @param id id della città di cui salvare i dati ogni ora
+	 * @param id id della città di cui salvare i dati ogni tot ore
+	 * @param multiplier moltiplicatore dell'ora per cambiare la frequenza di salvataggio. (Es. Impostando il valore a 2, il salvataggio avviene ogni 2 ore, a 0.5 ogni 30 minuti).
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
-	 * @throws WrongMultiplyException 
+	 * @throws WrongMultiplyException Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa.
 	 */
 	public abstract void saveToFileHourly(String id, double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException;
 

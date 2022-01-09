@@ -46,45 +46,46 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 <details>
 <summary>Table of Contents</summary>
 
-<ol>    
+<ol>   
 <li>
-  <a href="#about-the-project">About The Project</a>
-  <ul>
-	<li><a href="#built-with">Built With</a></li>
-  </ul>
-</l1>
-  <l1>
-  <a href="#uml">UML</a>
-	<ul>
-	  <l1><a href="#use-case"> Use Case</a></l1>
-		</ul>
-	<ul>
-	  <l1>
-		<a href="#package-controller"> Package Controller </a> </l1>
-	</ul>
-	<ul>
-		  <l1>
-			<a href="#package-model"> Package Model </a>
-			</ul>       
-	  </l1>
+<a href="#about-the-project">About The Project</a>
 <ul>
-	<l1>
-			  <a href="#package-service"> Package Service </a>
-	  </l1> 
-	</ul>
+<li><a href="#built-with">Built With</a></li>
+</ul>
+</l1>
+<l1>
+<a href="#uml">UML</a>
+<ul>
+<l1><a href="#use-case"> Use Case</a></l1>
+</ul>
+<ul>
+<l1><a href="#package-controller"> Package Controller </a></l1>
+</ul>
+<ul>
+<l1><a href="#package-model"> Package Model </a></l1>
+</ul>
+<ul>
+<l1><a href="#package-service"> Package Service </a></l1>
+</ul>
+<ul>
+<l1><a href="#package-statistics"> Package Statistics </a></l1>
+</ul>
+<ul>
+<l1><a href="#package-exception"> Package Exception </a></l1>
+</ul>
 </li>    
 <li>
-  <a href="#getting-started">Getting Started</a>
-  <ul>
-   <!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
-	<li><a href="#installation">Installation</a></li>
-  </ul>
+<a href="#getting-started">Getting Started</a>
+<ul>
+<!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
+<li><a href="#installation">Installation</a></li>
+</ul>
 </li>
 <li>
-  <a href="#usage">Usage</a>
-  <ul>
-	<li><a href="#rotte">Rotte</a></li>
-  </ul>
+<a href="#usage">Usage</a>
+<ul>
+<li><a href="#rotte">Rotte</a></li>
+</ul>
 </li>    
 <!--<li><a href="#roadmap">Roadmap</a></li>-->
 <!-- <li><a href="#contributing">Contributing</a></li>-->
@@ -136,21 +137,23 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Use Case
 <img src="use_case.svg" alt="use_case">
 <p align="right">(<a href="#top">back to top</a>)</p>
-***
+
 ### Package Controller
 <img src="controller_pkg.svg" alt="controller_pkg">
 <p align="right">(<a href="#top">back to top</a>)</p>
-***
+
 ### Package Model
 <img src="model_pkg.svg" alt="model_pkg"><p>
 <p align="right">(<a href="#top">back to top</a>)</p>
-***
+
 ### Package Service
 <img src="service_pkg.svg" alt="service_pkg">
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Package Statistics
 <img src="statistics_pkg.svg" alt="statistics_pkg">
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Package Exception
 <img src="exception_pkg.svg" alt="exception_pkg">
 <p align="right">(<a href="#top">back to top</a>)</p>

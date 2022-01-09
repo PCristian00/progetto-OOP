@@ -113,18 +113,19 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 Progetto Programmazione ad Oggetti
 di [Settimi Diego](https://github.com/Diego7imi) e [Pietroniro Cristian](https://github.com/PCristian00)
 
-PressureStats permette di salvare dati su pressione e visibilità di una città su un file di testo.<p>
-Tale salvataggio viene eseguito una sola volta oppure in automatico ogni ora.<p>
-I dati raccolti possono poi essere elaborati per ricavare statistiche su pressione e visibilità della città:
+PressureStats permette di salvare dati su <b>pressione</b> e <b>visibilità</b> di una città su un file di testo.<p>
+Tale salvataggio viene eseguito una sola volta oppure in automatico ogni tot ore (frequenza scelta dall'utente).<p>
+  I dati raccolti possono poi essere elaborati per ricavare <b>statistiche</b> su <b>pressione</b> e <b>visibilità</b> della città:
 * Pressione massima, minima, media
 * Visibilità massima, minima, media
 * Varianza Pressione
 * Varianza Visibilità
-
-Le statistiche possono quindi essere mostrate in vari filtri:
-* Giornaliere: Mostra le statistiche di un intero giorno scelto dall'utente
-* Più giorni: Mostra le statistiche per una fascia di giorno scelti dall'utente
-* Orarie: Mostra le statistiche comprese tra due ore (di un giorno) scelte dall'utente.
+<p>
+Le <b>statistiche</b> possono quindi essere mostrate in vari <b>filtri</b>:
+  
+  * <b>Giornaliere</b>: Mostra le statistiche di un intero giorno scelto dall'utente
+  * <b>Più giorni</b>: Mostra le statistiche per una fascia di giorno scelti dall'utente
+  * <b>Orarie</b>: Mostra le statistiche comprese tra due ore (di un giorno) scelte dall'utente.
 
 
 <!--
@@ -145,38 +146,42 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ## UML
 ### Use Case
 <img src="use_case.svg" alt="use_case"><p>
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<p>
-    aaaaaaaaaaaaaaaaaaaaaaaaa<p>
+  Diagramma dei casi d'uso.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Controller
 <img src="controller_pkg.svg" alt="controller_pkg"><p><p>
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<p>
-    aaaaaaaaaaaaaaaaaaaaaaaaa<p>
+  Contiene il <b>Controller</b>, necessario per gestire le richieste degli utenti<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Model
 <img src="model_pkg.svg" alt="model_pkg"><p>
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<p>
-    aaaaaaaaaaaaaaaaaaaaaaaaa<p>
+  Contiene tutta la parte di modellazione delle classi.<p>
+    La classe <b>City</b> contiene le proprietà della città e le relative previsioni.<p>
+      La classe <b>Forecast</b> contiene i dati di pressione, visibilità e la data della loro misurazione.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Service
 <img src="service_pkg.svg" alt="service_pkg"><p>
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<p>
-    aaaaaaaaaaaaaaaaaaaaaaaaa<p>
+  Contiene i servizi e le operazioni usate per raccogliere, salvare e mostrare i dati.<p>
+  L'interfaccia Service contiene i metodi implementati da ServiceImpl e richiamati dal Controller.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Statistics
 <img src="statistics_pkg.svg" alt="statistics_pkg"><p>
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<p>
-    aaaaaaaaaaaaaaaaaaaaaaaaa<p>
+  Contiene le statistiche e metodi per filtrarle e presentarle.<p>
+    <b>Statistics</b> permette di calcolare e salvare le statistiche.<p>
+      <b>Filters</b> filtra le statistiche calcolate, mostrando statistiche del giorno (intero o solo alcune ore) o di più giorni.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Exception
 <img src="exception_pkg.svg" alt="exception_pkg"><p>
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<p>
-    aaaaaaaaaaaaaaaaaaaaaaaaa<p>
+  Contiene le eccezioni personalizzate di PressureStats.<p>
+    <b>CityStatisticsNotFoundException</b>: Eccezione lanciata se le statistiche della città non sono state trovate.<p>
+  <b>DayNotFoundException</b>: Eccezione lanciata se il giorno non è stato trovato.<p>
+    <b>ItalianCityNotFoundException</b>: Eccezione lanciata se la città non è italiana.<p>
+  <b>WrongHoursPeriodException</b>: Eccezione lanciata se il range orario non è corretto.<p>
+    <b>WrongMultiplyException</b>: Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

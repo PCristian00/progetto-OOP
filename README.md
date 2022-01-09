@@ -20,60 +20,78 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/PCristian00/progetto-OOP">
-    <img src="logo.png" alt="Logo" width="80" height="80">
-  </a>
+<a href="https://github.com/PCristian00/progetto-OOP">
+<img src="logo.png" alt="Logo" width="80" height="80">
+</a>
 
 <h3 align="center">PressureStats</h3>
 
-  <p align="center">
-    Applicazione Java che calcola statistiche di visibilità e pressione di una città data.
-    <br />
-    <a href="https://github.com/PCristian00/progetto-OOP/"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/PCristian00/progetto-OOP">View Demo</a>
-    ·
-    <a href="https://github.com/PCristian00/progetto-OOP/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/PCristian00/progetto-OOP/issues">Request Feature</a>
-  </p>
+<p align="center">
+Applicazione Java che calcola statistiche di visibilità e pressione di una città data.
+<br />
+<a href="https://github.com/PCristian00/progetto-OOP/"><strong>Explore the docs »</strong></a>
+<br />
+<br />
+<a href="https://github.com/PCristian00/progetto-OOP">View Demo</a>
+·
+<a href="https://github.com/PCristian00/progetto-OOP/issues">Report Bug</a>
+·
+<a href="https://github.com/PCristian00/progetto-OOP/issues">Request Feature</a>
+</p>
 </div>
 
 
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>    
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-      <ul>
-        <li><a href="#uml">UML</a></li>
-      </ul>
-    </li>    
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-       <!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#usage">Usage</a>
-      <ul>
-        <li><a href="#rotte">Rotte</a></li>
-      </ul>
-    </li>    
-    <!--<li><a href="#roadmap">Roadmap</a></li>-->
-    <!-- <li><a href="#contributing">Contributing</a></li>-->
-    <li><a href="#license">License</a></li>
-    <!--<li><a href="#contact">Contact</a></li>-->
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+<summary>Table of Contents</summary>
+
+<ol>    
+<li>
+  <a href="#about-the-project">About The Project</a>
+  <ul>
+	<li><a href="#built-with">Built With</a></li>
+  </ul>
+</l1>
+  <l1>
+  <a href="#uml">UML</a>
+	<ul>
+	  <l1><a href="#use-case"> Use Case</a></l1>
+		</ul>
+	<ul>
+	  <l1>
+		<a href="#package-controller"> Package Controller </a> </l1>
+	</ul>
+	<ul>
+		  <l1>
+			<a href="#package-model"> Package Model </a>
+			</ul>       
+	  </l1>
+<ul>
+	<l1>
+			  <a href="#package-service"> Package Service </a>
+	  </l1> 
+	</ul>
+</li>    
+<li>
+  <a href="#getting-started">Getting Started</a>
+  <ul>
+   <!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
+	<li><a href="#installation">Installation</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#usage">Usage</a>
+  <ul>
+	<li><a href="#rotte">Rotte</a></li>
+  </ul>
+</li>    
+<!--<li><a href="#roadmap">Roadmap</a></li>-->
+<!-- <li><a href="#contributing">Contributing</a></li>-->
+<li><a href="#license">License</a></li>
+<!--<li><a href="#contact">Contact</a></li>-->
+<li><a href="#acknowledgments">Acknowledgments</a></li>
+</ol>
 </details>
 
 
@@ -114,15 +132,30 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### UML
-<img src="controller_pkg.svg" alt="controller_pkg">
-<img src="model_pkg.svg" alt="model_pkg">
-<img src="service_pkg.svg" alt="service_pkg">
-<img src="statistics_pkg.svg" alt="statistics_pkg">
-<img src="exception_pkg.svg" alt="exception_pkg">
+## UML
+### Use Case
 <img src="use_case.svg" alt="use_case">
-
 <p align="right">(<a href="#top">back to top</a>)</p>
+***
+### Package Controller
+<img src="controller_pkg.svg" alt="controller_pkg">
+<p align="right">(<a href="#top">back to top</a>)</p>
+***
+### Package Model
+<img src="model_pkg.svg" alt="model_pkg"><p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+***
+### Package Service
+<img src="service_pkg.svg" alt="service_pkg">
+<p align="right">(<a href="#top">back to top</a>)</p>
+### Package Statistics
+<img src="statistics_pkg.svg" alt="statistics_pkg">
+<p align="right">(<a href="#top">back to top</a>)</p>
+### Package Exception
+<img src="exception_pkg.svg" alt="exception_pkg">
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -135,21 +168,21 @@ To get a local copy up and running follow these simple example steps.
 <!--### Prerequisites
 This is an example of how to list things you need to use the software and how to install them.
 * npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
 -->
 ### Installation
 
 1. Get a free API Key at [https://openweathermap.org/api](https://openweathermap.org/api)
 2. Clone the repo
-   ```sh
-   git clone https://github.com/PCristian00/progetto-OOP.git
-   ```
+```sh
+git clone https://github.com/PCristian00/progetto-OOP.git
+```
 3. Enter your API in `ServiceImpl.java`
-   ```java
-   private String apiKey = 'ENTER YOUR API';
-   ```
+```java
+private String apiKey = 'ENTER YOUR API';
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -184,7 +217,7 @@ N° | Tipo | Rotta | Descrizione
 - [] Feature 1
 - [] Feature 2
 - [] Feature 3
-    - [] Nested Feature
+- [] Nested Feature
 
 See the [open issues](https://github.com/PCristian00/progetto-OOP/issues) for a full list of proposed features (and known issues).
 

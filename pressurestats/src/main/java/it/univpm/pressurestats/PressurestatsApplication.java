@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class PressurestatsApplication {
+	//TODO manca il costruttore: Non serve, ma valutare di scriverlo per completare JavaDoc
 	/**
 	 * Avvia main che avvia l'applicazione SpringBoot
 	 * 

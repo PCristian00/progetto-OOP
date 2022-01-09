@@ -51,3 +51,7 @@
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641693804,"date":"09-01-2022 03:03:24"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641716671,"date":"09-01-2022 09:24:31"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641718135,"date":"09-01-2022 09:48:55"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641720646,"date":"09-01-2022 10:30:46"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1002,"visibility":10000,"dt":1641723158,"date":"09-01-2022 11:12:38"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1001,"visibility":10000,"dt":1641726758,"date":"09-01-2022 12:12:38"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1000,"visibility":10000,"dt":1641730358,"date":"09-01-2022 13:12:38"}],"lon":13.3598,"id":2523920,"lat":38.1158}

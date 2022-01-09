@@ -11,9 +11,22 @@ import java.util.Objects;
  * 
  */
 public class Forecast {
+	/**
+	 * Pressione misurata in hPa
+	 */
 	private long pressure;
+	/**
+	 * Visibilità misurata in km
+	 */
 	private long visibility;
+	/**
+	 * Data misurazione in formato Unix epoch (long) (Secondi passati
+	 * dal 1 gennaio 1970)
+	 */
 	private long dt;
+	/**
+	 * Data misurazione in formato standard DD-MM-YYYY
+	 */
 	private String date;
 
 	/**

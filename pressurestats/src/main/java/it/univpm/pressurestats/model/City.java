@@ -11,11 +11,29 @@ import java.util.Vector;
  * 
  */
 public class City {
+	/**
+	 * Identificativo univoco città
+	 */
 	private long id;
+	/**
+	 * Nome città
+	 */
 	private String name;
+	/**
+	 * Nazione città
+	 */
 	private String country;
+	/**
+	 * Latitudine città
+	 */
 	private double lat;
+	/**
+	 * Longitudine città
+	 */
 	private double lon;
+	/**
+	 * Vettore contenente varie misurazioni meteo della città
+	 */
 	private Vector<Forecast> weather;
 
 	/**

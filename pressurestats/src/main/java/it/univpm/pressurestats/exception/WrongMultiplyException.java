@@ -8,7 +8,10 @@ package it.univpm.pressurestats.exception;
  * 
  */
 public class WrongMultiplyException extends Exception {
-private static final long serialVersionUID = 1L;
+/**
+ * Seriale eccezione
+ */
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Messaggio di errore

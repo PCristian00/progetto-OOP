@@ -26,11 +26,24 @@ import it.univpm.pressurestats.statistics.Statistics;
  * 
  */
 @RestController
-public class Controller {
-	@Autowired
-	Service service;
-	Statistics statistics;	
 
+public class Controller {
+	/**
+	 * Interfaccia Service usata per le operazioni di raccolta e salvataggio dati.
+	 */	
+	Service service;
+	/**
+	 * Oggetto Statitstics usata per le operazioni di generazione e salvataggio statistiche.
+	 */
+	Statistics statistics;
+	/**
+	 * Costruttore dell'oggetto.
+	 */
+	@Autowired	
+	public Controller() {
+		
+	}
+	
 	/**
 	 * Mostra le informazioni attuali su pressione e
 	 * visibilità. I dati vengono stampati su schermo e salvati in un file di
@@ -85,7 +98,7 @@ public class Controller {
 			
 			String msg;
 			if (multiplier != 1)
-				msg = multiplier + " ore";
+				msg = multiplier*60 + " minuti";
 			else
 				msg = "ora";
 		return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.",HttpStatus.OK);
@@ -114,7 +127,7 @@ public class Controller {
 
 			service.saveToFileHourly(id, multiplier);
 			if (multiplier != 1)
-				msg = multiplier + " ore";
+				msg = multiplier*60 + " minuti";
 			else
 				msg = "ora";
 
@@ -199,4 +212,6 @@ public class Controller {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
+
+	
 }

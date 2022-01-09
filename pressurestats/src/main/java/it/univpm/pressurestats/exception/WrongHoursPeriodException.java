@@ -9,7 +9,9 @@ package it.univpm.pressurestats.exception;
  */
 //@SuppressWarnings("serial")
 public class WrongHoursPeriodException extends Exception {
-	
+	/**
+	 * Seriale eccezione
+	 */
 	private static final long serialVersionUID = 1L;
 	
 	/**

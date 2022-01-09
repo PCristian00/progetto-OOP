@@ -20,10 +20,21 @@ import it.univpm.pressurestats.exception.WrongHoursPeriodException;
  */
  
 public class Statistics{
-	
+	/**
+	 * JSONArray in cui vengono salvate le statistiche
+	 */
 	private JSONArray stats;
+	/**
+	 * Permette di usare i filtri e le loro operazioni.
+	 */
 	private Filters od;
+	/**
+	 * Nome città di cui calcolare statistiche.
+	 */
 	private String city;
+	/**
+	 * Data di cui calcolare statistiche.
+	 */
 	private String date;
 	
 	/**
@@ -186,7 +197,7 @@ public class Statistics{
 		String fileName = this.city+ "_stats_"+this.date;
 		// Il file viene salvato nella cartella /src/main/resources/
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
-	//String path=dir+this.city+end;
+	
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
 			pw.append(object.toJSONString() + "\n");

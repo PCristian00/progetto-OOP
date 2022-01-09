@@ -21,7 +21,7 @@
 <br />
 <div align="center">
 <a href="https://github.com/PCristian00/progetto-OOP">
-<img src="logo.png" alt="Logo" width="80" height="80">
+<img src="images/logo.png" alt="Logo" width="80" height="80">
 </a>
 
 <h3 align="center">PressureStats</h3>
@@ -146,37 +146,37 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ## UML
 ### Use Case
-<img src="use_case.svg" alt="use_case"><p>
+<img src="images/use_case.svg" alt="use_case"><p>
   Diagramma dei casi d'uso.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Controller
-<img src="controller_pkg.svg" alt="controller_pkg"><p><p>
+<img src="images/controller_pkg.svg" alt="controller_pkg"><p><p>
   Contiene il <b>Controller</b>, necessario per gestire le richieste degli utenti<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Model
-<img src="model_pkg.svg" alt="model_pkg"><p>
+<img src="images/model_pkg.svg" alt="model_pkg"><p>
   Contiene tutta la parte di modellazione delle classi.<p>
     La classe <b>City</b> contiene le proprietà della città e le relative previsioni.<p>
       La classe <b>Forecast</b> contiene i dati di pressione, visibilità e la data della loro misurazione.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Service
-<img src="service_pkg.svg" alt="service_pkg"><p>
+<img src="images/service_pkg.svg" alt="service_pkg"><p>
   Contiene i servizi e le operazioni usate per raccogliere, salvare e mostrare i dati.<p>
   L'interfaccia Service contiene i metodi implementati da ServiceImpl e richiamati dal Controller.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Statistics
-<img src="statistics_pkg.svg" alt="statistics_pkg"><p>
+<img src="images/statistics_pkg.svg" alt="statistics_pkg"><p>
   Contiene le statistiche e metodi per filtrarle e presentarle.<p>
     <b>Statistics</b> permette di calcolare e salvare le statistiche.<p>
       <b>Filters</b> filtra le statistiche calcolate, mostrando statistiche del giorno (intero o solo alcune ore) o di più giorni.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Package Exception
-<img src="exception_pkg.svg" alt="exception_pkg"><p>
+<img src="images/exception_pkg.svg" alt="exception_pkg"><p>
   Contiene le eccezioni personalizzate di PressureStats.<p>
     <b>CityStatisticsNotFoundException</b>: Eccezione lanciata se le statistiche della città non sono state trovate.<p>
   <b>DayNotFoundException</b>: Eccezione lanciata se il giorno non è stato trovato.<p>

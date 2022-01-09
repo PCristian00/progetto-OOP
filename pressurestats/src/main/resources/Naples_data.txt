@@ -50,3 +50,8 @@
 {"country":"IT","name":"Naples","weather":[{"pressure":1006,"visibility":10000,"dt":1641722951,"date":"09-01-2022 11:09:11"}],"lon":14.25,"id":3172395,"lat":40.8333}
 {"country":"IT","name":"Naples","weather":[{"pressure":1004,"visibility":10000,"dt":1641726740,"date":"09-01-2022 12:12:20"}],"lon":14.25,"id":3172395,"lat":40.8333}
 {"country":"IT","name":"Naples","weather":[{"pressure":1002,"visibility":3000,"dt":1641730276,"date":"09-01-2022 13:11:16"}],"lon":14.25,"id":3172395,"lat":40.8333}
+{"country":"IT","name":"Naples","weather":[{"pressure":1000,"visibility":2500,"dt":1641735162,"date":"09-01-2022 14:32:42"}],"lon":14.25,"id":3172395,"lat":40.8333}
+
+{"country":"IT","name":"Naples","weather":[{"pressure":999,"visibility":10000,"dt":1641739358,"date":"09-01-2022 15:42:38"}],"lon":14.25,"id":3172395,"lat":40.8333}
+{"country":"IT","name":"Palermo","weather":[{"pressure":997,"visibility":10000,"dt":1641742838,"date":"09-01-2022 16:40:38"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Naples","weather":[{"pressure":997,"visibility":10000,"dt":1641746400,"date":"09-01-2022 17:40:00"}],"lon":14.25,"id":3172395,"lat":40.8333}

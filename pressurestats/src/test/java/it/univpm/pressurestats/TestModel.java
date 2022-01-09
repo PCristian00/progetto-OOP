@@ -11,24 +11,45 @@ import org.junit.jupiter.api.Test;
 import it.univpm.pressurestats.model.City;
 import it.univpm.pressurestats.model.Forecast;
 import it.univpm.pressurestats.service.ServiceImpl;
-
+/**
+ * Classe che testa i vari modelli.
+ * @author Pietroniro Cristian
+ * @author Settimi Diego
+ *
+ */
 class TestModel {
-	
+	/**
+	 * Vettore di previsioni usato per test.
+	 */
 	private Vector<Forecast> f = null;
+	/**
+	 * Città usato per test.
+	 */
 	private City c = null;
+	/**
+	 * Implementazione di Service usata per test.
+	 */
 	private ServiceImpl s = null;
- 
+	/**
+	 * Imposta le variabili per i test.
+	 * @throws Exception Eccezione
+	 */
 	@BeforeEach
 	void setUp() throws Exception {
 		s = new ServiceImpl();
 		c = s.getForecast(s.getJSONForecast("3169070", true));
 		f = c.getWeather();
 	}
-
+	/**
+	 * Usato per rilasciare le risorse dopo che i test sono eseguiti.
+	 * @throws Exception Eccezione
+	 */
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
+	/**
+	 * Testa funzioni della classe City.
+	 */
 	@Test
 	void testCity() {
 		assertEquals("Rome", c.getName());
@@ -38,7 +59,9 @@ class TestModel {
 		assertEquals(3169070, c.getId());
 		assertNotNull(c.getWeather());
 	}
-	
+	/**
+	 * Testa funzioni della classe Forecast.
+	 */
 	@Test
 	void testForecast() {
 		for (Forecast forecast : f) {

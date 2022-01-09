@@ -13,22 +13,40 @@ import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.service.ServiceImpl;
 import it.univpm.pressurestats.statistics.Filters;
-
+/**
+ * Classe che testa le eccezioni.
+ * @author Pietroniro Cristian
+ * @author Settimi Diego
+ *
+ */
 class TestThrows {
-
+/**
+ * Implementazione di Service usata per test
+ */
 	private ServiceImpl c = null;
+	/**
+	 * Filtri usati per test
+	 */
 	private Filters f = null;
-	
+	/**
+	 * Imposta le variabili per i test.
+	 * @throws Exception Eccezione
+	 */
 	@BeforeEach
 	void setUp() throws Exception {
 		c = new ServiceImpl();
 		f = new Filters();
 	}
-
+/**
+ * Usato per rilasciare le risorse dopo che i test sono eseguiti.
+ * @throws Exception Eccezione
+ */
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
+/**
+ * Testa le eccezioni personalizzate di PressureStats.
+ */
 	@Test
 	void testException() {
 		assertThrows(ItalianCityNotFoundException.class, ()->c.saveToFile(c.getJSONForecast("2172797", true)));

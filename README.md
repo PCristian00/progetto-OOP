@@ -89,6 +89,8 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 <ul>
 <li><a href="#rotte">Rotte</a></li>
 </ul>
+  <ul><li><a href="#test">Test</a></li>
+  </ul>
 </li>    
 
   <!--<li><a href="#roadmap">Roadmap</a></li>-->
@@ -232,13 +234,31 @@ Le rotte definite sono le seguenti:
 
 N° | Tipo | Rotta | Descrizione
 ----- | ------------ | -------------------- | ----------------------
-1 | ` GET ` | `/current?id=6542126` | *Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data*
-2 | ` GET ` | `/hourlySave?id=6542126&multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su un file i  dati attuali di pressione e visibilità di una città data.*
-3 | ` GET ` | `/multiSave?multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su dei file i  dati attuali di pressione e visibilità di alcune città selezionate.*
-4 | ` GET ` | `/oneDay?city=Ancona&?date=05-01-2022` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.*
-5 | ` GET ` | `/moreDays?city=Ancona&?days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per i giorni scelti.*
-6 | ` GET ` | `/hourly?city=Ancona&?date=05-01-2022&from=10&to=13` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
+[1](#1) | ` GET ` | `/current?id=6542126` | *Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data*
+[2](#2) | ` GET ` | `/hourlySave?id=6542126&multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su un file i  dati attuali di pressione e visibilità di una città data.*
+[3](#3) | ` GET ` | `/multiSave?multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su dei file i  dati attuali di pressione e visibilità di alcune città selezionate.*
+[4](#4) | ` GET ` | `/oneDay?city=Ancona&?date=05-01-2022` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.*
+[5](#5) | ` GET ` | `/moreDays?city=Ancona&?days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per i giorni scelti.*
+[6](#6) | ` GET ` | `/hourly?city=Ancona&?date=05-01-2022&from=10&to=13` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="1"></a>
+### /current
+Inserire immagini e maggiori dettagli.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="2"></a>
+### /hourlySave
+Inserire immagini e maggiori dettagli.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="3"></a>
+### /multiSave
+Inserire immagini e maggiori dettagli.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Utilizzo del Multiplier
 Per le rotte `2` e `3` è possibile modificare la frequenza di salvataggio attraverso la variabile <b>Multiplier</b>.<p>
 Il valore assegnato a Multiplier viene moltiplicato ad una costante Hour che contiene il valore di 1 ora espresso in millisecondi.<p>
 Sono ammessi tutti i valori superiori a `0.02` ma è consigliabile inserire un valore di almeno `0.17` (corrispondente a circa 10 minuti) in quanto OpenWeather aggiorna i propri dati con questa frequenza con un'API gratuita.<p>
@@ -256,6 +276,24 @@ Valore | Frequenza di salvataggio |
 `10` | ogni 10 ore |
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="4"></a>
+### /oneDay
+Inserire immagini e maggiori dettagli.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="5"></a>
+### /moreDays
+Inserire immagini e maggiori dettagli.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="6"></a>
+### /hourly
+Inserire immagini e maggiori dettagli.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Test
+Inserire qui test con immagini.
+<p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 <!--## Roadmap
 <!--

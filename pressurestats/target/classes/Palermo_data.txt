@@ -11,7 +11,6 @@
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641557870,"date":"07-01-2022 13:17:50"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641561290,"date":"07-01-2022 14:14:50"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641565024,"date":"07-01-2022 15:17:04"}],"lon":13.3598,"id":2523920,"lat":38.1158}
-{"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641565024,"date":"07-01-2022 15:17:04"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641566505,"date":"07-01-2022 15:41:45"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641567958,"date":"07-01-2022 16:05:58"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641577673,"date":"07-01-2022 18:47:53"}],"lon":13.3598,"id":2523920,"lat":38.1158}
@@ -27,4 +26,28 @@
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641654777,"date":"08-01-2022 16:12:57"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641655206,"date":"08-01-2022 16:20:06"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1008,"visibility":10000,"dt":1641658906,"date":"08-01-2022 17:21:46"}],"lon":13.3598,"id":2523920,"lat":38.1158}
-
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641662060,"date":"08-01-2022 18:14:20"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641663671,"date":"08-01-2022 18:41:11"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641665132,"date":"08-01-2022 19:05:32"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641667270,"date":"08-01-2022 19:41:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641667322,"date":"08-01-2022 19:42:02"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641668734,"date":"08-01-2022 20:05:34"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641670644,"date":"08-01-2022 20:37:24"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641671780,"date":"08-01-2022 20:56:20"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641672386,"date":"08-01-2022 21:06:26"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641674470,"date":"08-01-2022 21:41:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641675544,"date":"08-01-2022 21:59:04"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641676270,"date":"08-01-2022 22:11:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641678070,"date":"08-01-2022 22:41:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641679054,"date":"08-01-2022 22:57:34"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641679870,"date":"08-01-2022 23:11:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641681670,"date":"08-01-2022 23:41:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1007,"visibility":10000,"dt":1641683134,"date":"09-01-2022 00:05:34"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1007,"visibility":10000,"dt":1641685213,"date":"09-01-2022 00:40:13"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641686482,"date":"09-01-2022 01:01:22"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641688870,"date":"09-01-2022 01:41:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641690064,"date":"09-01-2022 02:01:04"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641692470,"date":"09-01-2022 02:41:10"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641693804,"date":"09-01-2022 03:03:24"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641716671,"date":"09-01-2022 09:24:31"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641718135,"date":"09-01-2022 09:48:55"}],"lon":13.3598,"id":2523920,"lat":38.1158}

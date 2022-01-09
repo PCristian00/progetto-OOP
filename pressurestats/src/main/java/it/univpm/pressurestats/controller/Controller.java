@@ -13,6 +13,7 @@ import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
 import it.univpm.pressurestats.exception.DayNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.exception.WrongHoursPeriodException;
+import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.service.Service;
 import it.univpm.pressurestats.statistics.Statistics;
 
@@ -66,9 +67,11 @@ public class Controller {
 	 *                   minuti, 2 ogni 2 ore)
 	 * @return Un messaggio di riepilogo con la frequenza
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
+	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa
 	 */
 	@GetMapping(value = "/multiSave")
-	public String saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException{		
+	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException{		
+		try {
 		//ROMA		
 			service.saveToFileHourly("3169070",multiplier);			
 		//NAPOLI		
@@ -85,7 +88,10 @@ public class Controller {
 				msg = multiplier + " ore";
 			else
 				msg = "ora";
-		return "Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.";
+		return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.",HttpStatus.OK);
+		}catch(ItalianCityNotFoundException | WrongMultiplyException e2) {
+			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
+		}
 	}
 
 	/**
@@ -97,11 +103,12 @@ public class Controller {
 	 * @param multiplier moltiplicatore dell'ora (Esempio: 0,5 salva i dati ogni 30
 	 *                   minuti, 2 ogni 2 ore)
 	 * @return Un messaggio di riepilogo con la frequenza e la prima misurazione
+	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa
 	 * 
 	 */
 	@GetMapping(value = "/hourlySave")
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
-			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) {
+			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws WrongMultiplyException {
 		String msg;
 		try {
 
@@ -113,7 +120,7 @@ public class Controller {
 
 			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
 					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (ItalianCityNotFoundException e2) {
+		} catch (ItalianCityNotFoundException |WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}

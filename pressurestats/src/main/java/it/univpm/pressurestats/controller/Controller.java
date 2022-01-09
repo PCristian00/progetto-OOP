@@ -134,7 +134,7 @@ public class Controller {
 
 			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
 					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (ItalianCityNotFoundException |WrongMultiplyException e2) {
+		} catch (ItalianCityNotFoundException | WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}

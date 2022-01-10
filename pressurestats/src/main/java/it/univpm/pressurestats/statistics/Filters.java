@@ -92,7 +92,7 @@ public class Filters {
 		} catch (IOException e) {
 			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");
 		} catch (ParseException e1) {
-			e1.printStackTrace();
+			e1.printStackTrace(); 
 		}
 		return ja;
 	}

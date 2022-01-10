@@ -198,7 +198,7 @@ public class Controller {
 	 * @param date Il giorno di cui si vogliono ricevere statistiche
 	 * @param from prima ora
 	 * @param to   ultima ora
-	 * @return Le statistiche per più ore
+	 * @return Le statistiche per più ore 
 	 * 
 	 */
 	@GetMapping(value = "/hourly")

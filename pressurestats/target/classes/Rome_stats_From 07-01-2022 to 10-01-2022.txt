@@ -1,0 +1,1 @@
+{"date":"From 07-01-2022 to 10-01-2022","maxMin":{"visibilityMin":3500,"visibilityMax":10000,"pressureMax":1012,"pressureMin":998},"average":{"visibilityAvg":9731,"pressureAvg":1005},"city":"Rome","variance":{"visibilityVariance":1339935,"pressureVariance":30}}

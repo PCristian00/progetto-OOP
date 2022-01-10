@@ -46,11 +46,11 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 <summary>Table of Contents</summary>
 <ol>   
 <li>
-<a href="#about-the-project">About The Project</a>
+<a href="#about-the-project">About The Project</a></li> 
 <ul>
 <li><a href="#built-with">Built With</a></li>
 </ul>
-</l1>  
+</li>  
 <li>
 <a href="#uml">UML</a>
 <ul>
@@ -96,6 +96,7 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
   <li><a href="#acknowledgments">Acknowledgments</a></li>
 </ol>
 </details>
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 

@@ -431,7 +431,7 @@ Inserire qui test con immagini.
 
 ### Documentazione
 Il programma è completamente documentato in Javadoc [qui](/pressurestats/doc).<p>
-Ulteriore documentazione con diagrammi UML è disponibile [qui](/UMLExports/html-docs).
+Ulteriore documentazione con diagrammi UML è disponibile [qui](https://github.com/PCristian00/progetto-OOP/tree/main/UML%20Exports).
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 <!--## Roadmap

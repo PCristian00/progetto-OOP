@@ -230,19 +230,33 @@ Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [P
 2. Da Postman, fare una chiamata di tipo get con la rotta scelta (vedi tabella)
 3. Consultare i dati salvati in /src/main/resources/
 4. Terminare il programma
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Rotte
 Le rotte definite sono le seguenti:
 
 N° | Tipo | Rotta | Descrizione
------ | ------------ | -------------------- | ----------------------
+--- | --- | --- | ---
 [1](#1) | ` GET ` | `/current?id=6542126` | *Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data*
 [2](#2) | ` GET ` | `/hourlySave?id=6542126&multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su un file i  dati attuali di pressione e visibilità di una città data.*
 [3](#3) | ` GET ` | `/multiSave?multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su dei file i  dati attuali di pressione e visibilità di alcune città selezionate.*
 [4](#4) | ` GET ` | `/oneDay?city=Ancona&?date=05-01-2022` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.*
 [5](#5) | ` GET ` | `/moreDays?city=Ancona&?days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per i giorni scelti.*
 [6](#6) | ` GET ` | `/hourly?city=Ancona&?date=05-01-2022&from=10&to=13` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
+
+### Perché viene usato ID
+Le rotte [1](#1), [2](#2) e [3](#3) richiedono l'`ID` della città per funzionare.
+
+Nonostante sia meno pratico di usare il nome della città, usare l'`ID` per richiedere i dati ad OpenWeather è la scelta migliore, in quanto l'`ID` rappresenta univocamente una città.
+
+Ciò non sempre è invece il caso per il nome: ad esempio, `Rome` si trova sia negli USA che in Italia (Roma, nome inglese).
+
+Cercando `Roma` su OpenWeather otteniamo anche risultati da altre nazioni o anche Roma intesa come provincia.
+
+<img src="images/rome_query.jpg" alt="rome_query">
+
+Per questo abbiamo deciso di usare l'`ID`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -324,7 +338,7 @@ Sono ammessi tutti i valori superiori a `0.02` ma è consigliabile inserire un v
 Di seguito sono riportati esempi di modifiche di frequenza:
   
 Valore | Frequenza di salvataggio |
-:----: | :----------: |
+:-:	| :-:|
   `0.02` | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) |
  `0.1` | ogni 6 minuti | 
 `0.17` | ogni 10 minuti circa | 

@@ -93,7 +93,7 @@ public class Controller {
 		//MILANO
 			service.saveToFileHourly("6542283",multiplier);				
 		//ANCONA		
-			service.saveToFileHourly("6542126",multiplier);				
+			service.saveToFileHourly("6542126",multiplier);			
 		//PALERMO		
 			service.saveToFileHourly("2523920",multiplier);
 			
@@ -188,6 +188,8 @@ public class Controller {
 
 	}
 	
+	//TODO Scrivere su json da che ora a che ora
+	
 	/**
 	 * Restituisce e salva le statistiche per più ore di un giorno di una città.
 	 * 
@@ -202,7 +204,6 @@ public class Controller {
 	@GetMapping(value = "/hourly")
 	public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Rome") String city,
 			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
-
 			@RequestParam(name = "to") int to) {
 		try {
 			statistics = new Statistics(city, date, from, to);
@@ -213,6 +214,4 @@ public class Controller {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
-
-	
 }

@@ -3,6 +3,7 @@ package it.univpm.pressurestats.service;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.City;
@@ -29,8 +30,9 @@ public interface Service {
 	 * @param name     nome della città da cercare
 	 * @param isObject controllo di tipo Boolean (COMPLETARE)
 	 * @return un JSONObject contenente le previsioni meteo complete.
+	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
 	 */
-	public abstract JSONObject getJSONForecast(String name, boolean isObject);
+	public abstract JSONObject getJSONForecast(String name, boolean isObject) throws IdNotFoundException;
 
 	/**
 	 * Utilizza getJSONForecast per prendere le informazioni di

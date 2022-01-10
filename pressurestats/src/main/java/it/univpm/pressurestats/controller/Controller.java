@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
 import it.univpm.pressurestats.exception.DayNotFoundException;
+import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
@@ -55,16 +56,17 @@ public class Controller {
 	 * @return le previsioni meteo su pressione e visibilità della città richiesta e
 	 *         le informazioni generali sulla città.
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
+	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
 	 */
 	@GetMapping(value = "/current")
-	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException {
+	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException, IdNotFoundException {
 		// TODO Portata all'esterno il metodo saveToFile per evitare ripetizioni in
 		// saveToFileHourly (vedere getJSONForecast)
 		
 		try {
 			service.saveToFile((service.getJSONForecast(id, true)));
 			return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (ItalianCityNotFoundException e1){
+		} catch (IdNotFoundException | ItalianCityNotFoundException e1){
 			return new ResponseEntity<>(e1.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -120,11 +122,12 @@ public class Controller {
 	 *                   minuti, 2 ogni 2 ore)
 	 * @return Un messaggio di riepilogo con la frequenza e la prima misurazione
 	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa
+	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
 	 * 
 	 */
 	@GetMapping(value = "/hourlySave")
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
-			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws WrongMultiplyException {
+			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws WrongMultiplyException, IdNotFoundException {
 		String msg;
 		try {
 
@@ -136,7 +139,7 @@ public class Controller {
 
 			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
 					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (ItalianCityNotFoundException | WrongMultiplyException e2) {
+		} catch (IdNotFoundException |ItalianCityNotFoundException | WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}

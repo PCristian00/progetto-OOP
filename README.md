@@ -91,6 +91,8 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 </ul>
   <ul><li><a href="#test">Test</a></li>
   </ul>
+<ul><li><a href="#documentazione">Documentazione</a></li>
+  </ul>
 </li>    
 
   <!--<li><a href="#roadmap">Roadmap</a></li>-->
@@ -425,6 +427,11 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.tx
 
 ### Test
 Inserire qui test con immagini.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Documentazione
+Il programma è completamente documentato in Javadoc [qui](/pressurestats/doc).<p>
+Ulteriore documentazione con diagrammi UML è disponibile [qui](/UMLExports/html-docs).
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 <!--## Roadmap

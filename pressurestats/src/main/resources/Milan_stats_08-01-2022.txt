@@ -1,0 +1,3 @@
+{"date":"08-01-2022","maxMin":{"visibilityMin":200,"visibilityMax":10000,"pressureMax":1016,"pressureMin":1007},"average":{"visibilityAvg":3792,"pressureAvg":1011},"city":"Milan","variance":{"visibilityVariance":18438336,"pressureVariance":5}}
+{"date":"08-01-2022","maxMin":{"visibilityMin":200,"visibilityMax":10000,"pressureMax":1016,"pressureMin":1007},"average":{"visibilityAvg":3792,"pressureAvg":1011},"city":"Milan","variance":{"visibilityVariance":18438336,"pressureVariance":5}}
+{"date":"08-01-2022","maxMin":{"visibilityMin":200,"visibilityMax":10000,"pressureMax":1016,"pressureMin":1007},"average":{"visibilityAvg":3792,"pressureAvg":1011},"city":"Milan","variance":{"visibilityVariance":18438336,"pressureVariance":5}}

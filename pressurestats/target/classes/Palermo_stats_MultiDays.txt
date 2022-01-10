@@ -1,0 +1,2 @@
+{"date":"From 07-01-2022 to 10-01-2022","maxMin":{"visibilityMin":5922,"visibilityMax":10000,"pressureMax":1008,"pressureMin":991},"average":{"visibilityAvg":9869,"pressureAvg":1002},"city":"Palermo","variance":{"visibilityVariance":459197,"pressureVariance":25}}
+{"date":"From 07-01-2022 to 10-01-2022","maxMin":{"visibilityMin":5922,"visibilityMax":10000,"pressureMax":1008,"pressureMin":991},"average":{"visibilityAvg":9869,"pressureAvg":1002},"city":"Palermo","variance":{"visibilityVariance":459197,"pressureVariance":25}}

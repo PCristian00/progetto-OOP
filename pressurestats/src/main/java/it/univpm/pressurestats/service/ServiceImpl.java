@@ -170,7 +170,6 @@ public JSONObject toJSON(City city) {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 	
 	@Override

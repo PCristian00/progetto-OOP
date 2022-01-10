@@ -28,9 +28,11 @@ import it.univpm.pressurestats.statistics.Statistics;
 @RestController
 
 public class Controller {
+	
 	/**
 	 * Interfaccia Service usata per le operazioni di raccolta e salvataggio dati.
-	 */	
+	 */
+	@Autowired
 	Service service;
 	/**
 	 * Oggetto Statitstics usata per le operazioni di generazione e salvataggio statistiche.
@@ -38,8 +40,7 @@ public class Controller {
 	Statistics statistics;
 	/**
 	 * Costruttore dell'oggetto.
-	 */
-	@Autowired	
+	 */	
 	public Controller() {
 		
 	}
@@ -133,7 +134,7 @@ public class Controller {
 
 			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
 					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (ItalianCityNotFoundException |WrongMultiplyException e2) {
+		} catch (ItalianCityNotFoundException | WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}

@@ -20,60 +20,92 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/PCristian00/progetto-OOP">
-    <img src="logo.png" alt="Logo" width="80" height="80">
-  </a>
+<a href="https://github.com/PCristian00/progetto-OOP">
+<img src="images/logo.png" alt="Logo" width="80" height="80">
+</a>
 
 <h3 align="center">PressureStats</h3>
 
-  <p align="center">
-    Applicazione Java che calcola statistiche di visibilità e pressione di una città data.
-    <br />
-    <a href="https://github.com/PCristian00/progetto-OOP/"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/PCristian00/progetto-OOP">View Demo</a>
-    ·
-    <a href="https://github.com/PCristian00/progetto-OOP/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/PCristian00/progetto-OOP/issues">Request Feature</a>
-  </p>
+<p align="center">
+Applicazione Java che calcola statistiche di visibilità e pressione di una città data.
+<br />
+<a href="https://github.com/PCristian00/progetto-OOP/"><strong>Explore the docs »</strong></a>
+<br />
+<br />
+<a href="https://github.com/PCristian00/progetto-OOP">View Demo</a>
+·
+<a href="https://github.com/PCristian00/progetto-OOP/issues">Report Bug</a>
+·
+<a href="https://github.com/PCristian00/progetto-OOP/issues">Request Feature</a>
+</p>
 </div>
 
 
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>    
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-      <ul>
-        <li><a href="#uml">UML</a></li>
-      </ul>
-    </li>    
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-       <!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#usage">Usage</a>
-      <ul>
-        <li><a href="#rotte">Rotte</a></li>
-      </ul>
-    </li>    
-    <!--<li><a href="#roadmap">Roadmap</a></li>-->
-    <!-- <li><a href="#contributing">Contributing</a></li>-->
-    <li><a href="#license">License</a></li>
-    <!--<li><a href="#contact">Contact</a></li>-->
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+<summary>Table of Contents</summary>
+
+<ol>   
+<li>
+<a href="#about-the-project">About The Project</a>
+<ul>
+<li><a href="#built-with">Built With</a></li>
+</ul>
+</l1>
+  
+<li>
+<a href="#uml">UML</a>
+<ul>
+<li><a href="#use-case">Use Case</a></li>
+</ul>
+<ul>
+<li><a href="#package-controller">Package Controller</a></li>
+</ul>
+<ul>
+<li><a href="#package-model">Package Model</a></li>
+</ul>
+<ul>
+<li><a href="#package-service">Package Service</a></li>
+</ul>
+<ul>
+<li><a href="#package-statistics">Package Statistics</a></li>
+</ul>
+<ul>
+<li><a href="#package-exception">Package Exception</a></li>
+</ul>
+</li>
+  
+<li>
+<a href="#getting-started">Getting Started</a>
+<ul>
+<!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
+<li><a href="#installation">Installation</a></li>
+</ul>
+</li>
+  
+<li>
+<a href="#usage">Usage</a>
+<ul>
+<li><a href="#rotte">Rotte</a></li>
+</ul>
+  <ul><li><a href="#test">Test</a></li>
+  </ul>
+<ul><li><a href="#documentazione">Documentazione</a></li>
+  </ul>
+</li>    
+
+  <!--<li><a href="#roadmap">Roadmap</a></li>-->
+
+  <!-- <li><a href="#contributing">Contributing</a></li>-->
+
+  <li><a href="#license">License</a></li>
+
+  <!--<li><a href="#contact">Contact</a></li>-->
+
+  <li><a href="#acknowledgments">Acknowledgments</a></li>
+
+</ol>
 </details>
 
 
@@ -85,18 +117,19 @@
 Progetto Programmazione ad Oggetti
 di [Settimi Diego](https://github.com/Diego7imi) e [Pietroniro Cristian](https://github.com/PCristian00)
 
-PressureStats permette di salvare dati su pressione e visibilità di una città su un file di testo.<p>
-Tale salvataggio viene eseguito una sola volta oppure in automatico ogni ora.<p>
-I dati raccolti possono poi essere elaborati per ricavare statistiche su pressione e visibilità della città:
+PressureStats permette di salvare dati su <b>pressione</b> e <b>visibilità</b> di una città su un file di testo.<p>
+Tale salvataggio viene eseguito una sola volta oppure in automatico ogni tot ore (frequenza scelta dall'utente).<p>
+  I dati raccolti possono poi essere elaborati per ricavare <b>statistiche</b> su <b>pressione</b> e <b>visibilità</b> della città:
 * Pressione massima, minima, media
 * Visibilità massima, minima, media
 * Varianza Pressione
 * Varianza Visibilità
-
-Le statistiche possono quindi essere mostrate in vari filtri:
-* Giornaliere: Mostra le statistiche di un intero giorno scelto dall'utente
-* Più giorni: Mostra le statistiche per una fascia di giorno scelti dall'utente
-* Orarie: Mostra le statistiche comprese tra due ore (di un giorno) scelte dall'utente.
+<p>
+Le <b>statistiche</b> possono quindi essere mostrate in vari <b>filtri</b>:
+  
+  * <b>Giornaliere</b>: Mostra le statistiche di un intero giorno scelto dall'utente
+  * <b>Più giorni</b>: Mostra le statistiche per una fascia di giorno scelti dall'utente
+  * <b>Orarie</b>: Mostra le statistiche comprese tra due ore (di un giorno) scelte dall'utente.
 
 
 <!--
@@ -110,19 +143,53 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * [Spring Initializr](https://start.spring.io/)
 * [Eclipse IDE](https://www.eclipse.org/)
+* [Postman](https://www.postman.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### UML
-<img src="controller_pkg.svg" alt="controller_pkg">
-<img src="model_pkg.svg" alt="model_pkg">
-<img src="service_pkg.svg" alt="service_pkg">
-<img src="statistics_pkg.svg" alt="statistics_pkg">
-<img src="exception_pkg.svg" alt="exception_pkg">
-<img src="use_case.svg" alt="use_case">
-
+## UML
+### Use Case
+<img src="images/use_case.svg" alt="use_case"><p>
+  Diagramma dei casi d'uso.<p>
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Package Controller
+<img src="images/controller_pkg.svg" alt="controller_pkg"><p><p>
+  Contiene il <b>Controller</b>, necessario per gestire le richieste degli utenti<p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Package Model
+<img src="images/model_pkg.svg" alt="model_pkg"><p>
+  Contiene tutta la parte di modellazione delle classi.<p>
+    La classe <b>City</b> contiene le proprietà della città e le relative previsioni.<p>
+      La classe <b>Forecast</b> contiene i dati di pressione, visibilità e la data della loro misurazione.<p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Package Service
+<img src="images/service_pkg.svg" alt="service_pkg"><p>
+  Contiene i servizi e le operazioni usate per raccogliere, salvare e mostrare i dati.<p>
+  L'interfaccia Service contiene i metodi implementati da ServiceImpl e richiamati dal Controller.<p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Package Statistics
+<img src="images/statistics_pkg.svg" alt="statistics_pkg"><p>
+  Contiene le statistiche e metodi per filtrarle e presentarle.<p>
+    <b>Statistics</b> permette di calcolare e salvare le statistiche.<p>
+      <b>Filters</b> filtra le statistiche calcolate, mostrando statistiche del giorno (intero o solo alcune ore) o di più giorni.<p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Package Exception
+<img src="images/exception_pkg.svg" alt="exception_pkg"><p>
+  Contiene le eccezioni personalizzate di PressureStats.<p>
+    <b>CityStatisticsNotFoundException</b>: Eccezione lanciata se le statistiche della città non sono state trovate.<p>
+  <b>DayNotFoundException</b>: Eccezione lanciata se il giorno non è stato trovato.<p>
+    <b>ItalianCityNotFoundException</b>: Eccezione lanciata se la città non è italiana.<p>
+  <b>WrongHoursPeriodException</b>: Eccezione lanciata se il range orario non è corretto.<p>
+    <b>WrongMultiplyException</b>: Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).<p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -135,21 +202,21 @@ To get a local copy up and running follow these simple example steps.
 <!--### Prerequisites
 This is an example of how to list things you need to use the software and how to install them.
 * npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
 -->
 ### Installation
 
 1. Get a free API Key at [https://openweathermap.org/api](https://openweathermap.org/api)
 2. Clone the repo
-   ```sh
-   git clone https://github.com/PCristian00/progetto-OOP.git
-   ```
+```sh
+git clone https://github.com/PCristian00/progetto-OOP.git
+```
 3. Enter your API in `ServiceImpl.java`
-   ```java
-   private String apiKey = 'ENTER YOUR API';
-   ```
+```java
+private String apiKey = 'ENTER YOUR API';
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -157,13 +224,13 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-<!--
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [Postman](https://www.postman.com/) o applicazioni simili.
+1. Avviare il programma come applicazione SpringBoot
+2. Da Postman, fare una chiamata di tipo get con la rotta scelta (vedi tabella)
+3. Consultare i dati salvati in /src/main/resources/
+4. Terminare il programma
 <p align="right">(<a href="#top">back to top</a>)</p>
--->
+
 ### Rotte
 Le rotte definite sono le seguenti:
 
@@ -178,13 +245,201 @@ N° | Tipo | Rotta | Descrizione
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="1"></a>
+### /current
+
+```java
+@GetMapping("/current")
+ResponseEntity<Object> getForecast(@RequestParam(name="id",defaultValue="3169070") String id)
+throws ItalianCityNotFoundException 
+ ```
+Se la città è italiana, restituisce su schermo la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.<p>
+  ```json
+  {
+    "id": 3169070,
+    "name": "Rome",
+    "country": "IT",
+    "lat": 41.8947,
+    "lon": 12.4839,
+    "weather": [
+        {
+            "pressure": 999,
+            "visibility": 10000,
+            "dt": 1641804066,
+            "date": "10-01-2022 09:41:06"
+        }
+    ]
+}
+  ```
+La misurazione viene inoltre salvata su un file chiamato `CITYNAME_data.txt`
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="2"></a>
+### /hourlySave
+
+```java
+@GetMapping(value = "/hourlySave")
+public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
+  @RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
+  throws WrongMultiplyException
+ ```
+Se la città è italiana e il [Multiplier](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo e la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.<p>
+  ```txt
+Il salvataggio avverrà ogni ora
+id=3169070, name=Rome, country=IT, lat=41.8947, lon=12.4839, weather=[pressure=999, visibility=10000, dt=1641805793, date=10-01-2022 10:09:53]
+  ```
+La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'utente tramite il [Multiplier](#m) su un file chiamato `CITYNAME_data.txt`
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="3"></a>
+### /multiSave
+```java
+@GetMapping(value = "/multiSave")
+public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
+  throws ItalianCityNotFoundException, WrongMultiplyException
+ ```
+Se la città è italiana e il [Multiplier](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo con la frequenza scelta.<p>
+  ```txt
+Il salvataggio avverrà ogni ora
+Ricontrollare file finali, lasciare in esecuzione applicazione.
+  ```
+La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'utente tramite il [Multiplier](#m) su 5 file diversi (uno per ogni città) chiamato `CITYNAME_data.txt`.<p>
+ Questa funzione è stata usata durante lo sviluppo per scaricare dati per più città contemporaneamente (Ancona, Milano, Napoli, Palermo, Roma).
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="m"></a>
+### Utilizzo del Multiplier
+Per le rotte [2](#2) e [3](#3) è possibile modificare la frequenza di salvataggio attraverso la variabile <b>Multiplier</b>.<p>
+Il valore assegnato a Multiplier viene moltiplicato ad una costante Hour che contiene il valore di 1 ora espresso in millisecondi.<p>
+Sono ammessi tutti i valori superiori a `0.02` ma è consigliabile inserire un valore di almeno `0.17` (corrispondente a circa 10 minuti) in quanto OpenWeather aggiorna i propri dati con questa frequenza con un'API gratuita.<p>
+Di seguito sono riportati esempi di modifiche di frequenza:
+  
+Valore | Frequenza di salvataggio |
+:----: | :----------: |
+  `0.02` | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) |
+ `0.1` | ogni 6 minuti | 
+`0.17` | ogni 10 minuti circa | 
+`0.5` | ogni 30 minuti |
+`1` | ogni ora (valore default) |
+`1.5` | ogni ora e 30 minuti |
+`3` | ogni 3 ore |
+`10` | ogni 10 ore |
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="4"></a>
+### /oneDay
+```java
+@GetMapping(value="/oneDay")
+public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Rome") String city,
+	@RequestParam(name = "date") String date)
+ ```
+Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta nella data scelta.<p>
+  ```json
+  {
+    "date": "09-01-2022",
+    "maxMin": {
+        "visibilityMin": 3500,
+        "visibilityMax": 10000,
+        "pressureMax": 1010,
+        "pressureMin": 998
+    },
+    "average": {
+        "visibilityAvg": 9065,
+        "pressureAvg": 1003
+    },
+    "city": "Rome",
+    "variance": {
+        "visibilityVariance": 3528355,
+        "pressureVariance": 24
+    }
+}
+  ```
+La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.txt`
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="5"></a>
+### /moreDays
+```java
+@GetMapping(value="/moreDays")
+public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
+			@RequestParam(name = "days") int days)
+ ```
+Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate su un numero di giorni scelto dall'utente.<p>
+  ERRATO / INCOMPLETO. MODIFICARE <p>
+  ```json
+  {
+    "date": null,
+    "maxMin": {
+        "visibilityMin": 3500,
+        "visibilityMax": 10000,
+        "pressureMax": 1014,
+        "pressureMin": 995
+    },
+    "average": {
+        "visibilityAvg": 9688,
+        "pressureAvg": 1007
+    },
+    "city": "Rome",
+    "variance": {
+        "visibilityVariance": 1370300,
+        "pressureVariance": 33
+    }
+}
+  ```
+La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.txt`
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="6"></a>
+### /hourly
+```java
+@GetMapping(value = "/hourly")
+public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Rome") String city,
+			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
+			@RequestParam(name = "to") int to) {
+ ```
+Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate sulla fascia oraria scelta di un giorno.<p>
+  ERRATO / INCOMPLETO. MODIFICARE <p>
+  ```json
+  {
+    "date": "09-01-2022",
+    "maxMin": {
+        "visibilityMin": 10000,
+        "visibilityMax": 10000,
+        "pressureMax": 1004,
+        "pressureMin": 1000
+    },
+    "average": {
+        "visibilityAvg": 10000,
+        "pressureAvg": 1002
+    },
+    "city": "Rome",
+    "variance": {
+        "visibilityVariance": 0,
+        "pressureVariance": 2
+    }
+}
+  ```
+La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.txt`
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Test
+Inserire qui test con immagini.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Documentazione
+Il programma è completamente documentato in Javadoc [qui](/pressurestats/doc).<p>
+Ulteriore documentazione con diagrammi UML è disponibile [qui](https://github.com/PCristian00/progetto-OOP/tree/main/UML%20Exports).
+<p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 <!--## Roadmap
 <!--
 - [] Feature 1
 - [] Feature 2
 - [] Feature 3
-    - [] Nested Feature
+- [] Nested Feature
 
 See the [open issues](https://github.com/PCristian00/progetto-OOP/issues) for a full list of proposed features (and known issues).
 

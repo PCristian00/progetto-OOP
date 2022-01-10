@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import it.univpm.pressurestats.controller.Controller;
+import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 
@@ -23,7 +24,7 @@ class TestController {
 	}
 
 	@Test
-	void testController() throws ItalianCityNotFoundException, WrongMultiplyException {
+	void testController() throws ItalianCityNotFoundException, WrongMultiplyException, IdNotFoundException {
 		assertNotNull(c.getForecast("3169070"));
 		assertNotNull(c.getStatisticsHourly("Rome", "07-01-2022", 0, 7));
 		assertNotNull(c.getStatisticsMoreDays("Palermo", 3));

@@ -28,6 +28,13 @@ import it.univpm.pressurestats.statistics.Statistics;
 @RestController
 
 public class Controller {
+
+	/**
+	 * Costruttore dell'oggetto.
+	 */	
+	public Controller() {
+		
+	}
 	
 	/**
 	 * Interfaccia Service usata per le operazioni di raccolta e salvataggio dati.
@@ -38,12 +45,6 @@ public class Controller {
 	 * Oggetto Statitstics usata per le operazioni di generazione e salvataggio statistiche.
 	 */
 	Statistics statistics;
-	/**
-	 * Costruttore dell'oggetto.
-	 */	
-	public Controller() {
-		
-	}
 	
 	/**
 	 * Mostra le informazioni attuali su pressione e
@@ -59,6 +60,7 @@ public class Controller {
 	public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id) throws ItalianCityNotFoundException {
 		// TODO Portata all'esterno il metodo saveToFile per evitare ripetizioni in
 		// saveToFileHourly (vedere getJSONForecast)
+		
 		try {
 			service.saveToFile((service.getJSONForecast(id, true)));
 			return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);

@@ -1,1 +1,0 @@
-{"country":"IT","name":"Bari","weather":[{"pressure":1001,"visibility":10000,"dt":1641739240,"date":"09-01-2022 15:40:40"}],"lon":16.8512,"id":6542001,"lat":41.1177}

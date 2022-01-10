@@ -241,9 +241,9 @@ N° | Tipo | Rotta | Descrizione
 [1](#1) | ` GET ` | `/current?id=6542126` | *Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data*
 [2](#2) | ` GET ` | `/hourlySave?id=6542126&multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su un file i  dati attuali di pressione e visibilità di una città data.*
 [3](#3) | ` GET ` | `/multiSave?multiplier=1` | *Finché è in esecuzione, salva ogni tot ore su dei file i  dati attuali di pressione e visibilità di alcune città selezionate.*
-[4](#4) | ` GET ` | `/oneDay?city=Ancona&?date=05-01-2022` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.*
-[5](#5) | ` GET ` | `/moreDays?city=Ancona&?days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per i giorni scelti.*
-[6](#6) | ` GET ` | `/hourly?city=Ancona&?date=05-01-2022&from=10&to=13` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
+[4](#4) | ` GET ` | `/oneDay?city=Rome&date=10-01-2022` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.*
+[5](#5) | ` GET ` | `/moreDays?city=Rome&days=3` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate dal giorno attuale a tot giorni passati.*
+[6](#6) | ` GET ` | `/hourly?city=Rome&date=10-01-2022&from=9&to=12` | *Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.*
 
 ### Perché viene usato ID
 Le rotte [1](#1), [2](#2) e [3](#3) richiedono l'`ID` della città per funzionare.
@@ -269,7 +269,9 @@ ResponseEntity<Object> getForecast(@RequestParam(name="id",defaultValue="3169070
 throws ItalianCityNotFoundException 
  ```
 Se la città è italiana, restituisce su schermo la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.
-
+```txt
+/current?id=6542126
+```
   ```json
   {
     "id": 3169070,
@@ -301,7 +303,9 @@ public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaul
   throws WrongMultiplyException
  ```
 Se la città è italiana e il [Multiplier](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo e la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.
-
+```txt
+localhost:8080/hourlySave?id=3169070&mutliplier=1
+```
   ```txt
 Il salvataggio avverrà ogni ora
 id=3169070, name=Rome, country=IT, lat=41.8947, lon=12.4839, weather=[pressure=999, visibility=10000, dt=1641805793, date=10-01-2022 10:09:53]
@@ -311,12 +315,17 @@ La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'u
 
 <a name="3"></a>
 ### /multiSave
+
 ```java
 @GetMapping(value = "/multiSave")
 public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
   throws ItalianCityNotFoundException, WrongMultiplyException
  ```
 Se la città è italiana e il [Multiplier](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo con la frequenza scelta.
+
+```txt
+localhost:8080/multiSave?multiplier=1
+```
 
   ```txt
 Il salvataggio avverrà ogni ora
@@ -338,7 +347,7 @@ Sono ammessi tutti i valori superiori a `0.02` ma è consigliabile inserire un v
 Di seguito sono riportati esempi di modifiche di frequenza:
   
 Valore | Frequenza di salvataggio |
-:-:	| :-:|
+:--:	| :--:|
   `0.02` | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) |
  `0.1` | ogni 6 minuti | 
 `0.17` | ogni 10 minuti circa | 
@@ -357,24 +366,26 @@ public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", d
 	@RequestParam(name = "date") String date)
  ```
 Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta nella data scelta.
-
+```txt
+localhost:8080/oneDay?city=Rome&date=10-01-2022
+```
   ```json
   {
-    "date": "09-01-2022",
+    "date": "10-01-2022",
     "maxMin": {
-        "visibilityMin": 3500,
+        "visibilityMin": 10000,
         "visibilityMax": 10000,
-        "pressureMax": 1010,
+        "pressureMax": 1001,
         "pressureMin": 998
     },
     "average": {
-        "visibilityAvg": 9065,
-        "pressureAvg": 1003
+        "visibilityAvg": 10000,
+        "pressureAvg": 999
     },
     "city": "Rome",
     "variance": {
-        "visibilityVariance": 3528355,
-        "pressureVariance": 24
+        "visibilityVariance": 0,
+        "pressureVariance": 1
     }
 }
   ```
@@ -389,31 +400,38 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.tx
 public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
 			@RequestParam(name = "days") int days)
  ```
-Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate su un numero di giorni scelto dall'utente.
+Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta.
 
-  ERRATO / INCOMPLETO. MODIFICARE
-  
-  ```json
+Le statistiche sono calcolate dalle misurazioni giornaliere precedenti alla data attuale.
+
+Il parametro `days` indica quante misurazioni passate devono essere comprese nella statistica.
+
+In questo esempio, la data attuale è `10-01-2022`, quindi se il valore di `days` è `3` le misurazioni arriveranno fino al giorno `07-01-2022`.
+```txt
+localhost:8080/moreDays?city=Rome&days=3
+```
+
+   ```json
   {
-    "date": null,
+    "date": "From 07-01-2022 to 10-01-2022",
     "maxMin": {
         "visibilityMin": 3500,
         "visibilityMax": 10000,
-        "pressureMax": 1014,
-        "pressureMin": 995
+        "pressureMax": 1012,
+        "pressureMin": 998
     },
     "average": {
-        "visibilityAvg": 9688,
-        "pressureAvg": 1007
+        "visibilityAvg": 9741,
+        "pressureAvg": 1005
     },
     "city": "Rome",
     "variance": {
-        "visibilityVariance": 1370300,
-        "pressureVariance": 33
+        "visibilityVariance": 1294563,
+        "pressureVariance": 29
     }
 }
   ```
-La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.txt`
+La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_MultiDays.txt`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -427,25 +445,27 @@ public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", d
  ```
 Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate sulla fascia oraria scelta di un giorno.
 
-  ERRATO / INCOMPLETO. MODIFICARE
-  
+```txt
+localhost:8080/hourly?city=Rome&date=10-01-2022&from=9&to=12
+```
+
   ```json
   {
-    "date": "09-01-2022",
+    "date": "10-01-2022 from 9:00 to 12:00",
     "maxMin": {
         "visibilityMin": 10000,
         "visibilityMax": 10000,
-        "pressureMax": 1004,
-        "pressureMin": 1000
+        "pressureMax": 1000,
+        "pressureMin": 999
     },
     "average": {
         "visibilityAvg": 10000,
-        "pressureAvg": 1002
+        "pressureAvg": 999
     },
     "city": "Rome",
     "variance": {
         "visibilityVariance": 0,
-        "pressureVariance": 2
+        "pressureVariance": 0
     }
 }
   ```

@@ -191,7 +191,7 @@ public class Controller {
 	//TODO Scrivere su json da che ora a che ora
 	
 	/**
-	 * Restituisce e salva le statistiche per più ore di un giorno di una città.
+	 * Restituisce e salva le statistiche per più ore di un giorno di una città. 
 	 * 
 	 * @param city rappresenta la città di cui si richiedono le statistiche. Valore
 	 *             di default: Rome,IT

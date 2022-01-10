@@ -52,7 +52,7 @@ public class Statistics{
 		od = new Filters();
 		stats = od.oneDayWeather(city, day);
 		this.date = day;
-		this.city = city; 
+		this.city = city;
 	}
 	
 	/**

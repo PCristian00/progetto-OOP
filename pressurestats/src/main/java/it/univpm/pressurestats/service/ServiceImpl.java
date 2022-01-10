@@ -58,7 +58,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	public static String f_type="_data.txt";
 	
 	@Override	
-public JSONObject toJSON(City city) {
+	public JSONObject toJSON(City city) {
 		
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		try {

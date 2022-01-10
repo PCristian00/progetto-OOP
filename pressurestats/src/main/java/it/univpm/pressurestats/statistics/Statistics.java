@@ -3,7 +3,9 @@ package it.univpm.pressurestats.statistics;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -68,7 +70,7 @@ public class Statistics{
 	{
 		od = new Filters();
 		stats = od.hourly(city, day, from, to);
-		this.date = day;
+		this.date = day + " from " + from + ":00 to " + to + ":00";
 		this.city = city;
 	}
 	
@@ -84,6 +86,12 @@ public class Statistics{
 		od = new Filters();
 		stats = od.moreDayWeather(city, numDays);
 		this.city = city;
+		Calendar cal = Calendar.getInstance();
+		Calendar cal2 = Calendar.getInstance();
+		cal.add(Calendar.DATE, -numDays);
+		cal2.add(Calendar.DATE, -0);
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		this.date = "From " + dateFormat.format(cal.getTime()) + " to " + dateFormat.format(cal2.getTime());
 	}
 	
 	/**
@@ -194,7 +202,14 @@ public class Statistics{
 	 */
 	public void saveToFile(JSONObject object) {
 
-		String fileName = this.city+ "_stats_"+this.date;
+		String fileName = "";
+		
+		if (this.date.charAt(0) == 'F') {
+			fileName = this.city+ "_stats_MultiDays";
+		}
+		else {
+			fileName = this.city+ "_stats_"+this.date.substring(0,10);
+		}
 		// Il file viene salvato nella cartella /src/main/resources/
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
 	

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
+import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.*;
@@ -75,7 +76,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 
 	@Override
-	public JSONObject getJSONForecast(String id, boolean isObject) {
+	public JSONObject getJSONForecast(String id, boolean isObject) throws IdNotFoundException {
 		JSONArray ja = new JSONArray();
 		JSONObject jo = new JSONObject();
 		String url = "https://api.openweathermap.org/data/2.5/weather?id=" + id + "&appid=" + apiKey;
@@ -105,9 +106,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 					jo = (JSONObject) ja.get(i);
 				}
 			}
-
+//TODO funziona ma migliorare
 		} catch (IOException | ParseException e) {
-			e.printStackTrace();
+			throw new IdNotFoundException("ID non trovato");
+			//e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -180,7 +182,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			public void run(){						
 			try {
 				saveToFile(getJSONForecast(id, true));
-			} catch (ItalianCityNotFoundException e) {
+			} catch (IdNotFoundException|ItalianCityNotFoundException e) {
 				e.printStackTrace();
 			}
 				}	

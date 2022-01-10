@@ -110,13 +110,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		} catch (IOException | ParseException e) {
 			throw new IdNotFoundException("ID non trovato");
 			//e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		// TODO rimossa stampa singola temporaneamente: il metodo è stato portato
-		// all'esterno
-		// saveToFile(jo);
+		} 
 
 		return jo;
 	}

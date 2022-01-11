@@ -75,4 +75,10 @@ public interface Service {
 	 * @return JSONArray contenente i dati letti
 	 */
 	public abstract JSONArray readFile(String city);
+	/**
+	 * A partire dal multiplier, prepara una stringa contenente la frequenza di aggiornamento del salvataggio.
+	 * @param multiplier
+	 * @return un messaggio contenente la frequenza di aggiornamento
+	 */
+	public String saveMessage(double multiplier);
 }

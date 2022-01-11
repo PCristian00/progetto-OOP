@@ -57,7 +57,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	 * 
 	 */
 	public static String f_type="_data.txt";
-	
+	/**
+	 * Ora in millisecondi, costante
+	 */
+	static final long hour = 3600000;
 	@Override	
 	public JSONObject toJSON(City city) {
 		
@@ -181,7 +184,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			}
 				}	
 		};
-		final long hour = 3600000; // ora in millisecondi
+		
 		Timer timer = new Timer();
 		timer.schedule(tt, 0, (long) (multiplier*hour)); // ogni ora
 	}
@@ -203,4 +206,42 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		}
 		return ja;
 	}
+
+
+public String saveMessage(double multiplier) {
+	/**
+	 * Ora in millisecondi (costante) moltiplicata per l'input dell'utente
+	 */
+	long ms=(long) (multiplier*hour);
+	/**
+	 * Ore
+	 */
+	int h=0;
+	/**
+	 * Minuti
+	 */
+	int m=0;
+	/**
+	 * Secondi
+	 */
+	int s=0;
+	/**
+	 * Parte iniziale del messaggio
+	 */
+	String msg="Il salvataggio avverrà ogni ";
+	if (multiplier != 1) {
+
+		s=(int)(ms/1000)%60;
+		m=(int)(ms/(1000*60))%60;
+		h=(int)(ms/(1000*60*60))%60;
+		if(h!=0) msg+=h+" h ";
+		if(m!=0) msg+=m+" m ";
+		if(s!=0) msg+=s+" s ";
+	}
+		
+	else
+		msg += "ora.";
+	return msg+"\n";
+	
+}
 }

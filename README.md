@@ -493,14 +493,6 @@ localhost:8080/hourly?city=Rome&date=10-01-2022&from=9&to=12
 La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.txt`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Test
-Inserire qui test con immagini.
-
-Riga 2
-
-Riga 3
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### Documentazione
 Il programma è completamente documentato in Javadoc [qui](/pressurestats/doc).
 

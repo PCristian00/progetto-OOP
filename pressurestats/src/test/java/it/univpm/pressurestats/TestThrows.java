@@ -8,13 +8,14 @@ import org.junit.jupiter.api.Test;
 
 import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
 import it.univpm.pressurestats.exception.DayNotFoundException;
+import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
 import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.service.ServiceImpl;
 import it.univpm.pressurestats.statistics.Filters;
 /**
- * Classe che testa le eccezioni.
+ * Testa le eccezioni.
  * @author Pietroniro Cristian
  * @author Settimi Diego
  *
@@ -29,9 +30,16 @@ class TestThrows {
 	 */
 	private Filters f = null;
 	/**
+	 * Costruttore della classe.
+	 */
+	public TestThrows() {
+		
+	}
+	/**
 	 * Imposta le variabili per i test.
 	 * @throws Exception Eccezione
 	 */
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		c = new ServiceImpl();
@@ -54,5 +62,6 @@ class TestThrows {
 		assertThrows(DayNotFoundException.class, ()->f.oneDayWeather("Rome", "15-10-2022"));
 		assertThrows(WrongHoursPeriodException.class, ()->f.hourly("Rome", "07-01-2022", 10, 0));
 		assertThrows(WrongMultiplyException.class, ()->c.saveToFileHourly("3169070", 0.01));
+		assertThrows(IdNotFoundException.class,()->c.getJSONForecast("123", true));
 	}
 }

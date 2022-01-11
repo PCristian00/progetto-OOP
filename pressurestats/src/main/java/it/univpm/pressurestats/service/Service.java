@@ -9,7 +9,7 @@ import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.City;
 
 /**
- * Questa è l'interfaccia contenente i metodi implementati da ServiceImpl e richiamati
+ * Interfaccia contenente i metodi implementati da ServiceImpl e richiamati
  * dal Controller.
  * 
  * @author Pietroniro Cristian
@@ -77,7 +77,7 @@ public interface Service {
 	public abstract JSONArray readFile(String city);
 	/**
 	 * A partire dal multiplier, prepara una stringa contenente la frequenza di aggiornamento del salvataggio.
-	 * @param multiplier
+	 * @param multiplier moltiplicatore dell'ora per cambiare la frequenza di salvataggio. (Es. Impostando il valore a 2, il salvataggio avviene ogni 2 ore, a 0.5 ogni 30 minuti).
 	 * @return un messaggio contenente la frequenza di aggiornamento
 	 */
 	public String saveMessage(double multiplier);

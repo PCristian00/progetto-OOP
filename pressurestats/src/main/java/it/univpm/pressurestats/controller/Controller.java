@@ -19,7 +19,7 @@ import it.univpm.pressurestats.service.Service;
 import it.univpm.pressurestats.statistics.Statistics;
 
 /**
- * La classe Controller processa le varie richieste, prepara il modello e
+ * Processa le varie richieste, prepara il modello e
  * restituisce una risposta.
  * 
  * @author Pietroniro Cristian
@@ -31,7 +31,7 @@ import it.univpm.pressurestats.statistics.Statistics;
 public class Controller {
 
 	/**
-	 * Costruttore dell'oggetto.
+	 * Costruttore della classe.
 	 */	
 	public Controller() {
 		

@@ -67,6 +67,9 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 	</ul>
 <ul>
 	<li><a href="#package-exception">Package Exception</a></li>
+	</ul>
+<ul>
+	<li><a href="#test">Test</a></li>
 	</ul>  
 <li><a href="#getting-started">Getting Started</a></li>
 <ul>
@@ -74,9 +77,6 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 	<li><a href="#installation">Installation</a></li>
 </ul>  
 	<li><a href="#usage">Usage</a></li>
-<ul>
-	<li><a href="#rotte">Rotte</a></li>
-	</ul>
 <ul>
 	<li><a href="#test">Test</a></li>
 	</ul>
@@ -188,6 +188,25 @@ Contiene le eccezioni personalizzate di PressureStats.
 
 <b>WrongMultiplyException</b>: Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).
 
+<b>IdNotFoundException</b>: Eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Test
+<img src="images/test_pkg.svg" alt="test_pkg">
+
+L'applicazione offre la possibilità di testare la maggior parte dei metodi.
+  
+<b>TestController</b>: Testa le rotte del Controller.
+
+<b>TestModel</b>: Testa i modelli City e Forecast e i loro rispettivi metodi.
+
+<b>TestService</b>: Testa i metodi di Service.
+
+<b>TestStatistics</b>: Testa Statistics e Filters.
+
+<b>TestThrows</b>: Testa le eccezioni personalizzate di PressureStats.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -216,7 +235,7 @@ git clone https://github.com/PCristian00/progetto-OOP.git
 ```
 3. Enter your API in `ServiceImpl.java`
 ```java
-private String apiKey = 'ENTER YOUR API';
+private String apiKey = "ENTER YOUR API";
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -228,9 +247,10 @@ private String apiKey = 'ENTER YOUR API';
 Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [Postman](https://www.postman.com/) o applicazioni simili.
 1. Avviare il programma come applicazione SpringBoot
 2. Da Postman, fare una chiamata di tipo get con la rotta scelta (vedi tabella)
-3. Consultare i dati salvati in /src/main/resources/
+3. Consultare i dati (salvati in /src/main/resources/)
 4. Terminare il programma
 
+Nella cartella `/src/main/resources/` sono già presenti dati meteorologici 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Rotte
@@ -521,7 +541,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distribuito con licenza MIT. Vedi `LICENSE.txt` per maggiori informazioni.
+Distribuito con licenza MIT. Vedi [LICENSE](LICENSE) per maggiori informazioni.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

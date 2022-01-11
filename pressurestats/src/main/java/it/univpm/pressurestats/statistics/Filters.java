@@ -67,7 +67,7 @@ public class Filters {
 	}
 
 	/**
-	 * Prepara un JSONArray delle statistiche di più giorni.
+	 * Prepara un JSONArray delle statistiche filtrate dal giorno attuale a tot giorni passati.
 	 * 
 	 * @param city    città scelta
 	 * @param numDays numeri di giorni di cui filtrare statistiche

@@ -30,9 +30,6 @@ import it.univpm.pressurestats.model.*;
  */
 @Service
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
-
-	// TODO Chiave cambiata rispetto a main
-	
 	/**
 	 * API Key
 	 * 
@@ -77,7 +74,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			Map<String, Object> map = mapper.readValue(json, Map.class);
 			forecast = new JSONObject(map);
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return forecast;

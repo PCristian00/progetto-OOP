@@ -95,7 +95,7 @@ public class Statistics{
 	}
 	
 	/**
-	 * Metodo che calcola statistiche.
+	 * Calcola le statistiche.
 	 * 
 	 * 
 	 * 
@@ -194,7 +194,7 @@ public class Statistics{
 		return object;
 	}
 	/**
-	 * Metodo che salva le statistiche calcolate su un file di testo.
+	 * Salva le statistiche calcolate su un file di testo.
 	 * 
 	 * @param object JSONObject contenente i dati da salvare
 	 * 

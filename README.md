@@ -346,16 +346,16 @@ Sono ammessi tutti i valori superiori a `0.02` ma è consigliabile inserire un v
 
 Di seguito sono riportati esempi di modifiche di frequenza:
   
-Valore | Frequenza di salvataggio |
-:---:	| :---:|
-  `0.02` | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) |
- `0.1` | ogni 6 minuti | 
-`0.17` | ogni 10 minuti circa | 
-`0.5` | ogni 30 minuti |
-`1` | ogni ora (valore default) |
-`1.5` | ogni ora e 30 minuti |
-`3` | ogni 3 ore |
-`10` | ogni 10 ore |
+Valore | Frequenza di salvataggio 
+:---:	| :---:
+  `0.02` | ogni minuto circa (Valore non ammesso, lancia WrongMultiplyException) 
+ `0.1` | ogni 6 minuti 
+`0.17` | ogni 10 minuti circa
+`0.5` | ogni 30 minuti 
+`1` | ogni ora (valore default) 
+`1.5` | ogni ora e 30 minuti 
+`3` | ogni 3 ore 
+`10` | ogni 10 ore 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <a name="4"></a>

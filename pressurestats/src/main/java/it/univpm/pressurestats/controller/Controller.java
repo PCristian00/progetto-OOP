@@ -100,13 +100,14 @@ public class Controller {
 			service.saveToFileHourly("6542126",multiplier);			
 		//PALERMO		
 			service.saveToFileHourly("2523920",multiplier);
-			
+			/*
 			String msg;
 			if (multiplier != 1)
-				msg = multiplier*60 + " minuti";
+				msg =((int) Math.round(multiplier*60)) + " minuti circa";
 			else
 				msg = "ora";
-		return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\nRicontrollare file finali, lasciare in esecuzione applicazione.",HttpStatus.OK);
+				*/
+		return new ResponseEntity<>(service.saveMessage(multiplier)+ "Ricontrollare file finali, lasciare in esecuzione applicazione.",HttpStatus.OK);
 		}catch(ItalianCityNotFoundException | WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
 		}
@@ -128,16 +129,17 @@ public class Controller {
 	@GetMapping(value = "/hourlySave")
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
 			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier) throws WrongMultiplyException, IdNotFoundException {
-		String msg;
+		//String msg;
 		try {
 
 			service.saveToFileHourly(id, multiplier);
+			/*
 			if (multiplier != 1)
-				msg = multiplier*60 + " minuti";
+				msg = ((int) Math.round(multiplier*60)) + " minuti circa";
 			else
 				msg = "ora";
-
-			return new ResponseEntity<>("Il salvataggio avverrà ogni " + msg + "\n"
+*/
+			return new ResponseEntity<>(service.saveMessage(multiplier)
 					+ service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
 		} catch (IdNotFoundException |ItalianCityNotFoundException | WrongMultiplyException e2) {
 			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);

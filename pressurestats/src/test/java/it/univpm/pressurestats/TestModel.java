@@ -12,7 +12,7 @@ import it.univpm.pressurestats.model.City;
 import it.univpm.pressurestats.model.Forecast;
 import it.univpm.pressurestats.service.ServiceImpl;
 /**
- * Classe che testa i vari modelli.
+ * Testa i vari modelli.
  * @author Pietroniro Cristian
  * @author Settimi Diego
  *
@@ -23,13 +23,19 @@ class TestModel {
 	 */
 	private Vector<Forecast> f = null;
 	/**
-	 * Città usato per test.
+	 * Città usata per test.
 	 */
 	private City c = null;
 	/**
 	 * Implementazione di Service usata per test.
 	 */
 	private ServiceImpl s = null;
+	/**
+	 * Costruttore della classe.
+	 */
+	public TestModel() {
+		
+	}	
 	/**
 	 * Imposta le variabili per i test.
 	 * @throws Exception Eccezione
@@ -48,7 +54,7 @@ class TestModel {
 	void tearDown() throws Exception {
 	}
 	/**
-	 * Testa funzioni della classe City.
+	 * Testa metodi della classe City.
 	 */
 	@Test
 	void testCity() {
@@ -60,7 +66,7 @@ class TestModel {
 		assertNotNull(c.getWeather());
 	}
 	/**
-	 * Testa funzioni della classe Forecast.
+	 * Testa metodi della classe Forecast.
 	 */
 	@Test
 	void testForecast() {

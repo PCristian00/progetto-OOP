@@ -1,0 +1,1 @@
+{"date":"09-01-2022 from 9:00 to 12:00","maxMin":{"visibilityMin":10000,"visibilityMax":10000,"pressureMax":1004,"pressureMin":1000},"average":{"visibilityAvg":10000,"pressureAvg":1002},"city":"Rome","variance":{"visibilityVariance":0,"pressureVariance":2}}

@@ -22,7 +22,7 @@ import it.univpm.pressurestats.model.*;
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
 
 /**
- * Questa classe è l'implementazione dell'interfaccia Service. Contiene i
+ * Implementazione dell'interfaccia Service. Contiene i
  * metodi utilizzati dal controller.
  * 
  * @author Pietroniro Cristian
@@ -30,9 +30,6 @@ import it.univpm.pressurestats.model.*;
  */
 @Service
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
-
-	// TODO Chiave cambiata rispetto a main
-	
 	/**
 	 * API Key
 	 * 
@@ -61,6 +58,11 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	 * Ora in millisecondi, costante
 	 */
 	static final long hour = 3600000;
+	/**
+	 * Costruttore della classe
+	 */
+	public ServiceImpl() {
+	}
 	@Override	
 	public JSONObject toJSON(City city) {
 		
@@ -72,7 +74,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			Map<String, Object> map = mapper.readValue(json, Map.class);
 			forecast = new JSONObject(map);
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return forecast;
@@ -244,4 +246,6 @@ public String saveMessage(double multiplier) {
 	return msg+"\n";
 	
 }
+
+
 }

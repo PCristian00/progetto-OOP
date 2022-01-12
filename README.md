@@ -1,21 +1,26 @@
 <div id="top"></div>
 
-<!-- PROJECT SHIELDS -->
-<!--
+<!-- PROJECT SHIELDS
+
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 -->
+<div align="center">
+	
+[![Contributors][contributors-shield]][contributors-url]
+[![Stargazers][stars-shield]][stars-url]
+[![MIT License][license-shield]][license-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]	
+</div>
+
+
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -494,7 +499,7 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.tx
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Documentazione
-Il programma è completamente documentato in Javadoc [qui](/pressurestats/doc).
+Il programma è completamente documentato in Javadoc [qui](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/doc).
 
 Ulteriore documentazione con diagrammi UML è disponibile [qui](https://github.com/PCristian00/progetto-OOP/tree/main/UML%20Exports).
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -533,7 +538,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distribuito con licenza MIT. Vedi [`LICENSE`](LICENSE) per maggiori informazioni.
+Distribuito con licenza MIT. Vedi [`LICENSE`](https://github.com/PCristian00/progetto-OOP/blob/main/LICENSE) per maggiori informazioni.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -572,7 +577,7 @@ Project Link: [https://github.com/PCristian00/progetto-OOP](https://github.com/P
 [issues-shield]: https://img.shields.io/github/issues/PCristian00/progetto-OOP.svg?style=for-the-badge
 [issues-url]: https://github.com/PCristian00/progetto-OOP/issues
 [license-shield]: https://img.shields.io/github/license/PCristian00/progetto-OOP.svg?style=for-the-badge
-[license-url]: https://github.com/PCristian00/progetto-OOP/blob/master/LICENSE.txt
+[license-url]: https://github.com/PCristian00/progetto-OOP/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png

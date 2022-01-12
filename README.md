@@ -79,8 +79,7 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 	<li><a href="#install">Installazione</a></li>
 </ul>  
 	<li><a href="#usage">Utilizzo</a></li>
-	<ul><li><a href="#r">Rotte</a></ul>
-	
+	<ul><li><a href="#r">Rotte</a></ul>	
 <li><a href="#docs">Documentazione</a></li>
 <!--<li><a href="#roadmap">Roadmap</a></li>-->
 <!-- <li><a href="#contributing">Contributing</a></li>-->

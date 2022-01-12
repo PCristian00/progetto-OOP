@@ -8,18 +8,15 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
--->
-<div align="center">
-	
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
-[![MIT License][license-shield]][license-url]
+[![MIT Licenza][Licenza-shield]][Licenza-url]
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]	
 </div>
 
 
+-->
 
 
 <!-- PROJECT LOGO -->
@@ -48,54 +45,54 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 
 <!-- TABLE OF CONTENTS -->
 <details>
-<summary>Table of Contents</summary>
+<summary>Indice</summary>
 <ol>   
-<li><a href="#about-the-project">About The Project</a></li>
+<li><a href="#desc">Il progetto</a></li>
 <ul>
-	<li><a href="#built-with">Built With</a></li>
+	<li><a href="#built">Costruito con</a></li>
 	</ul>  
-<li><a href="#uml">UML</a></li>
+<li><a href="#uml">Diagrammi UML</a></li>
 <ul>
-	<li><a href="#use-case">Use Case</a></li>
+	<li><a href="#use-case">Casi d'uso</a></li>
 	</ul>
 <ul>
-	<li><a href="#package-controller">Package Controller</a></li>
+	<li><a href="#p-controller">Package Controller</a></li>
 	</ul>
 <ul>
-	<li><a href="#package-model">Package Model</a></li>
+	<li><a href="#p-model">Package Model</a></li>
 	</ul>
 <ul>
-	<li><a href="#package-service">Package Service</a></li>
+	<li><a href="#p-service">Package Service</a></li>
 	</ul>
 <ul>
-	<li><a href="#package-statistics">Package Statistics</a></li>
+	<li><a href="#p-statistics">Package Statistics</a></li>
 	</ul>
 <ul>
-	<li><a href="#package-exception">Package Exception</a></li>
+	<li><a href="#p-exception">Package Exception</a></li>
 	</ul>
 <ul>
-	<li><a href="#test">Test</a></li>
+	<li><a href="#tests">Test</a></li>
 	</ul>  
-<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#prep">Preparazione</a></li>
 <ul>
-<!-- <li><a href="#prerequisites">Prerequisites</a></li>-->
-	<li><a href="#installation">Installation</a></li>
+<li><a href="#prereq">Prerequisiti</a></li>
+	<li><a href="#install">Installazione</a></li>
 </ul>  
-	<li><a href="#usage">Usage</a></li>
-<ul>
-	<li><a href="#test">Test</a></li>
-	</ul>
-<li><a href="#documentazione">Documentazione</a></li>
+	<li><a href="#usage">Utilizzo</a></li>
+	<ul><li><a href="#r">Rotte</a></ul>
+	
+<li><a href="#docs">Documentazione</a></li>
 <!--<li><a href="#roadmap">Roadmap</a></li>-->
 <!-- <li><a href="#contributing">Contributing</a></li>-->
-<li><a href="#license">License</a></li>
+<li><a href="#license">Licenza</a></li>
 <!--<li><a href="#contact">Contact</a></li>-->
-<li><a href="#acknowledgments">Acknowledgments</a></li>
+<li><a href="#thanks">Ringraziamenti</a></li>
 	</ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- Il progetto -->
+<a name="desc"></a>
+## Il progetto
 
 ### PressureStats
 Progetto Programmazione ad Oggetti
@@ -121,7 +118,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 -->
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Built With
+<a name="built"></a>
+### Costruito con
 
 * [Spring Initializr](https://start.spring.io/)
 * [Eclipse IDE](https://www.eclipse.org/)
@@ -129,9 +127,17 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="uml"></a>
+## Diagrammi UML
 
-## UML
-### Use Case
+In questa sezione è possibile vedere i diagrammi UML realizzati per i vari package del programma.
+
+Ulteriore documentazione con diagrammi UML è disponibile [qui](https://github.com/PCristian00/progetto-OOP/tree/main/UML%20Exports).
+
+
+
+<a name="use-case"></a>
+### Casi d'uso
 
 <img src="images/use_case.svg" alt="use_case">
 
@@ -139,6 +145,7 @@ Diagramma dei casi d'uso.
   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="p-controller"></a>
 ### Package Controller
 
 <img src="images/controller_pkg.svg" alt="controller_pkg">
@@ -147,6 +154,7 @@ Contiene il <b>Controller</b>, necessario per gestire le richieste degli utenti.
   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="p-model"></a>
 ### Package Model
 <img src="images/model_pkg.svg" alt="model_pkg">
 
@@ -158,6 +166,7 @@ La classe <b>Forecast</b> contiene i dati di pressione, visibilità e la data de
       
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="p-service"></a>
 ### Package Service
 <img src="images/service_pkg.svg" alt="service_pkg">
 	
@@ -167,6 +176,7 @@ La classe <b>Forecast</b> contiene i dati di pressione, visibilità e la data de
 	  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="p-statistics"></a>
 ### Package Statistics
 <img src="images/statistics_pkg.svg" alt="statistics_pkg">
 	
@@ -178,6 +188,7 @@ Contiene le statistiche e metodi per filtrarle e presentarle.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="p-exception"></a>
 ### Package Exception
 <img src="images/exception_pkg.svg" alt="exception_pkg">
 
@@ -197,6 +208,7 @@ Contiene le eccezioni personalizzate di PressureStats.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="tests"></a>
 ### Test
 <img src="images/test_pkg.svg" alt="test_pkg">
 
@@ -214,31 +226,28 @@ L'applicazione offre la possibilità di testare la maggior parte dei metodi.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="preparazione"></a>
 
+<!-- Preparazione -->
+<a name="prep"></a>
+## Preparazione
 
-<!-- GETTING STARTED -->
-## Getting Started
+Per iniziare ad usare l'applicazione è necessario seguire pochi semplici passi.
 
-<!--
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
--->
+<a name="prereq"></a>
+### Prerequisiti
 
-<!--### Prerequisites
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
--->
-### Installation
+Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [Postman](https://www.postman.com/) o applicazioni simili.
 
-1. Get a free API Key at [https://openweathermap.org/api](https://openweathermap.org/api)
-2. Clone the repo
+<a name="install"></a>
+### Installazione
+
+1. Ottieni una API Key gratuita da [https://openweathermap.org/api](https://openweathermap.org/api)
+2. Clona la repository
 ```sh
 git clone https://github.com/PCristian00/progetto-OOP.git
 ```
-3. Enter your API in `ServiceImpl.java`
+3. Inserisci la tua API in `ServiceImpl.java`
 ```java
 private String apiKey = "ENTER YOUR API";
 ```
@@ -247,29 +256,32 @@ private String apiKey = "ENTER YOUR API";
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- Utilizzo EXAMPLES -->
+<a name="usage"></a>
+## Utilizzo
 Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [Postman](https://www.postman.com/) o applicazioni simili.
 1. Avviare il programma come applicazione SpringBoot
 2. Da Postman, fare una chiamata di tipo get con la rotta scelta (vedi tabella)
-3. Consultare i dati (salvati in /src/main/resources/)
+3. Consultare i dati (salvati in [`/src/main/resources/`](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/src/main/resources))
 4. Terminare il programma
 
 Nella cartella [`/src/main/resources/`](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/src/main/resources) sono già presenti dati meteorologici di varie città con cui è possibile testare l'applicazione. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="r"></a>
 ### Rotte
 Le rotte definite sono le seguenti:
 
 N° 	| Tipo 	| Rotta 						| Descrizione
 ---	| --- 	| --- 							| ---
-[1](#1) | `GET` | `/current?id=6542126` 				| Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data
-[2](#2) | `GET` | `/hourlySave?id=6542126&multiplier=1` 		| Finché è in esecuzione, salva ogni tot ore su un file i  dati attuali di pressione e visibilità di una città data.
-[3](#3) | `GET` | `/multiSave?multiplier=1` 				| Finché è in esecuzione, salva ogni tot ore su dei file i  dati attuali di pressione e visibilità di alcune città selezionate.
-[4](#4) | `GET` | `/oneDay?city=Rome&date=10-01-2022` 			| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.
-[5](#5) | `GET` | `/moreDays?city=Rome&days=3` 				| Restituisce le statistiche di pressione e visibilità di una città data, filtrate dal giorno attuale a tot giorni passati.
-[6](#6) | `GET` | `/hourly?city=Rome&date=10-01-2022&from=9&to=12`	| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.
+[1](#r1) | `GET` | `/current?id=6542126` 				| Restituisce e salva su un file i dati attuali di pressione e visibilità di una città data
+[2](#r2) | `GET` | `/hourlySave?id=6542126&multiplier=1` 		| Finché è in esecuzione, salva ogni tot ore su un file i  dati attuali di pressione e visibilità di una città data.
+[3](#r3) | `GET` | `/multiSave?multiplier=1` 				| Finché è in esecuzione, salva ogni tot ore su dei file i  dati attuali di pressione e visibilità di alcune città selezionate.
+[4](#r4) | `GET` | `/oneDay?city=Rome&date=10-01-2022` 			| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.
+[5](#r5) | `GET` | `/moreDays?city=Rome&days=3` 				| Restituisce le statistiche di pressione e visibilità di una città data, filtrate dal giorno attuale a tot giorni passati.
+[6](#r6) | `GET` | `/hourly?city=Rome&date=10-01-2022&from=9&to=12`	| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.
 
+<a name="id"></a>
 ### Perché viene usato ID
 Le rotte [`1`](#1), [`2`](#2) e [`3`](#3) richiedono l'`id` della città per funzionare.
 
@@ -285,7 +297,7 @@ Per questo abbiamo deciso di usare l'`id`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="1"></a>
+<a name="r1"></a>
 ### /current
 
 ```java
@@ -318,7 +330,7 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_data.txt`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="2"></a>
+<a name="r2"></a>
 ### /hourlySave
 
 ```java
@@ -338,7 +350,7 @@ id=3169070, name=Rome, country=IT, lat=41.8947, lon=12.4839, weather=[pressure=9
 La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'utente tramite il [`Multiplier`](#m) su un file chiamato `CITYNAME_data.txt`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="3"></a>
+<a name="r3"></a>
 ### /multiSave
 
 ```java
@@ -384,7 +396,7 @@ Valore 		| Frequenza di salvataggio
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="4"></a>
+<a name="r4"></a>
 ### /oneDay
 ```java
 @GetMapping(value="/oneDay")
@@ -419,7 +431,7 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.tx
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="5"></a>
+<a name="r5"></a>
 ### /moreDays
 ```java
 @GetMapping(value="/moreDays")
@@ -461,7 +473,7 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_MultiDa
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="6"></a>
+<a name="r6"></a>
 ### /hourly
 ```java
 @GetMapping(value = "/hourly")
@@ -498,6 +510,7 @@ localhost:8080/hourly?city=Rome&date=10-01-2022&from=9&to=12
 La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.txt`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<a name="docs"></a>
 ### Documentazione
 Il programma è completamente documentato in Javadoc [qui](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/doc).
 
@@ -535,10 +548,12 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
-## License
+<!-- Licenza -->
 
-Distribuito con licenza MIT. Vedi [`LICENSE`](https://github.com/PCristian00/progetto-OOP/blob/main/LICENSE) per maggiori informazioni.
+<a name="license"></a>
+## Licenza
+
+Distribuito con licenza MIT. Vedi [`Licenza`](https://github.com/PCristian00/progetto-OOP/blob/main/Licenza) per maggiori informazioni.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -555,8 +570,10 @@ Project Link: [https://github.com/PCristian00/progetto-OOP](https://github.com/P
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- Ringraziamenti -->
+
+<a name="thanks"></a>
+## Ringraziamenti
 
 
 * [Best README Template](https://github.com/othneildrew/Best-README-Template)
@@ -576,8 +593,8 @@ Project Link: [https://github.com/PCristian00/progetto-OOP](https://github.com/P
 [stars-url]: https://github.com/PCristian00/progetto-OOP/stargazers
 [issues-shield]: https://img.shields.io/github/issues/PCristian00/progetto-OOP.svg?style=for-the-badge
 [issues-url]: https://github.com/PCristian00/progetto-OOP/issues
-[license-shield]: https://img.shields.io/github/license/PCristian00/progetto-OOP.svg?style=for-the-badge
-[license-url]: https://github.com/PCristian00/progetto-OOP/blob/main/LICENSE
+[Licenza-shield]: https://img.shields.io/github/Licenza/PCristian00/progetto-OOP.svg?style=for-the-badge
+[Licenza-url]: https://github.com/PCristian00/progetto-OOP/blob/main/Licenza
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png

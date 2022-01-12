@@ -77,7 +77,6 @@
 {"country":"IT","name":"Palermo","weather":[{"pressure":1003,"visibility":10000,"dt":1641903559,"date":"11-01-2022 13:19:19"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1004,"visibility":10000,"dt":1641908561,"date":"11-01-2022 14:42:41"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1004,"visibility":10000,"dt":1641912417,"date":"11-01-2022 15:46:57"}],"lon":13.3598,"id":2523920,"lat":38.1158}
-{"country":"IT","name":"Naples","weather":[{"pressure":1012,"visibility":10000,"dt":1641912322,"date":"11-01-2022 15:45:22"}],"lon":14.25,"id":3172395,"lat":40.8333}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641916138,"date":"11-01-2022 16:48:58"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1005,"visibility":10000,"dt":1641919625,"date":"11-01-2022 17:47:05"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1006,"visibility":10000,"dt":1641923384,"date":"11-01-2022 18:49:44"}],"lon":13.3598,"id":2523920,"lat":38.1158}
@@ -92,3 +91,5 @@
 {"country":"IT","name":"Palermo","weather":[{"pressure":1010,"visibility":10000,"dt":1641975723,"date":"12-01-2022 09:22:03"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1011,"visibility":10000,"dt":1641979341,"date":"12-01-2022 10:22:21"}],"lon":13.3598,"id":2523920,"lat":38.1158}
 {"country":"IT","name":"Palermo","weather":[{"pressure":1011,"visibility":10000,"dt":1641982779,"date":"12-01-2022 11:19:39"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1012,"visibility":10000,"dt":1641990212,"date":"12-01-2022 13:23:32"}],"lon":13.3598,"id":2523920,"lat":38.1158}
+{"country":"IT","name":"Palermo","weather":[{"pressure":1011,"visibility":10000,"dt":1641993269,"date":"12-01-2022 14:14:29"}],"lon":13.3598,"id":2523920,"lat":38.1158}

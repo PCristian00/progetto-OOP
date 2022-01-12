@@ -79,7 +79,6 @@
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641912419,"date":"11-01-2022 15:46:59"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641912419,"date":"11-01-2022 15:46:59"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641912419,"date":"11-01-2022 15:46:59"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Milan","weather":[{"pressure":1024,"visibility":10000,"dt":1641912375,"date":"11-01-2022 15:46:15"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641916131,"date":"11-01-2022 16:48:51"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1013,"visibility":10000,"dt":1641919598,"date":"11-01-2022 17:46:38"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1013,"visibility":10000,"dt":1641923217,"date":"11-01-2022 18:46:57"}],"lon":12.4839,"id":3169070,"lat":41.8947}
@@ -94,3 +93,6 @@
 {"country":"IT","name":"Rome","weather":[{"pressure":1017,"visibility":10000,"dt":1641975841,"date":"12-01-2022 09:24:01"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1019,"visibility":10000,"dt":1641978940,"date":"12-01-2022 10:15:40"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1019,"visibility":10000,"dt":1641982824,"date":"12-01-2022 11:20:24"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1020,"visibility":10000,"dt":1641986541,"date":"12-01-2022 12:22:21"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1020,"visibility":10000,"dt":1641989967,"date":"12-01-2022 13:19:27"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1021,"visibility":10000,"dt":1641993603,"date":"12-01-2022 14:20:03"}],"lon":12.4839,"id":3169070,"lat":41.8947}

@@ -260,7 +260,7 @@ private String apiKey = "ENTER YOUR API";
 ## Utilizzo
 Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [Postman](https://www.postman.com/) o applicazioni simili.
 1. Avviare il programma come applicazione SpringBoot
-2. Da Postman, fare una chiamata di tipo get con la rotta scelta (vedi tabella)
+2. Da Postman, fare una chiamata di tipo get con la rotta scelta [(vedi tabella)](#r)
 3. Consultare i dati (salvati in [`/src/main/resources/`](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/src/main/resources))
 4. Terminare il programma
 
@@ -279,6 +279,9 @@ N° 	| Tipo 	| Rotta 						| Descrizione
 [4](#r4) | `GET` | `/oneDay?city=Rome&date=10-01-2022` 			| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per il giorno scelto.
 [5](#r5) | `GET` | `/moreDays?city=Rome&days=3` 				| Restituisce le statistiche di pressione e visibilità di una città data, filtrate dal giorno attuale a tot giorni passati.
 [6](#r6) | `GET` | `/hourly?city=Rome&date=10-01-2022&from=9&to=12`	| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 <a name="id"></a>
 ### Perché viene usato ID

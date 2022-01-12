@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 
 import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
+import it.univpm.pressurestats.exception.NegativeStartException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.*;
 
@@ -174,8 +175,9 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 	
 	@Override
-	public void saveToFileHourly(String id,double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException {
+	public void saveToFileHourly(String id,double multiplier,long start) throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
 	if(multiplier<=0.02) throw new WrongMultiplyException("Moltiplicatore non ammesso.");
+	if(start<0) throw new NegativeStartException("Il millisecondo di partenza non può essere inferiore a zero");
 	
 		TimerTask tt = new TimerTask() {
 			public void run(){						
@@ -188,7 +190,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		};
 		
 		Timer timer = new Timer();
-		timer.schedule(tt, 0, (long) (multiplier*hour)); // ogni ora
+		//TODO start prima era 0 ed è misurato in millisecondi
+		timer.schedule(tt, start, (long) (multiplier*hour)); // ogni ora
 	}
 
 	@SuppressWarnings("unchecked")

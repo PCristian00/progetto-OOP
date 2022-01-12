@@ -250,7 +250,7 @@ Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [P
 3. Consultare i dati (salvati in /src/main/resources/)
 4. Terminare il programma
 
-Nella cartella `/src/main/resources/` sono già presenti dati meteorologici 
+Nella cartella [`/src/main/resources/`](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/src/main/resources) sono già presenti dati meteorologici di varie città con cui è possibile testare l'applicazione. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Rotte
@@ -266,9 +266,9 @@ N° 	| Tipo 	| Rotta 						| Descrizione
 [6](#6) | `GET` | `/hourly?city=Rome&date=10-01-2022&from=9&to=12`	| Restituisce le statistiche di pressione e visibilità di una città data, filtrate per la fascia oraria scelta.
 
 ### Perché viene usato ID
-Le rotte [1](#1), [2](#2) e [3](#3) richiedono l'`ID` della città per funzionare.
+Le rotte [`1`](#1), [`2`](#2) e [`3`](#3) richiedono l'`id` della città per funzionare.
 
-Nonostante sia meno pratico di usare il nome della città, usare l'`ID` per richiedere i dati ad OpenWeather è la scelta migliore, in quanto l'`ID` rappresenta univocamente una città.
+Nonostante sia meno pratico di usare il nome della città, usare l'`id` per richiedere i dati ad OpenWeather è la scelta migliore, in quanto l'`id` rappresenta univocamente una città.
 
 Ciò non sempre è invece il caso per il nome: ad esempio, `Rome` si trova sia negli USA che in Italia (Roma, nome inglese).
 
@@ -276,7 +276,7 @@ Cercando `Roma` su OpenWeather otteniamo anche risultati da altre nazioni o anch
 
 <img src="images/rome_query.jpg" alt="rome_query">
 
-Per questo abbiamo deciso di usare l'`ID`.
+Per questo abbiamo deciso di usare l'`id`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -322,7 +322,7 @@ public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaul
   @RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
   throws WrongMultiplyException
  ```
-Se la città è italiana e il [Multiplier](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo e la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.
+Se la città è italiana e il [`Multiplier`](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo e la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.
 ```txt
 localhost:8080/hourlySave?id=3169070&mutliplier=1
 ```
@@ -330,7 +330,7 @@ localhost:8080/hourlySave?id=3169070&mutliplier=1
 Il salvataggio avverrà ogni ora
 id=3169070, name=Rome, country=IT, lat=41.8947, lon=12.4839, weather=[pressure=999, visibility=10000, dt=1641805793, date=10-01-2022 10:09:53]
   ```
-La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'utente tramite il [Multiplier](#m) su un file chiamato `CITYNAME_data.txt`
+La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'utente tramite il [`Multiplier`](#m) su un file chiamato `CITYNAME_data.txt`
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <a name="3"></a>
@@ -341,7 +341,7 @@ La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'u
 public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
   throws ItalianCityNotFoundException, WrongMultiplyException
  ```
-Se la città è italiana e il [Multiplier](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo con la frequenza scelta.
+Se la città è italiana e il [`Multiplier`](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo con la frequenza scelta.
 
 ```txt
 localhost:8080/multiSave?multiplier=1
@@ -358,7 +358,7 @@ La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'u
 
 <a name="m"></a>
 ### Utilizzo del Multiplier
-Per le rotte [2](#2) e [3](#3) è possibile modificare la frequenza di salvataggio attraverso la variabile <b>Multiplier</b>.
+Per le rotte [`2`](#2) e [`3`](#3) è possibile modificare la frequenza di salvataggio attraverso la variabile <b>Multiplier</b>.
 
 Il valore assegnato a Multiplier viene moltiplicato ad una costante Hour che contiene il valore di 1 ora espresso in millisecondi.
 
@@ -386,7 +386,7 @@ Valore 		| Frequenza di salvataggio
 public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Rome") String city,
 	@RequestParam(name = "date") String date)
  ```
-Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta nella data scelta.
+Se esistono dati a riguardo,generati da [`1`](#1),[`2`](#2) o [`3`](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta nella data scelta.
 ```txt
 localhost:8080/oneDay?city=Rome&date=10-01-2022
 ```
@@ -421,7 +421,7 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.tx
 public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
 			@RequestParam(name = "days") int days)
  ```
-Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta.
+Se esistono dati a riguardo,generati da [`1`](#1),[`2`](#2) o [`3`](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta.
 
 Le statistiche sono calcolate dalle misurazioni giornaliere precedenti alla data attuale.
 
@@ -464,7 +464,7 @@ public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", d
 			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
 			@RequestParam(name = "to") int to) {
  ```
-Se esistono dati a riguardo,generati da [1](#1),[2](#2) o [3](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate sulla fascia oraria scelta di un giorno.
+Se esistono dati a riguardo,generati da [`1`](#1),[`2`](#2) o [`3`](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate sulla fascia oraria scelta di un giorno.
 
 ```txt
 localhost:8080/hourly?city=Rome&date=10-01-2022&from=9&to=12
@@ -533,7 +533,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distribuito con licenza MIT. Vedi [LICENSE](LICENSE) per maggiori informazioni.
+Distribuito con licenza MIT. Vedi [`LICENSE`](LICENSE) per maggiori informazioni.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

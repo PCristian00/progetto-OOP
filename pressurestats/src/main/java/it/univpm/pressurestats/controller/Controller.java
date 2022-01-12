@@ -100,6 +100,7 @@ public class Controller {
 	 *                                      uguale a 0.02).Un moltiplicatore di 0.02
 	 *                                      restituirebbe dati ogni minuto circa
 	 * @throws NegativeStartException eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
+	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
 	 */
 	@GetMapping(value = "/multiSave")
 	public ResponseEntity<Object> saveToFileHourly(

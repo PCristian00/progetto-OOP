@@ -81,10 +81,8 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 	<li><a href="#usage">Utilizzo</a></li>
 	<ul><li><a href="#r">Rotte</a></li></ul>	
 <li><a href="#docs">Documentazione</a></li>
-<!--<li><a href="#roadmap">Roadmap</a></li>-->
-<!-- <li><a href="#contributing">Contributing</a></li>-->
+<li><a href="#authors">Autori</a></li>
 <li><a href="#license">Licenza</a></li>
-<!--<li><a href="#contact">Contact</a></li>-->
 <li><a href="#thanks">Ringraziamenti</a></li>
 	</ol>
 </details>
@@ -533,7 +531,11 @@ See the [open issues](https://github.com/PCristian00/progetto-OOP/issues) for a 
 
 
 <!-- CONTRIBUTING -->
-<!--## Contributing
+<a name="authors"></a>
+## Autori
+
+Il progetto è stato interamento realizzato da [Settimi Diego](https://github.com/Diego7imi) e [Pietroniro Cristian](https://github.com/PCristian00).
+
 <!--
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -555,7 +557,7 @@ Don't forget to give the project a star! Thanks again!
 <a name="license"></a>
 ## Licenza
 
-Distribuito con licenza MIT. Vedi [`Licenza`](https://github.com/PCristian00/progetto-OOP/blob/main/Licenza) per maggiori informazioni.
+Distribuito con licenza MIT. Vedi [`LICENSE`](https://github.com/PCristian00/progetto-OOP/blob/main/license) per maggiori informazioni.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -596,7 +598,7 @@ Project Link: [https://github.com/PCristian00/progetto-OOP](https://github.com/P
 [issues-shield]: https://img.shields.io/github/issues/PCristian00/progetto-OOP.svg?style=for-the-badge
 [issues-url]: https://github.com/PCristian00/progetto-OOP/issues
 [Licenza-shield]: https://img.shields.io/github/Licenza/PCristian00/progetto-OOP.svg?style=for-the-badge
-[Licenza-url]: https://github.com/PCristian00/progetto-OOP/blob/main/Licenza
+[Licenza-url]: https://github.com/PCristian00/progetto-OOP/blob/main/license
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png

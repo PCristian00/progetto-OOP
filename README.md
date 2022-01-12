@@ -536,6 +536,8 @@ See the [open issues](https://github.com/PCristian00/progetto-OOP/issues) for a 
 
 Il progetto è stato interamento realizzato da [Settimi Diego](https://github.com/Diego7imi) e [Pietroniro Cristian](https://github.com/PCristian00).
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!--
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 

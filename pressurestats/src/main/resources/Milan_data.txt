@@ -71,7 +71,6 @@
 {"country":"IT","name":"Milan","weather":[{"pressure":1024,"visibility":10000,"dt":1641903515,"date":"11-01-2022 13:18:35"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1023,"visibility":10000,"dt":1641908520,"date":"11-01-2022 14:42:00"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1024,"visibility":10000,"dt":1641912375,"date":"11-01-2022 15:46:15"}],"lon":9.192,"id":6542283,"lat":45.4642}
-{"country":"IT","name":"Milan","weather":[{"pressure":1024,"visibility":10000,"dt":1641912375,"date":"11-01-2022 15:46:15"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1023,"visibility":10000,"dt":1641915978,"date":"11-01-2022 16:46:18"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1023,"visibility":10000,"dt":1641919495,"date":"11-01-2022 17:44:55"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1024,"visibility":10000,"dt":1641923136,"date":"11-01-2022 18:45:36"}],"lon":9.192,"id":6542283,"lat":45.4642}
@@ -89,3 +88,6 @@
 {"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":10000,"dt":1641986402,"date":"12-01-2022 12:20:02"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":10000,"dt":1641990259,"date":"12-01-2022 13:24:19"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":10000,"dt":1641993760,"date":"12-01-2022 14:22:40"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":10000,"dt":1641999410,"date":"12-01-2022 15:56:50"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":10000,"dt":1641999779,"date":"12-01-2022 16:02:59"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":10000,"dt":1642000699,"date":"12-01-2022 16:18:19"}],"lon":9.192,"id":6542283,"lat":45.4642}

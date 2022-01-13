@@ -13,6 +13,7 @@ import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
 import it.univpm.pressurestats.exception.DayNotFoundException;
 import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
+import it.univpm.pressurestats.exception.NegativeStartException;
 import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.service.Service;
@@ -42,7 +43,7 @@ public class Controller {
 	@Autowired
 	Service service;
 	/**
-	 * Oggetto Statitstics usata per le operazioni di generazione e salvataggio
+	 * Oggetto Statitstics usato per le operazioni di generazione e salvataggio
 	 * statistiche.
 	 */
 	Statistics statistics;
@@ -68,15 +69,19 @@ public class Controller {
 		try {
 			service.saveToFile((service.getJSONForecast(id, true)));
 			return new ResponseEntity<>(service.getForecast(service.getJSONForecast(id, true)), HttpStatus.OK);
-		} catch (IdNotFoundException | ItalianCityNotFoundException e1) {
-			return new ResponseEntity<>(e1.getMessage(), HttpStatus.BAD_REQUEST);
+		} catch (IdNotFoundException | ItalianCityNotFoundException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
-	// TODO ROTTA BOZZA:Togliere da programma finale o rimediare
-	// TODO A volte questa rotta chiama contemporaneamente per due città diverse e
-	// inserisce i dati nel file sbagliato (Aggiunge righe vuote)
-	// TODO ricontrollare SEMPRE i dati ottenuti dopo l'utilizzo
+	// TODO Risolto forse il problema del salvataggio (es. Roma salvata in Ancona)
+	
+	/*
+	 * Per risolvere il problema ho aggiunto un ulteriore parametro a saveToFile
+	 * chiamato Start che indica il millisecondo di partenza del salvataggio. Un
+	 * ritardo di un secondo tra una città e l'altra sembra aver risolto ogni
+	 * problema.
+	 */
 
 	/**
 	 * Se lasciata in esecuzione, salva con una frequenza impostata dall'utente le
@@ -94,22 +99,25 @@ public class Controller {
 	 *                                      non è ammesso (moltiplicatore minore o
 	 *                                      uguale a 0.02).Un moltiplicatore di 0.02
 	 *                                      restituirebbe dati ogni minuto circa
+	 * @throws NegativeStartException eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
+	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
 	 */
 	@GetMapping(value = "/multiSave")
 	public ResponseEntity<Object> saveToFileHourly(
 			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
-			throws ItalianCityNotFoundException, WrongMultiplyException {
+			throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
 		try {
+			//TODO Attenzione: Tenere le variabili Start separate tra loro di almeno 1000 (un secondo).
 			// ROMA
-			service.saveToFileHourly("3169070", multiplier);
+			service.saveToFileHourly("3169070", multiplier, 1000);
 			// NAPOLI
-			service.saveToFileHourly("3172395", multiplier);
+			service.saveToFileHourly("3172395", multiplier, 2000);
 			// MILANO
-			service.saveToFileHourly("6542283", multiplier);
+			service.saveToFileHourly("6542283", multiplier, 3000);
 			// ANCONA
-			service.saveToFileHourly("6542126", multiplier);
+			service.saveToFileHourly("6542126", multiplier, 4000);
 			// PALERMO
-			service.saveToFileHourly("2523920", multiplier);
+			service.saveToFileHourly("2523920", multiplier, 5000);
 			/*
 			 * String msg; if (multiplier != 1) msg =((int) Math.round(multiplier*60)) +
 			 * " minuti circa"; else msg = "ora";
@@ -117,8 +125,8 @@ public class Controller {
 			return new ResponseEntity<>(
 					service.saveMessage(multiplier) + "Ricontrollare file finali, lasciare in esecuzione applicazione.",
 					HttpStatus.OK);
-		} catch (ItalianCityNotFoundException | WrongMultiplyException e2) {
-			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
+		} catch (IdNotFoundException|ItalianCityNotFoundException | WrongMultiplyException | NegativeStartException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -133,20 +141,21 @@ public class Controller {
 	 * @return Un messaggio di riepilogo con la frequenza e la prima misurazione
 	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è
 	 *                                ammesso (moltiplicatore minore o uguale a
-	 *                                0.02).Un moltiplicatore di 0.02 restituirebbe
+	 *                                0.02). Un moltiplicatore di 0.02 restituirebbe
 	 *                                dati ogni minuto circa
 	 * @throws IdNotFoundException    eccezione lanciata se non è stato trovato
 	 *                                nessun ID corrispondente alla richiesta
+	 * @throws NegativeStartException eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
 	 * 
 	 */
 	@GetMapping(value = "/hourlySave")
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
 			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
-			throws WrongMultiplyException, IdNotFoundException {
+			throws WrongMultiplyException, IdNotFoundException, NegativeStartException {
 		// String msg;
 		try {
 
-			service.saveToFileHourly(id, multiplier);
+			service.saveToFileHourly(id, multiplier, 0);
 			/*
 			 * if (multiplier != 1) msg = ((int) Math.round(multiplier*60)) +
 			 * " minuti circa"; else msg = "ora";
@@ -154,8 +163,8 @@ public class Controller {
 			return new ResponseEntity<>(
 					service.saveMessage(multiplier) + service.getForecast(service.getJSONForecast(id, true)),
 					HttpStatus.OK);
-		} catch (IdNotFoundException | ItalianCityNotFoundException | WrongMultiplyException e2) {
-			return new ResponseEntity<>(e2.getMessage(), HttpStatus.BAD_REQUEST);
+		} catch (IdNotFoundException | ItalianCityNotFoundException | WrongMultiplyException | NegativeStartException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
@@ -181,8 +190,7 @@ public class Controller {
 		}
 	}
 
-	// TODO Data nel json è sempre null (da risolvere)
-
+	
 	/**
 	 * Restituisce le statistiche di pressione e visibilità di una città data,
 	 * filtrate dal giorno attuale a tot giorni passati.
@@ -197,7 +205,6 @@ public class Controller {
 			@RequestParam(name = "days") int days) {
 		try {
 			statistics = new Statistics(city, days);
-			// TODO aggiunto salvataggio (Funzionante)
 			statistics.saveToFile(statistics.stats());
 			return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 		} catch (CityStatisticsNotFoundException e) {
@@ -206,8 +213,7 @@ public class Controller {
 
 	}
 
-	// TODO Scrivere su json da che ora a che ora
-
+	
 	/**
 	 * Restituisce e salva le statistiche per più ore di un giorno di una città.
 	 * 
@@ -225,7 +231,6 @@ public class Controller {
 			@RequestParam(name = "to") int to) {
 		try {
 			statistics = new Statistics(city, date, from, to);
-			// TODO aggiunto salvataggio (Funzionante)
 			statistics.saveToFile(statistics.stats());
 			return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 		} catch (WrongHoursPeriodException | CityStatisticsNotFoundException | DayNotFoundException e) {

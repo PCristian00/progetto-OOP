@@ -74,10 +74,6 @@
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641894896,"date":"11-01-2022 10:54:56"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1011,"visibility":10000,"dt":1641903301,"date":"11-01-2022 13:15:01"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641908100,"date":"11-01-2022 14:35:00"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641908100,"date":"11-01-2022 14:35:00"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641908100,"date":"11-01-2022 14:35:00"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641912419,"date":"11-01-2022 15:46:59"}],"lon":12.4839,"id":3169070,"lat":41.8947}
-{"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641912419,"date":"11-01-2022 15:46:59"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641912419,"date":"11-01-2022 15:46:59"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1012,"visibility":10000,"dt":1641916131,"date":"11-01-2022 16:48:51"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1013,"visibility":10000,"dt":1641919598,"date":"11-01-2022 17:46:38"}],"lon":12.4839,"id":3169070,"lat":41.8947}
@@ -96,3 +92,6 @@
 {"country":"IT","name":"Rome","weather":[{"pressure":1020,"visibility":10000,"dt":1641986541,"date":"12-01-2022 12:22:21"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1020,"visibility":10000,"dt":1641989967,"date":"12-01-2022 13:19:27"}],"lon":12.4839,"id":3169070,"lat":41.8947}
 {"country":"IT","name":"Rome","weather":[{"pressure":1021,"visibility":10000,"dt":1641993603,"date":"12-01-2022 14:20:03"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1022,"visibility":10000,"dt":1641999172,"date":"12-01-2022 15:52:52"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1022,"visibility":10000,"dt":1642000054,"date":"12-01-2022 16:07:34"}],"lon":12.4839,"id":3169070,"lat":41.8947}
+{"country":"IT","name":"Rome","weather":[{"pressure":1022,"visibility":10000,"dt":1642000790,"date":"12-01-2022 16:19:50"}],"lon":12.4839,"id":3169070,"lat":41.8947}

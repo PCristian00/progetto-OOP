@@ -15,10 +15,11 @@ public class PressurestatsApplication {
 	/**
 	 * Costruttore della classe.
 	 */
-	
+
 	public PressurestatsApplication() {
-		
+
 	}
+
 	/**
 	 * Avvia main che avvia l'applicazione SpringBoot
 	 * 
@@ -29,5 +30,4 @@ public class PressurestatsApplication {
 		SpringApplication.run(PressurestatsApplication.class, args);
 	}
 
-	
 }

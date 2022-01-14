@@ -1,4 +1,5 @@
 package it.univpm.pressurestats.exception;
+
 /**
  * Eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
  * 
@@ -7,11 +8,11 @@ package it.univpm.pressurestats.exception;
  * 
  */
 public class NegativeStartException extends Exception {
-/**
- * Seriale eccezione
- */
+	/**
+	 * Seriale eccezione
+	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Messaggio di errore
 	 * 

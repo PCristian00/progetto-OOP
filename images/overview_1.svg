@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 203 99" style="enable-background:new 0 0 203 99;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st1{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st2{fill:#FFFFFF;}
+	.st3{font-family:'Arial-BoldMT';}
+	.st4{font-size:13px;}
+</style>
+<g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M272,272h183v79H272V272z"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="291" y="293.5" class="st1" width="19.6" height="15"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="291" y="307.5" class="st1" width="49" height="25"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="284" y="301.5" class="st2" width="49" height="24"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M284,301.5h49v24h-49V301.5z"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="284" y="286.5" class="st2" width="19.6" height="15"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M284,286.5h19.6v15H284V286.5z"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="284" y="300.5" class="st2" width="49" height="25"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M284,300.5h49v25h-49V300.5z"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 305.25 321)" class="st3 st4">it</text>
+		</g>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="371" y="291" class="st1" width="71.1" height="44"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<rect x="364" y="284" class="st2" width="71.1" height="44"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M364,284h71.1v44H364V284z"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M364,309h71.1"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<path class="st0" d="M364,319h71.1"/>
+	</g>
+	<g transform="translate(-262,-262) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 371.0168 303.5)" class="st3 st4">Exception</text>
+		</g>
+	</g>
+</g>
+</svg>

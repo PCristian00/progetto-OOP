@@ -7,7 +7,6 @@ package it.univpm.pressurestats.exception;
  * @author Settimi Diego
  * 
  */
-//@SuppressWarnings("serial")
 public class IdNotFoundException extends Exception {
 	/**
 	 * Seriale eccezione

@@ -7,7 +7,6 @@ package it.univpm.pressurestats.exception;
  * @author Settimi Diego
  * 
  */
-//@SuppressWarnings("serial")
 public class WrongHoursPeriodException extends Exception {
 	/**
 	 * Seriale eccezione

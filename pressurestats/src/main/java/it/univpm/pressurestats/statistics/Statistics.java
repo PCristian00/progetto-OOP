@@ -210,7 +210,6 @@ public class Statistics{
 		else {
 			fileName = this.city+ "_stats_"+this.date.substring(0,10);
 		}
-		// Il file viene salvato nella cartella /src/main/resources/
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
 	
 		try {

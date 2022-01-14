@@ -20,8 +20,6 @@ import it.univpm.pressurestats.exception.NegativeStartException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.*;
 
-//TODO Forse @Service è preferibile metterlo nell'interfaccia
-
 /**
  * Implementazione dell'interfaccia Service. Contiene i
  * metodi utilizzati dal controller.
@@ -42,8 +40,6 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	 * 
 	 */
 	JSONObject forecast = null;
-	
-	//TODO Impostazioni del salvataggio file, usate anche in Filters
 	
 	/**
 	 * Percorso di salvataggio del file
@@ -112,7 +108,6 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 					jo = (JSONObject) ja.get(i);
 				}
 			}
-//TODO funziona ma migliorare
 		} catch (IOException | ParseException e) {
 			throw new IdNotFoundException("ID non trovato");
 			//e.printStackTrace();
@@ -190,8 +185,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		};
 		
 		Timer timer = new Timer();
-		//TODO start prima era 0 ed è misurato in millisecondi
-		timer.schedule(tt, start, (long) (multiplier*hour)); // ogni ora
+		timer.schedule(tt, start, (long) (multiplier*hour));
 	}
 
 	@SuppressWarnings("unchecked")

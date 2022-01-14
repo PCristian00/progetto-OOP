@@ -145,7 +145,7 @@ Diagramma dei casi d'uso.
 <a name="p-controller"></a>
 ### Package Controller
 
-<img src="images/Artboard 1.png" alt="controller_pkg">
+<img src="images/controller_pkg.svg" alt="controller_pkg">
 
 Contiene il <b>Controller</b>, necessario per gestire le richieste degli utenti.
   

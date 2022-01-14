@@ -301,9 +301,9 @@ Per questo abbiamo deciso di usare l'`id`.
 ### /current
 
 ```java
-@GetMapping("/current")
-ResponseEntity<Object> getForecast(@RequestParam(name="id",defaultValue="3169070") String id)
-throws ItalianCityNotFoundException 
+@GetMapping(value = "/current")
+public ResponseEntity<Object> getForecast(@RequestParam(name = "id", defaultValue = "3169070") String id)
+throws ItalianCityNotFoundException, IdNotFoundException
  ```
 Se la città è italiana, restituisce su schermo la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.
 ```txt
@@ -336,8 +336,8 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_data.txt`
 ```java
 @GetMapping(value = "/hourlySave")
 public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
-  @RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
-  throws WrongMultiplyException
+@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
+throws WrongMultiplyException, IdNotFoundException, NegativeStartException
  ```
 Se la città è italiana e il [`Multiplier`](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo e la misurazione attuale di pressione e visibilità della città scelta, oltre ad alcuni dati come nazione, nome città e posizione geografica.
 ```txt
@@ -355,8 +355,9 @@ La misurazione viene inoltre salvata automaticamente con frequenza scelta dall'u
 
 ```java
 @GetMapping(value = "/multiSave")
-public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
-  throws ItalianCityNotFoundException, WrongMultiplyException
+public ResponseEntity<Object> saveToFileHourly(
+@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
+throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException
  ```
 Se la città è italiana e il [`Multiplier`](#m) è di un valore maggiore di 0.02, restituisce su schermo un messaggio di riepilogo con la frequenza scelta.
 
@@ -399,9 +400,9 @@ Valore 		| Frequenza di salvataggio
 <a name="r4"></a>
 ### /oneDay
 ```java
-@GetMapping(value="/oneDay")
+@GetMapping(value = "/oneDay")
 public ResponseEntity<Object> getStatisticsOneDay(@RequestParam(name = "city", defaultValue = "Rome") String city,
-	@RequestParam(name = "date") String date)
+@RequestParam(name = "date") String date)
  ```
 Se esistono dati a riguardo,generati da [`1`](#1),[`2`](#2) o [`3`](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta nella data scelta.
 ```txt
@@ -434,9 +435,9 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_DATE.tx
 <a name="r5"></a>
 ### /moreDays
 ```java
-@GetMapping(value="/moreDays")
+@GetMapping(value = "/moreDays")
 public ResponseEntity<Object> getStatisticsMoreDays(@RequestParam(name = "city", defaultValue = "Rome") String city,
-			@RequestParam(name = "days") int days)
+@RequestParam(name = "days") int days) 
  ```
 Se esistono dati a riguardo,generati da [`1`](#1),[`2`](#2) o [`3`](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta.
 
@@ -478,8 +479,8 @@ La misurazione viene inoltre salvata su un file chiamato `CITYNAME_stats_MultiDa
 ```java
 @GetMapping(value = "/hourly")
 public ResponseEntity<Object> getStatisticsHourly(@RequestParam(name = "city", defaultValue = "Rome") String city,
-			@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
-			@RequestParam(name = "to") int to) {
+@RequestParam(name = "date") String date, @RequestParam(name = "from") int from,
+@RequestParam(name = "to") int to) {
  ```
 Se esistono dati a riguardo,generati da [`1`](#1),[`2`](#2) o [`3`](#3), restituisce su schermo le statistiche di pressione e visibilità della città scelta basate sulla fascia oraria scelta di un giorno.
 

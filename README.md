@@ -204,6 +204,9 @@ Contiene le eccezioni personalizzate di PressureStats.
 
 <b>IdNotFoundException</b>: Eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta.
 
+<b>NegativeStartException</b>: Eccezione lanciata se il valore di Start è inferiore a 0.
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <a name="tests"></a>

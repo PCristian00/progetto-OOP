@@ -3,35 +3,33 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 427 355" style="enable-background:new 0 0 427 355;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st0{fill:#FFFFFF;}
 	.st1{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
-	.st2{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st3{font-family:'Arial-BoldMT';}
 	.st4{font-size:13px;}
 	.st5{font-family:'ArialMT';}
 </style>
 <g>
-	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M248,208h407v335H248V208z"/>
-	</g>
+	<rect class="st0" width="427" height="355"/>
 	<g transform="translate(-238,-198) scale(1,1)">
 		<rect x="278.2" y="235" class="st1" width="356.9" height="102"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<rect x="271.2" y="228" class="st2" width="356.9" height="102"/>
+		<rect x="271.2" y="228" class="st0" width="356.9" height="102"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M271.2,228h356.9v102H271.2V228z"/>
+		<path class="st2" d="M271.2,228h356.9v102H271.2V228z"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M271.2,253h356.9"/>
+		<path class="st2" d="M271.2,253h356.9"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M271.2,263h356.9"/>
+		<path class="st2" d="M271.2,263h356.9"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 431.9417 247.5)" class="st3 st4">Filters</text>
 		</g>
 	</g>
@@ -63,20 +61,20 @@
 		<rect x="267" y="368" class="st1" width="379.3" height="160"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<rect x="260" y="361" class="st2" width="379.3" height="160"/>
+		<rect x="260" y="361" class="st0" width="379.3" height="160"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M260,361h379.3v160H260V361z"/>
+		<path class="st2" d="M260,361h379.3v160H260V361z"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M260,386h379.3"/>
+		<path class="st2" d="M260,386h379.3"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M260,439h379.3"/>
+		<path class="st2" d="M260,439h379.3"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 423.6294 380.5)" class="st3 st4">Statistics</text>
 		</g>
 	</g>
@@ -129,14 +127,14 @@
 		</g>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M450,360c0-9.3,0-19,0-29"/>
+		<path class="st2" d="M450,360c0-9.3,0-19,0-29"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
-		<path class="st0" d="M454.2,341.2L450,331l-4.2,10.2"/>
+		<path class="st2" d="M454.2,341.2L450,331l-4.2,10.2"/>
 	</g>
 	<g transform="translate(-238,-198) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 425.5 362.5)" class="st5 st4">-od</text>
 		</g>
 	</g>

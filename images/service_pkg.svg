@@ -3,31 +3,29 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 484 420" style="enable-background:new 0 0 484 420;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st0{fill:#FFFFFF;}
 	.st1{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
-	.st2{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st3{font-family:'Arial-BoldMT';}
 	.st4{font-size:13px;}
 	.st5{font-family:'ArialMT';}
 </style>
 <g>
+	<rect class="st0" width="484" height="420"/>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st0" d="M296,264h464v400H296V264z"/>
+		<path class="st1" d="M508.1,302.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5S526,314,519.6,314S508.1,308.9,508.1,302.5z"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st1" d="M508.1,302.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5s-5.1,11.5-11.5,11.5S508.1,308.9,508.1,302.5z"/>
-	</g>
-	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st2" d="M501.1,295.5c0-6.4,5.1-11.5,11.5-11.5c6.4,0,11.5,5.1,11.5,11.5s-5.1,11.5-11.5,11.5
+		<path class="st0" d="M501.1,295.5c0-6.4,5.1-11.5,11.5-11.5c6.4,0,11.5,5.1,11.5,11.5S519,307,512.6,307
 			C506.2,307,501.1,301.9,501.1,295.5z"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st0" d="M501.1,295.5c0-6.4,5.1-11.5,11.5-11.5c6.4,0,11.5,5.1,11.5,11.5s-5.1,11.5-11.5,11.5
+		<path class="st2" d="M501.1,295.5c0-6.4,5.1-11.5,11.5-11.5c6.4,0,11.5,5.1,11.5,11.5S519,307,512.6,307
 			C506.2,307,501.1,301.9,501.1,295.5z"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 490.8921 326.5)" class="st3 st4">Service</text>
 		</g>
 	</g>
@@ -35,20 +33,20 @@
 		<rect x="331" y="370" class="st1" width="377.1" height="235"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<rect x="324" y="363" class="st2" width="377.1" height="235"/>
+		<rect x="324" y="363" class="st0" width="377.1" height="235"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st0" d="M324,363h377.1v235H324V363z"/>
+		<path class="st2" d="M324,363h377.1v235H324V363z"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st0" d="M324,388h377.1"/>
+		<path class="st2" d="M324,388h377.1"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st0" d="M324,471h377.1"/>
+		<path class="st2" d="M324,471h377.1"/>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 478.6125 382.5)" class="st3 st4">ServiceImpl</text>
 		</g>
 	</g>
@@ -68,26 +66,26 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 329 435.5)" class="st5 st4">+dir: String</text>
-			<path class="st0" d="M329,435.5h63.2"/>
+			<path class="st2" d="M329,435.5h63.2"/>
 		</g>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 329 450.5)" class="st5 st4">+f_type: String = &quot;_data.txt&quot;</text>
-			<path class="st0" d="M329,450.5h158.1"/>
+			<path class="st2" d="M329,450.5h158.1"/>
 		</g>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 329 465.5)" class="st5 st4">~hour: long = 3600000 {readOnly}</text>
-			<path class="st0" d="M329,465.5h195.9"/>
+			<path class="st2" d="M329,465.5h195.9"/>
 		</g>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 329 488.5)" class="st5 st4">«constructor»+ServiceImpl()</text>
 		</g>
 	</g>
@@ -134,7 +132,7 @@
 		</g>
 	</g>
 	<g transform="translate(-286,-254) scale(1,1)">
-		<path class="st0" d="M513,362c0-9.3-0.2-27.7-0.7-55"/>
+		<path class="st2" d="M513,362c0-9.3-0.2-27.7-0.7-55"/>
 	</g>
 </g>
 </svg>

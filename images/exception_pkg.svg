@@ -3,8 +3,8 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 836 724" style="enable-background:new 0 0 836 724;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st1{fill:#FFFFFF;}
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st2{font-family:'Arial-BoldMT';}
 	.st3{font-size:13px;}
 	.st4{font-family:'ArialMT';}
@@ -12,23 +12,20 @@
 </style>
 <g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M136,240h816v704H136V240z"/>
+		<rect x="172" y="300" class="st0" width="335.2" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="172" y="300" class="st1" width="335.2" height="100"/>
+		<path class="st1" d="M172,300h335.2v100H172V300z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M172,300h335.2v100H172V300z"/>
+		<path class="st1" d="M172,325h335.2"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M172,325h335.2"/>
-	</g>
-	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M172,363h335.2"/>
+		<path class="st1" d="M172,363h335.2"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 270.9722 319.5)" class="st2 st3">DayNotFoundException</text>
 		</g>
 	</g>
@@ -36,12 +33,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 177 342.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M177,342.5h227.3"/>
+			<path class="st1" d="M177,342.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 177 357.5)" class="st4 st3">-message: String</text>
 		</g>
 	</g>
@@ -61,20 +58,20 @@
 		<rect x="545.2" y="307" class="st5" width="386.5" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="538.2" y="300" class="st1" width="386.5" height="100"/>
+		<rect x="538.2" y="300" class="st0" width="386.5" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M538.2,300h386.5v100H538.2V300z"/>
+		<path class="st1" d="M538.2,300h386.5v100H538.2V300z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M538.2,325h386.5"/>
+		<path class="st1" d="M538.2,325h386.5"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M538.2,363h386.5"/>
+		<path class="st1" d="M538.2,363h386.5"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 637.2163 319.5)" class="st2 st3">CityStatisticsNotFoundException</text>
 		</g>
 	</g>
@@ -82,12 +79,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 543.2441 342.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M543.2,342.5h227.3"/>
+			<path class="st1" d="M543.2,342.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 543.2441 357.5)" class="st4 st3">-message: String</text>
 		</g>
 	</g>
@@ -107,20 +104,20 @@
 		<rect x="183" y="455" class="st5" width="323" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="176" y="448" class="st1" width="323" height="100"/>
+		<rect x="176" y="448" class="st0" width="323" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M176,448h323v100H176V448z"/>
+		<path class="st1" d="M176,448h323v100H176V448z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M176,473h323"/>
+		<path class="st1" d="M176,473h323"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M176,511h323"/>
+		<path class="st1" d="M176,511h323"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 274.9722 467.5)" class="st2 st3">IdNotFoundException</text>
 		</g>
 	</g>
@@ -128,12 +125,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 181 490.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M181,490.5h227.3"/>
+			<path class="st1" d="M181,490.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 181 505.5)" class="st4 st3">-message: String</text>
 		</g>
 	</g>
@@ -153,20 +150,20 @@
 		<rect x="559" y="455" class="st5" width="369.2" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="552" y="448" class="st1" width="369.2" height="100"/>
+		<rect x="552" y="448" class="st0" width="369.2" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M552,448h369.2v100H552V448z"/>
+		<path class="st1" d="M552,448h369.2v100H552V448z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M552,473h369.2"/>
+		<path class="st1" d="M552,473h369.2"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M552,511h369.2"/>
+		<path class="st1" d="M552,511h369.2"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 650.9722 467.5)" class="st2 st3">ItalianCityNotFoundException</text>
 		</g>
 	</g>
@@ -174,12 +171,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 557 490.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M557,490.5h227.3"/>
+			<path class="st1" d="M557,490.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 557 505.5)" class="st4 st3">~message: String</text>
 		</g>
 	</g>
@@ -199,20 +196,20 @@
 		<rect x="175" y="591" class="st5" width="333.8" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="168" y="584" class="st1" width="333.8" height="100"/>
+		<rect x="168" y="584" class="st0" width="333.8" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M168,584h333.8v100H168V584z"/>
+		<path class="st1" d="M168,584h333.8v100H168V584z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M168,609h333.8"/>
+		<path class="st1" d="M168,609h333.8"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M168,647h333.8"/>
+		<path class="st1" d="M168,647h333.8"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 266.9722 603.5)" class="st2 st3">NegativeStartException</text>
 		</g>
 	</g>
@@ -220,12 +217,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 173 626.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M173,626.5h227.3"/>
+			<path class="st1" d="M173,626.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 173 641.5)" class="st4 st3">~message: String</text>
 		</g>
 	</g>
@@ -245,20 +242,20 @@
 		<rect x="559" y="591" class="st5" width="365.3" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="552" y="584" class="st1" width="365.3" height="100"/>
+		<rect x="552" y="584" class="st0" width="365.3" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M552,584h365.3v100H552V584z"/>
+		<path class="st1" d="M552,584h365.3v100H552V584z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M552,609h365.3"/>
+		<path class="st1" d="M552,609h365.3"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M552,647h365.3"/>
+		<path class="st1" d="M552,647h365.3"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 650.9722 603.5)" class="st2 st3">WrongHoursPeriodException</text>
 		</g>
 	</g>
@@ -266,12 +263,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 557 626.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M557,626.5h227.3"/>
+			<path class="st1" d="M557,626.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 557 641.5)" class="st4 st3">-message: String</text>
 		</g>
 	</g>
@@ -291,20 +288,20 @@
 		<rect x="175" y="727" class="st5" width="337.2" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<rect x="168" y="720" class="st1" width="337.2" height="100"/>
+		<rect x="168" y="720" class="st0" width="337.2" height="100"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M168,720h337.2v100H168V720z"/>
+		<path class="st1" d="M168,720h337.2v100H168V720z"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M168,745h337.2"/>
+		<path class="st1" d="M168,745h337.2"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
-		<path class="st0" d="M168,783h337.2"/>
+		<path class="st1" d="M168,783h337.2"/>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 266.9722 739.5)" class="st2 st3">WrongMultiplyException</text>
 		</g>
 	</g>
@@ -312,12 +309,12 @@
 		<g>
 			<path d="M0,0"/>
 			<text transform="matrix(1 0 0 1 173 762.5)" class="st4 st3">-serialVersionUID: long = 1L {readOnly}</text>
-			<path class="st0" d="M173,762.5h227.3"/>
+			<path class="st1" d="M173,762.5h227.3"/>
 		</g>
 	</g>
 	<g transform="translate(-126,-230) scale(1,1)">
 		<g>
-			<path class="st0" d="M0,0"/>
+			<path class="st1" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 173 777.5)" class="st4 st3">~message: String</text>
 		</g>
 	</g>

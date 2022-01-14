@@ -11,8 +11,10 @@ import org.junit.jupiter.api.Test;
 import it.univpm.pressurestats.model.City;
 import it.univpm.pressurestats.model.Forecast;
 import it.univpm.pressurestats.service.ServiceImpl;
+
 /**
  * Testa i vari modelli.
+ * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
  *
@@ -30,14 +32,17 @@ class TestModel {
 	 * Implementazione di Service usata per test.
 	 */
 	private ServiceImpl s = null;
+
 	/**
 	 * Costruttore della classe.
 	 */
 	public TestModel() {
-		
-	}	
+
+	}
+
 	/**
 	 * Imposta le variabili per i test.
+	 * 
 	 * @throws Exception Eccezione
 	 */
 	@BeforeEach
@@ -46,13 +51,16 @@ class TestModel {
 		c = s.getForecast(s.getJSONForecast("3169070", true));
 		f = c.getWeather();
 	}
+
 	/**
 	 * Usato per rilasciare le risorse dopo che i test sono eseguiti.
+	 * 
 	 * @throws Exception Eccezione
 	 */
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+
 	/**
 	 * Testa metodi della classe City.
 	 */
@@ -65,6 +73,7 @@ class TestModel {
 		assertEquals(3169070, c.getId());
 		assertNotNull(c.getWeather());
 	}
+
 	/**
 	 * Testa metodi della classe Forecast.
 	 */

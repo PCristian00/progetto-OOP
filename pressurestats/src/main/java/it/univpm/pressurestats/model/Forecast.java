@@ -3,8 +3,7 @@ package it.univpm.pressurestats.model;
 import java.util.Objects;
 
 /**
- * Contiene i dati di pressione, visibilità e la data della
- * loro misurazione.
+ * Contiene i dati di pressione, visibilità e la data della loro misurazione.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
@@ -20,8 +19,8 @@ public class Forecast {
 	 */
 	private long visibility;
 	/**
-	 * Data misurazione in formato Unix epoch (long) (Secondi passati
-	 * dal 1 gennaio 1970)
+	 * Data misurazione in formato Unix epoch (long) (Secondi passati dal 1 gennaio
+	 * 1970)
 	 */
 	private long dt;
 	/**

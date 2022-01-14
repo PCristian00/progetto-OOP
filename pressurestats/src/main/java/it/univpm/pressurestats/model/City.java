@@ -37,7 +37,7 @@ public class City {
 	private Vector<Forecast> weather;
 
 	/**
-	 * Costruttore della classe.	 * 
+	 * Costruttore della classe. *
 	 */
 	public City() {
 		this.id = 0;

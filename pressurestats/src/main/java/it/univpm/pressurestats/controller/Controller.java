@@ -72,15 +72,11 @@ public class Controller {
 		}
 	}
 
-	
-
 	/**
 	 * Se lasciata in esecuzione, salva con una frequenza impostata dall'utente le
 	 * informazioni attuali su pressione e visibilita' di 5 città non scelte
 	 * dall'utente.
 	 *
-	 * Questa rotta presenta ancora problemi, ricontrollare il risultato finale.
-	 * 
 	 * @param multiplier moltiplicatore dell'ora (Esempio: 0,5 salva i dati ogni 30
 	 *                   minuti, 2 ogni 2 ore)
 	 * @return Un messaggio di riepilogo con la frequenza
@@ -90,15 +86,19 @@ public class Controller {
 	 *                                      non è ammesso (moltiplicatore minore o
 	 *                                      uguale a 0.02).Un moltiplicatore di 0.02
 	 *                                      restituirebbe dati ogni minuto circa
-	 * @throws NegativeStartException eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
-	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
+	 * @throws NegativeStartException       eccezione lanciata se il valore di Start
+	 *                                      è inferiore a 0. (Negativo)
+	 * @throws IdNotFoundException          eccezione lanciata se non è stato
+	 *                                      trovato nessun ID corrispondente alla
+	 *                                      richiesta
 	 */
 	@GetMapping(value = "/multiSave")
 	public ResponseEntity<Object> saveToFileHourly(
 			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
 			throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
 		try {
-			//TODO Attenzione: Tenere le variabili Start separate tra loro di almeno 1000 (un secondo).
+			// TODO Attenzione: Tenere le variabili Start separate tra loro di almeno 1000
+			// (un secondo).
 			// ROMA
 			service.saveToFileHourly("3169070", multiplier, 1000);
 			// NAPOLI
@@ -109,11 +109,11 @@ public class Controller {
 			service.saveToFileHourly("6542126", multiplier, 4000);
 			// PALERMO
 			service.saveToFileHourly("2523920", multiplier, 5000);
-		
-			return new ResponseEntity<>(
-					service.saveMessage(multiplier) + "Lasciare in esecuzione applicazione.",
+
+			return new ResponseEntity<>(service.saveMessage(multiplier) + "Lasciare in esecuzione applicazione.",
 					HttpStatus.OK);
-		} catch (IdNotFoundException|ItalianCityNotFoundException | WrongMultiplyException | NegativeStartException e) {
+		} catch (IdNotFoundException | ItalianCityNotFoundException | WrongMultiplyException
+				| NegativeStartException e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -133,22 +133,24 @@ public class Controller {
 	 *                                dati ogni minuto circa
 	 * @throws IdNotFoundException    eccezione lanciata se non è stato trovato
 	 *                                nessun ID corrispondente alla richiesta
-	 * @throws NegativeStartException eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
+	 * @throws NegativeStartException eccezione lanciata se il valore di Start è
+	 *                                inferiore a 0. (Negativo)
 	 * 
 	 */
 	@GetMapping(value = "/hourlySave")
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
 			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
 			throws WrongMultiplyException, IdNotFoundException, NegativeStartException {
-	
+
 		try {
 
 			service.saveToFileHourly(id, multiplier, 0);
-			
+
 			return new ResponseEntity<>(
 					service.saveMessage(multiplier) + service.getForecast(service.getJSONForecast(id, true)),
 					HttpStatus.OK);
-		} catch (IdNotFoundException | ItalianCityNotFoundException | WrongMultiplyException | NegativeStartException e) {
+		} catch (IdNotFoundException | ItalianCityNotFoundException | WrongMultiplyException
+				| NegativeStartException e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -174,7 +176,6 @@ public class Controller {
 		}
 	}
 
-	
 	/**
 	 * Restituisce le statistiche di pressione e visibilità di una città data,
 	 * filtrate dal giorno attuale a tot giorni passati.
@@ -197,7 +198,6 @@ public class Controller {
 
 	}
 
-	
 	/**
 	 * Restituisce e salva le statistiche per più ore di un giorno di una città.
 	 * 

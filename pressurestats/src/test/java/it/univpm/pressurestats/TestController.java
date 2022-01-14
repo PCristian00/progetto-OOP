@@ -12,8 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
 /**
  * Testa il Controller.
+ * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
  *
@@ -25,34 +27,42 @@ class TestController {
 	 * Costruttore della classe;
 	 */
 	public TestController() {
-		
+
 	}
+
 	/**
-	 * interfaccia di configurazione
+	 * Interfaccia di configurazione
 	 */
 	@Autowired
 	private WebApplicationContext context;
 	/**
-	 * Rende disponibili al test le applicazioni web senza usare una vera comunicazione HTTP.
+	 * Rende disponibili al test le applicazioni web senza usare una vera
+	 * comunicazione HTTP.
 	 */
 	private MockMvc mockMvc;
+
 	/**
 	 * Imposta le variabili per i test.
+	 * 
 	 * @throws Exception Eccezione
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context).build();
 	}
+
 	/**
 	 * Usato per rilasciare le risorse dopo che i test sono eseguiti.
+	 * 
 	 * @throws Exception Eccezione
 	 */
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+
 	/**
 	 * Testa rotte del Controller.
+	 * 
 	 * @throws Exception Eccezione
 	 */
 	@Test

@@ -21,8 +21,8 @@ import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.*;
 
 /**
- * Implementazione dell'interfaccia Service. Contiene i
- * metodi utilizzati dal controller.
+ * Implementazione dell'interfaccia Service. Contiene i metodi utilizzati dal
+ * controller.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
@@ -34,35 +34,37 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	 * 
 	 */
 	private String apiKey = "5a32bbb372f0b50deba8939136c59500";
-	
+
 	/**
 	 * Rappresenta la previsione
 	 * 
 	 */
 	JSONObject forecast = null;
-	
+
 	/**
 	 * Percorso di salvataggio del file
 	 * 
 	 */
-	public static String dir=System.getProperty("user.dir") + "/src/main/resources/";
+	public static String dir = System.getProperty("user.dir") + "/src/main/resources/";
 	/**
 	 * Suffisso nome file ed estensione
 	 * 
 	 */
-	public static String f_type="_data.txt";
+	public static String f_type = "_data.txt";
 	/**
 	 * Ora in millisecondi, costante
 	 */
 	static final long hour = 3600000;
+
 	/**
 	 * Costruttore della classe
 	 */
 	public ServiceImpl() {
 	}
-	@Override	
+
+	@Override
 	public JSONObject toJSON(City city) {
-		
+
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		try {
 			String json = ow.writeValueAsString(city);
@@ -71,7 +73,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			Map<String, Object> map = mapper.readValue(json, Map.class);
 			forecast = new JSONObject(map);
 		} catch (JsonProcessingException e) {
-			
+
 			e.printStackTrace();
 		}
 		return forecast;
@@ -112,7 +114,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		} catch (IOException | ParseException e) {
 			throw new IdNotFoundException("ID non trovato");
 
-		} 
+		}
 
 		return jo;
 	}
@@ -136,7 +138,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		city.setLon((double) coord.get("lon"));
 		city.setName((String) obj.get("name"));
 		city.setId((long) obj.get("id"));
-		if(!((String) sys.get("country")).equals("IT"))
+		if (!((String) sys.get("country")).equals("IT"))
 			throw new ItalianCityNotFoundException("La città non è italiana");
 		city.setCountry((String) sys.get("country"));
 
@@ -155,8 +157,8 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	@Override
 	public void saveToFile(JSONObject object) throws ItalianCityNotFoundException {
 
-		City city = this.getForecast(object);		
-		String path=dir+city.getName()+f_type;
+		City city = this.getForecast(object);
+		String path = dir + city.getName() + f_type;
 		JSONObject obj = toJSON(city);
 
 		try {
@@ -169,7 +171,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void saveToFileHourly(String id, double multiplier, long start)
 			throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
@@ -190,7 +192,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 
 		Timer timer = new Timer();
 
-		timer.schedule(tt, start, (long) (multiplier*hour));
+		timer.schedule(tt, start, (long) (multiplier * hour));
 
 	}
 
@@ -212,43 +214,44 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		return ja;
 	}
 
+	public String saveMessage(double multiplier) {
+		/**
+		 * Ora in millisecondi (costante) moltiplicata per l'input dell'utente
+		 */
+		long ms = (long) (multiplier * hour);
+		/**
+		 * Ore
+		 */
+		int h = 0;
+		/**
+		 * Minuti
+		 */
+		int m = 0;
+		/**
+		 * Secondi
+		 */
+		int s = 0;
+		/**
+		 * Parte iniziale del messaggio
+		 */
+		String msg = "Il salvataggio avverrà ogni ";
+		if (multiplier != 1) {
 
-public String saveMessage(double multiplier) {
-	/**
-	 * Ora in millisecondi (costante) moltiplicata per l'input dell'utente
-	 */
-	long ms=(long) (multiplier*hour);
-	/**
-	 * Ore
-	 */
-	int h=0;
-	/**
-	 * Minuti
-	 */
-	int m=0;
-	/**
-	 * Secondi
-	 */
-	int s=0;
-	/**
-	 * Parte iniziale del messaggio
-	 */
-	String msg="Il salvataggio avverrà ogni ";
-	if (multiplier != 1) {
+			s = (int) (ms / 1000) % 60;
+			m = (int) (ms / (1000 * 60)) % 60;
+			h = (int) (ms / (1000 * 60 * 60)) % 60;
+			if (h != 0)
+				msg += h + " h ";
+			if (m != 0)
+				msg += m + " m ";
+			if (s != 0)
+				msg += s + " s ";
+		}
 
-		s=(int)(ms/1000)%60;
-		m=(int)(ms/(1000*60))%60;
-		h=(int)(ms/(1000*60*60))%60;
-		if(h!=0) msg+=h+" h ";
-		if(m!=0) msg+=m+" m ";
-		if(s!=0) msg+=s+" s ";
+		else
+			msg += "ora.";
+		return msg + "\n";
+
 	}
-		
-	else
-		msg += "ora.";
-	return msg+"\n";
-	
-}
-
 
 }

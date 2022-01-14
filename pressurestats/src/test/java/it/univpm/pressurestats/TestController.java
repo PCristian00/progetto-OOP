@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 /**
  * Testa il Controller.
  * @author Pietroniro Cristian
@@ -29,6 +31,8 @@ class TestController {
 	 * Rende disponibili al test le applicazioni web senza usare una vera comunicazione HTTP.
 	 */
 	@Autowired
+	private WebApplicationContext context;
+	
 	private MockMvc mockMvc;
 	/**
 	 * Imposta le variabili per i test.
@@ -36,7 +40,7 @@ class TestController {
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		
+		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context).build();
 	}
 	/**
 	 * Usato per rilasciare le risorse dopo che i test sono eseguiti.
@@ -51,11 +55,11 @@ class TestController {
 	 */
 	@Test
 	void testController() throws Exception {
-		this.mockMvc.perform(get("/current")).andExpect(status().isOk());
-		this.mockMvc.perform(get("/multiSave")).andExpect(status().isOk());
-		this.mockMvc.perform(get("/hourlySave")).andExpect(status().isOk());
-		this.mockMvc.perform(get("/oneDay?date=07-01-2022")).andExpect(status().isOk());
-		this.mockMvc.perform(get("/moreDays?days=3")).andExpect(status().isOk());
-		this.mockMvc.perform(get("/hourly?date=07-01-2022&city=Palermo&from=0&to=7")).andExpect(status().isOk());
+		mockMvc.perform(get("/current")).andExpect(status().isOk());
+		mockMvc.perform(get("/multiSave")).andExpect(status().isOk());
+		mockMvc.perform(get("/hourlySave")).andExpect(status().isOk());
+		mockMvc.perform(get("/oneDay?date=07-01-2022")).andExpect(status().isOk());
+		mockMvc.perform(get("/moreDays?days=3")).andExpect(status().isOk());
+		mockMvc.perform(get("/hourly?date=07-01-2022&city=Palermo&from=0&to=7")).andExpect(status().isOk());
 	}
 }

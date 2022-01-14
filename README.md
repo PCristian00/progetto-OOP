@@ -207,9 +207,11 @@ Contiene le eccezioni personalizzate di PressureStats.
 
 <a name="tests"></a>
 ### Test
-<img src="images/test_pkg.svg" alt="test_pkg">
+<img src="images/pressurestats_pkg.svg" alt="test_pkg">
 
 L'applicazione offre la possibilità di testare la maggior parte dei metodi.
+
+I test sono contenuti nel package `it.univpm.pressurestats`.
   
 <b>TestController</b>: Testa le rotte del Controller.
 

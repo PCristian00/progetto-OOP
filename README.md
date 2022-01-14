@@ -121,6 +121,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [Spring Initializr](https://start.spring.io/)
 * [Eclipse IDE](https://www.eclipse.org/)
 * [Postman](https://www.postman.com/)
+* [StarUML](https://staruml.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

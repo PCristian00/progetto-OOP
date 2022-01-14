@@ -28,11 +28,13 @@ class TestController {
 		
 	}
 	/**
-	 * Rende disponibili al test le applicazioni web senza usare una vera comunicazione HTTP.
+	 * interfaccia di configurazione
 	 */
 	@Autowired
 	private WebApplicationContext context;
-	
+	/**
+	 * Rende disponibili al test le applicazioni web senza usare una vera comunicazione HTTP.
+	 */
 	private MockMvc mockMvc;
 	/**
 	 * Imposta le variabili per i test.

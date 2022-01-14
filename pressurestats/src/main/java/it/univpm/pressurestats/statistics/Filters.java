@@ -21,13 +21,18 @@ import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 
 
 /**
- * Questa classe gestisce i filtri.
+ * Gestisce i filtri.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
  */
 public class Filters {
-
+/**
+ * Costruttore della classe.
+ */
+	public Filters() {
+		
+	}
 	/**
 	 * Prepara un JSONArray delle statistiche di un solo giorno di una città.
 	 * 
@@ -62,7 +67,7 @@ public class Filters {
 	}
 
 	/**
-	 * Prepara un JSONArray delle statistiche di più giorni.
+	 * Prepara un JSONArray delle statistiche filtrate dal giorno attuale a tot giorni passati.
 	 * 
 	 * @param city    città scelta
 	 * @param numDays numeri di giorni di cui filtrare statistiche

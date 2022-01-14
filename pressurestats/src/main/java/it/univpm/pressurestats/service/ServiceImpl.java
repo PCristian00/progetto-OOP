@@ -16,13 +16,14 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 
 import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
+import it.univpm.pressurestats.exception.NegativeStartException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.*;
 
 //TODO Forse @Service è preferibile metterlo nell'interfaccia
 
 /**
- * Questa classe è l'implementazione dell'interfaccia Service. Contiene i
+ * Implementazione dell'interfaccia Service. Contiene i
  * metodi utilizzati dal controller.
  * 
  * @author Pietroniro Cristian
@@ -30,9 +31,6 @@ import it.univpm.pressurestats.model.*;
  */
 @Service
 public class ServiceImpl implements it.univpm.pressurestats.service.Service {
-
-	// TODO Chiave cambiata rispetto a main
-	
 	/**
 	 * API Key
 	 * 
@@ -57,7 +55,15 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	 * 
 	 */
 	public static String f_type="_data.txt";
-	
+	/**
+	 * Ora in millisecondi, costante
+	 */
+	static final long hour = 3600000;
+	/**
+	 * Costruttore della classe
+	 */
+	public ServiceImpl() {
+	}
 	@Override	
 	public JSONObject toJSON(City city) {
 		
@@ -69,7 +75,7 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			Map<String, Object> map = mapper.readValue(json, Map.class);
 			forecast = new JSONObject(map);
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return forecast;
@@ -169,8 +175,9 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 	
 	@Override
-	public void saveToFileHourly(String id,double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException {
+	public void saveToFileHourly(String id,double multiplier,long start) throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
 	if(multiplier<=0.02) throw new WrongMultiplyException("Moltiplicatore non ammesso.");
+	if(start<0) throw new NegativeStartException("Il millisecondo di partenza non può essere inferiore a zero");
 	
 		TimerTask tt = new TimerTask() {
 			public void run(){						
@@ -181,9 +188,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 			}
 				}	
 		};
-		final long hour = 3600000; // ora in millisecondi
+		
 		Timer timer = new Timer();
-		timer.schedule(tt, 0, (long) (multiplier*hour)); // ogni ora
+		//TODO start prima era 0 ed è misurato in millisecondi
+		timer.schedule(tt, start, (long) (multiplier*hour)); // ogni ora
 	}
 
 	@SuppressWarnings("unchecked")
@@ -203,4 +211,44 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 		}
 		return ja;
 	}
+
+
+public String saveMessage(double multiplier) {
+	/**
+	 * Ora in millisecondi (costante) moltiplicata per l'input dell'utente
+	 */
+	long ms=(long) (multiplier*hour);
+	/**
+	 * Ore
+	 */
+	int h=0;
+	/**
+	 * Minuti
+	 */
+	int m=0;
+	/**
+	 * Secondi
+	 */
+	int s=0;
+	/**
+	 * Parte iniziale del messaggio
+	 */
+	String msg="Il salvataggio avverrà ogni ";
+	if (multiplier != 1) {
+
+		s=(int)(ms/1000)%60;
+		m=(int)(ms/(1000*60))%60;
+		h=(int)(ms/(1000*60*60))%60;
+		if(h!=0) msg+=h+" h ";
+		if(m!=0) msg+=m+" m ";
+		if(s!=0) msg+=s+" s ";
+	}
+		
+	else
+		msg += "ora.";
+	return msg+"\n";
+	
+}
+
+
 }

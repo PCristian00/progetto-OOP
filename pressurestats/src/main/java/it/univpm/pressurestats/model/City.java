@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Vector;
 
 /**
- * La classe City contiene le proprietà della città e le relative previsioni.
+ * Contiene le proprietà della città e le relative previsioni.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
@@ -37,7 +37,7 @@ public class City {
 	private Vector<Forecast> weather;
 
 	/**
-	 * Costruttore dell'oggetto.	 * 
+	 * Costruttore della classe.	 * 
 	 */
 	public City() {
 		this.id = 0;
@@ -49,7 +49,7 @@ public class City {
 	}
 
 	/**
-	 * Costruttore dell'oggetto con nome come parametro.
+	 * Costruttore della classe con nome come parametro.
 	 * 
 	 * @param name nome della città
 	 */

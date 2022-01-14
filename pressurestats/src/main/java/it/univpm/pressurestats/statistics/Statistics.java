@@ -15,7 +15,7 @@ import it.univpm.pressurestats.exception.DayNotFoundException;
 import it.univpm.pressurestats.exception.WrongHoursPeriodException;
 
 /**
- * Questa classe permette di calcolare le statistiche.
+ * Permette di calcolare e salvare le statistiche.
  * 
  * @author Pietroniro Cristian
  * @author Settimi Diego
@@ -42,7 +42,7 @@ public class Statistics{
 	/**
 	 * Costruttore della classe.
 	 * 
-	 * @param city citta' di cui calcolare statitische
+	 * @param city città di cui calcolare statitische
 	 * @param day giorno di cui calcolare statistiche
 	 * @throws DayNotFoundException eccezione lanciata se il giorno non è stato trovato
 	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate
@@ -58,7 +58,7 @@ public class Statistics{
 	/**
 	 * Costruttore della classe.
 	 * 
-	 * @param city citta' di cui calcolare statitische
+	 * @param city città di cui calcolare statitische
 	 * @param day giorno di cui calcolare statistiche
 	 *	@param from ora da cui partire
 	 *	@param to ora a cui arrivare
@@ -77,7 +77,7 @@ public class Statistics{
 	/**
 	 * Costruttore della classe.
 	 * 
-	 * @param city citta' di cui calcolare statitische
+	 * @param city città di cui calcolare statitische
 	 * @param numDays numero di giorni di cui calcolare statistiche
 	 * @throws CityStatisticsNotFoundException eccezione lanciata se le statistiche della città non sono state trovate.
 	 */
@@ -95,7 +95,7 @@ public class Statistics{
 	}
 	
 	/**
-	 * Metodo che calcola statistiche.
+	 * Calcola le statistiche.
 	 * 
 	 * 
 	 * 
@@ -194,7 +194,7 @@ public class Statistics{
 		return object;
 	}
 	/**
-	 * Metodo che salva le statistiche calcolate su un file di testo.
+	 * Salva le statistiche calcolate su un file di testo.
 	 * 
 	 * @param object JSONObject contenente i dati da salvare
 	 * 

@@ -5,11 +5,12 @@ import org.json.simple.JSONObject;
 
 import it.univpm.pressurestats.exception.IdNotFoundException;
 import it.univpm.pressurestats.exception.ItalianCityNotFoundException;
+import it.univpm.pressurestats.exception.NegativeStartException;
 import it.univpm.pressurestats.exception.WrongMultiplyException;
 import it.univpm.pressurestats.model.City;
 
 /**
- * Questa è l'interfaccia contenente i metodi implementati da ServiceImpl e richiamati
+ * Interfaccia contenente i metodi implementati da ServiceImpl e richiamati
  * dal Controller.
  * 
  * @author Pietroniro Cristian
@@ -63,10 +64,13 @@ public interface Service {
 	 * 
 	 * @param id id della città di cui salvare i dati ogni tot ore
 	 * @param multiplier moltiplicatore dell'ora per cambiare la frequenza di salvataggio. (Es. Impostando il valore a 2, il salvataggio avviene ogni 2 ore, a 0.5 ogni 30 minuti).
+	 * @param start millisecondo di partenza del salvataggio
 	 * @throws ItalianCityNotFoundException eccezione lanciata se la città non è italiana
-	 * @throws WrongMultiplyException Eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa.
+	 * @throws WrongMultiplyException eccezione lanciata se il moltiplicatore non è ammesso (moltiplicatore minore o uguale a 0.02).Un moltiplicatore di 0.02 restituirebbe dati ogni minuto circa.
+	 * @throws NegativeStartException eccezione lanciata se il valore di Start è inferiore a 0. (Negativo)
+	 * @throws IdNotFoundException eccezione lanciata se non è stato trovato nessun ID corrispondente alla richiesta
 	 */
-	public abstract void saveToFileHourly(String id, double multiplier) throws ItalianCityNotFoundException, WrongMultiplyException;
+	public abstract void saveToFileHourly(String id, double multiplier, long start) throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException,IdNotFoundException;
 
 	/**
 	 * Legge dati da un file salvato in precedenza
@@ -75,4 +79,10 @@ public interface Service {
 	 * @return JSONArray contenente i dati letti
 	 */
 	public abstract JSONArray readFile(String city);
+	/**
+	 * A partire dal multiplier, prepara una stringa contenente la frequenza di aggiornamento del salvataggio.
+	 * @param multiplier moltiplicatore dell'ora per cambiare la frequenza di salvataggio. (Es. Impostando il valore a 2, il salvataggio avviene ogni 2 ore, a 0.5 ogni 30 minuti).
+	 * @return un messaggio contenente la frequenza di aggiornamento
+	 */
+	public String saveMessage(double multiplier);
 }

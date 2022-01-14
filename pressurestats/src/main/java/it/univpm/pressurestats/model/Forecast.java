@@ -3,7 +3,7 @@ package it.univpm.pressurestats.model;
 import java.util.Objects;
 
 /**
- * La classe Forecast contiene i dati di pressione, visibilità e la data della
+ * Contiene i dati di pressione, visibilità e la data della
  * loro misurazione.
  * 
  * @author Pietroniro Cristian
@@ -30,7 +30,7 @@ public class Forecast {
 	private String date;
 
 	/**
-	 * Costruttore dell'oggetto.
+	 * Costruttore della classe.
 	 * 
 	 */
 	public Forecast() {

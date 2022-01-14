@@ -56,6 +56,9 @@ Applicazione Java che calcola statistiche di visibilità e pressione di una citt
 	<li><a href="#use-case">Casi d'uso</a></li>
 	</ul>
 <ul>
+	<li><a href="#pkg">Struttura dei package</a></li>
+	</ul>
+<ul>
 	<li><a href="#p-controller">Package Controller</a></li>
 	</ul>
 <ul>
@@ -140,6 +143,15 @@ Ulteriore documentazione con diagrammi UML è disponibile [qui](https://github.c
 <img src="images/use_case.svg" alt="use_case">
 
 Diagramma dei casi d'uso.
+  
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="pkg"></a>
+### Struttura dei package
+
+<img src="images/package_structure.svg" alt="package_structure">
+
+Struttura dei package.
   
 <p align="right">(<a href="#top">back to top</a>)</p>
 

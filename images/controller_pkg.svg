@@ -3,38 +3,32 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 507 235" style="enable-background:new 0 0 507 235;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st2{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st0{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st3{font-family:'Arial-BoldMT';}
 	.st4{font-size:13px;}
 	.st5{font-family:'ArialMT';}
 </style>
 <g>
 	<g transform="translate(-278,-238) scale(1,1)">
-		<rect x="288" y="248" class="st0" width="487" height="215"/>
+		<rect x="307" y="267" class="st0" width="458.8" height="175"/>
 	</g>
 	<g transform="translate(-278,-238) scale(1,1)">
-		<path class="st1" d="M288,248h487v215H288V248z"/>
+		<rect x="300" y="260" class="st1" width="458.8" height="175"/>
 	</g>
 	<g transform="translate(-278,-238) scale(1,1)">
-		<rect x="307" y="267" class="st2" width="458.8" height="175"/>
+		<path class="st2" d="M300,260h458.8v175H300V260z"/>
 	</g>
 	<g transform="translate(-278,-238) scale(1,1)">
-		<rect x="300" y="260" class="st0" width="458.8" height="175"/>
+		<path class="st2" d="M300,285h458.8"/>
 	</g>
 	<g transform="translate(-278,-238) scale(1,1)">
-		<path class="st1" d="M300,260h458.8v175H300V260z"/>
-	</g>
-	<g transform="translate(-278,-238) scale(1,1)">
-		<path class="st1" d="M300,285h458.8"/>
-	</g>
-	<g transform="translate(-278,-238) scale(1,1)">
-		<path class="st1" d="M300,323h458.8"/>
+		<path class="st2" d="M300,323h458.8"/>
 	</g>
 	<g transform="translate(-278,-238) scale(1,1)">
 		<g>
-			<path class="st1" d="M0,0"/>
+			<path class="st2" d="M0,0"/>
 			<text transform="matrix(1 0 0 1 501.2043 279.5)" class="st3 st4">Controller</text>
 		</g>
 	</g>

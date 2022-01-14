@@ -619,7 +619,7 @@ Project Link: [https://github.com/PCristian00/progetto-OOP](https://github.com/P
 [issues-shield]: https://img.shields.io/github/issues/PCristian00/progetto-OOP.svg?style=for-the-badge
 [issues-url]: https://github.com/PCristian00/progetto-OOP/issues
 [Licenza-shield]: https://img.shields.io/github/Licenza/PCristian00/progetto-OOP.svg?style=for-the-badge
-[Licenza-url]: https://github.com/PCristian00/progetto-OOP/blob/main/license
+[Licenza-url]: https://github.com/PCristian00/progetto-OOP/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png

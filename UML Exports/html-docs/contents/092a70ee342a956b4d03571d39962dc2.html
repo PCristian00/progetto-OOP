@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Controller</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Controller</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>PressureStats</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='3f1ea772d41382ed4d55539a872d287d.html'><span class='node-icon staruml-icon icon-UMLModel'></span>Class diagrams</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='1b1d8fae595ea59cbe1469064c50ae7e.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>it</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='92c3cebb6557cccbe9a5774dd8e4c1a9.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>univpm</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='34d0e31a500557d8f271592e3e44098d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>pressurestats</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='8e6d9c31fdcbf2709c835279f3060210.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>controller</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='092a70ee342a956b4d03571d39962dc2.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Controller</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Processa le varie richieste, prepara il modello e restituisce una risposta.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+      <section>
+        <h3>Attributes</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="007f8f1493b95c0023b2fba1290e0f4c.html">service</a></td>
+            <td><a href='a58cabd2da4aaab5277354e9395cd758.html'>Service</a></td>
+            <td><p>Interfaccia Service usata per le operazioni di raccolta e salvataggio dati.</p></td>
+          </tr>
+          
+          <tr>
+            <td>package</td>
+            <td><a href="b2991851a0b2ddbc541c3302a3018c6a.html">statistics</a></td>
+            <td><a href='f51e2c5a904dc0a654e46073b5ac6956.html'>Statistics</a></td>
+            <td><p>Oggetto Statitstics usato per le operazioni di generazione e salvataggio
+statistiche.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="784c2414194653fec8cbb9f6890ba6eb.html">Controller()</a></td>
+            <td><p>Costruttore della classe.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="3380b881e7e7bd398c1bb85d1a2ab852.html">getForecast(id: String): ResponseEntity</a></td>
+            <td><p>Mostra le informazioni attuali su pressione e visibilità.
+I dati vengono stampati su schermo e salvati in un file di testo.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1b519985d94e6b99bc6831a3f3e13398.html">saveToFileHourly(multiplier: double): ResponseEntity</a></td>
+            <td><p>Se lasciata in esecuzione, salva con una frequenza impostata dall&#39;utente le informazioni attuali su pressione e visibilita&#39; di 5 città non scelte dall&#39;utente.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="54254760601b254b7d75bda37e63b75f.html">saveToFileHourly(id: String, multiplier: double): ResponseEntity</a></td>
+            <td><p>Se lasciata in esecuzione, salva con una frequenza impostata dall&#39;utente le informazioni attuali su pressione e visibilità.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="c7b486c7daed4ef6bd2b009a30b88e90.html">getStatisticsOneDay(city: String, date: String): ResponseEntity</a></td>
+            <td><p>Restituisce e salva le statistiche giornaliere di una città.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="b0cc2d2f92e08477c5a8ecbc8bd2c322.html">getStatisticsMoreDays(city: String, days: int): ResponseEntity</a></td>
+            <td><p>Restituisce le statistiche di pressione e visibilità di una città data, filtrate dal giorno attuale a tot giorni passati.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="f66d90aba1028b3edd3bd05b5894e8c7.html">getStatisticsHourly(city: String, date: String, from: int, to: int): ResponseEntity</a></td>
+            <td><p>Restituisce e salva le statistiche per più ore di un giorno di una città.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Controller</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isActive</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

@@ -207,9 +207,11 @@ Contiene le eccezioni personalizzate di PressureStats.
 
 <a name="tests"></a>
 ### Test
-<img src="images/test_pkg.svg" alt="test_pkg">
+<img src="images/pressurestats_pkg.svg" alt="test_pkg">
 
 L'applicazione offre la possibilità di testare la maggior parte dei metodi.
+
+I test sono contenuti nel package `it.univpm.pressurestats`.
   
 <b>TestController</b>: Testa le rotte del Controller.
 
@@ -257,6 +259,19 @@ private String apiKey = "ENTER YOUR API";
 <a name="usage"></a>
 ## Utilizzo
 Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [Postman](https://www.postman.com/) o applicazioni simili.
+
+Alcune rotte utilizzano l'[`id`](#id) della città anziché il nome.
+
+Per trovare l'`id` della città scelta è possibile cercare la città su [OpenWeather](https://openweathermap.org/find): l'[`id`] comparirà nell'URL.
+
+Esempio
+
+[https://openweathermap.org/city/3169070](https://openweathermap.org/city/3169070)
+
+Roma, id `3169070`
+
+Ottenuto l'`id` per la città scelta, è possibile eseguire tutte le operazioni seguendo questi semplici passi.
+
 1. Avviare il programma come applicazione SpringBoot
 2. Da Postman, fare una chiamata di tipo get con la rotta scelta [(vedi tabella)](#r)
 3. Consultare i dati (salvati in [`/src/main/resources/`](https://github.com/PCristian00/progetto-OOP/tree/main/pressurestats/src/main/resources))

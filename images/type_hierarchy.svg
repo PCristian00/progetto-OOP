@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 539 547" style="enable-background:new 0 0 539 547;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st1{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st2{fill:#FFFFFF;}
+	.st3{font-family:'Arial-BoldMT';}
+	.st4{font-size:13px;}
+</style>
+<g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M176,160h519v527H176V160z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="234.3" y="179" class="st1" width="71.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="227.3" y="172" class="st2" width="71.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M227.3,172h71.1v24h-71.1V172z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 234.71 191.5)" class="st3 st4">Controller</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="483" y="424.5" class="st1" width="156.3" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="476" y="417.5" class="st2" width="156.3" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M476,417.5h156.3v24H476V417.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 485.5486 437)" class="st3 st4">DayNotFoundException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="453.8" y="459.5" class="st1" width="214.8" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="446.8" y="452.5" class="st2" width="214.8" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M446.8,452.5h214.8v24H446.8V452.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 459.9072 472)" class="st3 st4">CityStatisticsNotFoundException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="489.2" y="494.5" class="st1" width="144" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="482.2" y="487.5" class="st2" width="144" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M482.2,487.5h144v24h-144V487.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 491.6868 507)" class="st3 st4">IdNotFoundException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="463.9" y="535.5" class="st1" width="194.6" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="456.9" y="528.5" class="st2" width="194.6" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M456.9,528.5h194.6v24H456.9V528.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 468.5686 548)" class="st3 st4">ItalianCityNotFoundException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="483.7" y="570.5" class="st1" width="154.9" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="476.7" y="563.5" class="st2" width="154.9" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M476.7,563.5h154.9v24H476.7V563.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 486.2722 583)" class="st3 st4">NegativeStartException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="466.2" y="605.5" class="st1" width="190.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="459.2" y="598.5" class="st2" width="190.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M459.2,598.5h190.1v24H459.2V598.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 470.4983 618)" class="st3 st4">WrongHoursPeriodException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="480.6" y="640.5" class="st1" width="161.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="473.6" y="633.5" class="st2" width="161.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M473.6,633.5h161.1v24H473.6V633.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 484.5933 653)" class="st3 st4">WrongMultiplyException</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="253.1" y="214" class="st1" width="33.6" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="246.1" y="207" class="st2" width="33.6" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M246.1,207h33.6v24h-33.6V207z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 251.6931 226.5)" class="st3 st4">City</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="238.3" y="249" class="st1" width="63.2" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="231.3" y="242" class="st2" width="63.2" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M231.3,242h63.2v24h-63.2V242z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 237.6013 261.5)" class="st3 st4">Forecast</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="187" y="284" class="st1" width="165.8" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="180" y="277" class="st2" width="165.8" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M180,277h165.8v24H180V277z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 191.3523 296.5)" class="st3 st4">PressurestatsApplication</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st1" d="M258.4,330.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5s-5.1,11.5-11.5,11.5S258.4,336.9,258.4,330.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M251.4,323.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5s-5.1,11.5-11.5,11.5S251.4,329.9,251.4,323.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M251.4,323.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5s-5.1,11.5-11.5,11.5S251.4,329.9,251.4,323.5z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 241.2131 354.5)" class="st3 st4">Service</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="520.2" y="331" class="st1" width="82" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="513.2" y="324" class="st2" width="82" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M513.2,324h82v24h-82V324z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 520.2449 343.5)" class="st3 st4">ServiceImpl</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="245.9" y="378" class="st1" width="48" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="238.9" y="371" class="st2" width="48" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M238.9,371h48v24h-48V371z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 245.1931 390.5)" class="st3 st4">Filters</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="236.5" y="413" class="st1" width="66.8" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="229.5" y="406" class="st2" width="66.8" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M229.5,406h66.8v24h-66.8V406z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 236.8809 425.5)" class="st3 st4">Statistics</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="221.4" y="448" class="st1" width="96.9" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="214.4" y="441" class="st2" width="96.9" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M214.4,441h96.9v24h-96.9V441z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 222.7891 460.5)" class="st3 st4">TestController</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="233.7" y="483" class="st1" width="72.3" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="226.7" y="476" class="st2" width="72.3" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M226.7,476H299v24h-72.3V476z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 233.2627 495.5)" class="st3 st4">TestModel</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="229.4" y="518" class="st1" width="81" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="222.4" y="511" class="st2" width="81" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M222.4,511h81v24h-81V511z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 229.2922 530.5)" class="st3 st4">TestService</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="223.6" y="553" class="st1" width="92.6" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="216.6" y="546" class="st2" width="92.6" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M216.6,546h92.6v24h-92.6V546z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 224.96 565.5)" class="st3 st4">TestStatistics</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="234.3" y="588" class="st1" width="71.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<rect x="227.3" y="581" class="st2" width="71.1" height="24"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M227.3,581h71.1v24h-71.1V581z"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 234.3418 600.5)" class="st3 st4">Exception</text>
+		</g>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M475,430c-52,0-119.3,50-202,150"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M279.5,559l-6.5,21l19.4-10.3"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M279.5,559l-6.5,21l19.4-10.3L279.5,559"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M446,465c-32.7,0-89.3,38.3-170,115"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M284.9,559.9L276,580l20.5-7.9"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M284.9,559.9L276,580l20.5-7.9L284.9,559.9"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M481,499c-56,0.7-122.7,27.7-200,81"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M293,561.5L281,580l21.5-4.6"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M293,561.5L281,580l21.5-4.6L293,561.5"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M456,541c-39.3,0-92.7,13-160,39"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M311.9,564.8L296,580l22,0.5"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M311.9,564.8L296,580l22,0.5L311.9,564.8"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M476,575c-52.7,0.7-111.7,5-177,13"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M318.2,577.2L299,588l21.2,5.9"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M318.2,577.2L299,588l21.2,5.9L318.2,577.2"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M458,611c-40.7,0-93.7-4.3-159-13"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M320.3,592.3L299,598l19,11"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M320.3,592.3L299,598l19,11L320.3,592.3"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M473,646c-50.7,0-110-13.3-178-40"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st2" d="M317,605.6l-22,0.4l15.8,15.3"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M317,605.6l-22,0.4l15.8,15.3L317,605.6"/>
+	</g>
+	<g transform="translate(-166,-150) scale(1,1)">
+		<path class="st0" d="M512,336c-76.7,0.7-155.9-1.9-237.6-7.6"/>
+	</g>
+</g>
+</svg>

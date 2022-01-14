@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Service</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/icon-font/icons.css">
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.bonsai.js"></script>
+
+  </head>
+  <body>
+    <div>
+
+      <!-- Name Title -->
+
+      <h1>Service</h1>
+
+      <!-- Type and Stereotype -->
+
+      <section style="margin-top: .5em;">
+        <span class="alert alert-info">
+          <span class="node-icon staruml-icon icon-UMLInterface"></span>
+          UMLInterface
+        </span>
+        
+      </section>
+
+      <!-- Path -->
+
+      <section style="margin-top: 10px">
+        
+        
+        
+          
+          <span class="label label-info"><a href='cf9c8b720f3815adeccaf3ef6e48c6c4.html'><span class='node-icon staruml-icon icon-Project'></span>PressureStats</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='3f1ea772d41382ed4d55539a872d287d.html'><span class='node-icon staruml-icon icon-UMLModel'></span>Class diagrams</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='1b1d8fae595ea59cbe1469064c50ae7e.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>it</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='92c3cebb6557cccbe9a5774dd8e4c1a9.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>univpm</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='34d0e31a500557d8f271592e3e44098d.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>pressurestats</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='ec3960c7cee3738e5013f2ef239e2eb7.html'><span class='node-icon staruml-icon icon-UMLPackage'></span>service</a></span>
+        
+          <span>::</span>
+          <span class="label label-info"><a href='599a341c03da98d6f180c1d35d3a52c4.html'><span class='node-icon staruml-icon icon-UMLInterface'></span>Service</a></span>
+        
+      </section>
+
+      <!-- Diagram -->
+
+      
+
+      <!-- Description -->
+
+      
+      <section>
+        <h3>Description</h3>
+        <div>
+          
+            <p>Interfaccia contenente i metodi implementati da ServiceImpl e richiamati dal Controller.</p>
+          
+        </div>
+      </section>
+      
+
+      <!-- Specification -->
+
+      
+
+      <!-- Directed Relationship -->
+
+      
+
+      <!-- Undirected Relationship -->
+
+      
+
+      <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+      
+
+      <!-- Interface -->
+
+      
+        
+        
+<section class="element-list">
+    <h3>Implementing Classifiers</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='401622139d1b11cf4a71d09149182899.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ServiceImpl</a></li>
+        
+    </ul>
+</section>
+
+
+      
+
+      <!-- Component -->
+
+      
+
+      <!-- Node -->
+
+      
+
+      <!-- Actor -->
+
+      
+
+      <!-- Use Case -->
+
+      
+
+      <!-- Template Parameters -->
+
+      
+
+      <!-- Literals -->
+
+      
+
+      <!-- Attributes -->
+
+      
+
+      <!-- Operations -->
+
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="53e72bf732eb0ff3eb0643f32ff5abd5.html">toJSON(city: City): JSONObject</a></td>
+            <td><p>Converte l&#39;oggetto di tipo City in un JSONObject.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="00f7414fdfb11a81fa0b1fce6af1dd90.html">getJSONForecast(name: String, isObject: boolean): JSONObject</a></td>
+            <td><p>Scarica da OpenWeather le previsioni meteo di una città data..</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="cb09e0bcecb0441cc9b768e031bef21c.html">getForecast(forecast: JSONObject): City</a></td>
+            <td><p>Utilizza getJSONForecast per prendere le informazioni di visibilità e pressione utilizzate per le statistiche.</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="1dc8bf151d9664bb4fc665df704b02cc.html">saveToFile(obj: JSONObject): void</a></td>
+            <td><p>Richiama getForecast(JSONObject obj) e salva i dati su un file di testo (salvato in /src/main/resources/)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="087332daebbbbef8a8db4044959600fc.html">saveToFileHourly(id: String, multiplier: double, start: long): void</a></td>
+            <td><p>Salva ogni tot ore su un file i dati delle previsioni utili richiamando getJSONForecast(String id, boolean isObject) e saveToFile(JSONObject object)</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="dfcabf963f8bb3f2fe2de4fc2e6af262.html">readFile(city: String): JSONArray</a></td>
+            <td><p>Legge dati da un file salvato in precedenza</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="bc4cb45f8d2c1377a8139409ded0dea6.html">saveMessage(multiplier: double): String</a></td>
+            <td><p>A partire dal multiplier, prepara una stringa contenente la frequenza di aggiornamento del salvataggio.</p></td>
+          </tr>
+          
+        </table>
+      </section>
+      
+
+      <!-- Receptions -->
+
+      
+
+      <!-- Extension Points -->
+
+      
+
+      <!-- Parameters -->
+
+      
+
+      <!-- Diagrams -->
+
+      
+      
+
+      <!-- Behavior -->
+
+      
+
+      <!-- Action -->
+
+      
+
+      <!-- Interaction -->
+
+      
+
+      <!-- CombinedFragment -->
+
+      
+
+      <!-- Activity -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State Machine -->
+
+      
+
+      <!-- State -->
+
+      
+
+      <!-- Vertex -->
+
+      
+
+      <!-- Transition -->
+
+      
+
+      <!-- Data Model (ERD) -->
+
+      
+
+      <!-- Columns (ERD) -->
+
+      
+
+      <!-- Related Entities (ERD) -->
+
+      
+
+      <!-- Data Flows (DFD) -->
+
+      
+
+      <!-- Flows (Flowchart) -->
+
+      
+
+      <!-- Properties -->
+
+      <section>
+        <h3>Properties</h3>
+        
+        <table class="table table-striped table-bordered">
+    <tr>
+        <th width="50%">Name</th>
+        <th width="50%">Value</th>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>name</td>
+        <td>Service</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>stereotype</td>
+        <td><span class='label label-info'>null</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>visibility</td>
+        <td>public</td>
+    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isLeaf</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+</table>                
+
+      </section>
+
+      <!-- Tags -->
+
+      
+
+      <!-- Constraints, Dependencies, Dependants -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+<section class="element-list">
+    <h3>Dependants</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='401622139d1b11cf4a71d09149182899.html'><span class='node-icon staruml-icon icon-UMLClass'></span>ServiceImpl</a></li>
+        
+    </ul>
+</section>
+
+
+      
+
+      <!-- Relationships -->
+
+      
+      
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='2b996f61d0b4e4c8cef80d66c98ce7fa.html'><span class='node-icon staruml-icon icon-UMLInterfaceRealization'></span>(ServiceImpl→Service)</a></li>
+        
+    </ul>
+</section>
+
+
+
+      <!-- Owned Elements -->
+
+      
+      
+
+
+    </div>
+  </body>
+</html>

@@ -112,10 +112,10 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 					jo = (JSONObject) ja.get(i);
 				}
 			}
-//TODO funziona ma migliorare
+
 		} catch (IOException | ParseException e) {
 			throw new IdNotFoundException("ID non trovato");
-			//e.printStackTrace();
+
 		} 
 
 		return jo;
@@ -175,23 +175,25 @@ public class ServiceImpl implements it.univpm.pressurestats.service.Service {
 	}
 	
 	@Override
-	public void saveToFileHourly(String id,double multiplier,long start) throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
-	if(multiplier<=0.02) throw new WrongMultiplyException("Moltiplicatore non ammesso.");
-	if(start<0) throw new NegativeStartException("Il millisecondo di partenza non può essere inferiore a zero");
-	
+	public void saveToFileHourly(String id, double multiplier, long start)
+			throws ItalianCityNotFoundException, WrongMultiplyException, NegativeStartException, IdNotFoundException {
+		if (multiplier <= 0.02)
+			throw new WrongMultiplyException("Moltiplicatore non ammesso.");
+		if (start < 0)
+			throw new NegativeStartException("Il millisecondo di partenza non può essere inferiore a zero");
+
 		TimerTask tt = new TimerTask() {
-			public void run(){						
-			try {
-				saveToFile(getJSONForecast(id, true));
-			} catch (IdNotFoundException|ItalianCityNotFoundException e) {
-				e.printStackTrace();
+			public void run() {
+				try {
+					saveToFile(getJSONForecast(id, true));
+				} catch (IdNotFoundException | ItalianCityNotFoundException e) {
+					e.printStackTrace();
+				}
 			}
-				}	
 		};
-		
+
 		Timer timer = new Timer();
-		//TODO start prima era 0 ed è misurato in millisecondi
-		timer.schedule(tt, start, (long) (multiplier*hour)); // ogni ora
+		timer.schedule(tt, start, (long) (multiplier * hour)); // ogni ora
 	}
 
 	@SuppressWarnings("unchecked")

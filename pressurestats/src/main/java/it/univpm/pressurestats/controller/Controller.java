@@ -1,7 +1,5 @@
 package it.univpm.pressurestats.controller;
 
-//import javax.naming.event.NamespaceChangeListener;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -74,14 +72,7 @@ public class Controller {
 		}
 	}
 
-	// TODO Risolto forse il problema del salvataggio (es. Roma salvata in Ancona)
 	
-	/*
-	 * Per risolvere il problema ho aggiunto un ulteriore parametro a saveToFile
-	 * chiamato Start che indica il millisecondo di partenza del salvataggio. Un
-	 * ritardo di un secondo tra una città e l'altra sembra aver risolto ogni
-	 * problema.
-	 */
 
 	/**
 	 * Se lasciata in esecuzione, salva con una frequenza impostata dall'utente le
@@ -118,12 +109,9 @@ public class Controller {
 			service.saveToFileHourly("6542126", multiplier, 4000);
 			// PALERMO
 			service.saveToFileHourly("2523920", multiplier, 5000);
-			/*
-			 * String msg; if (multiplier != 1) msg =((int) Math.round(multiplier*60)) +
-			 * " minuti circa"; else msg = "ora";
-			 */
+		
 			return new ResponseEntity<>(
-					service.saveMessage(multiplier) + "Ricontrollare file finali, lasciare in esecuzione applicazione.",
+					service.saveMessage(multiplier) + "Lasciare in esecuzione applicazione.",
 					HttpStatus.OK);
 		} catch (IdNotFoundException|ItalianCityNotFoundException | WrongMultiplyException | NegativeStartException e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
@@ -152,14 +140,11 @@ public class Controller {
 	public ResponseEntity<Object> saveToFileHourly(@RequestParam(name = "id", defaultValue = "3169070") String id,
 			@RequestParam(name = "multiplier", defaultValue = "1") double multiplier)
 			throws WrongMultiplyException, IdNotFoundException, NegativeStartException {
-		// String msg;
+	
 		try {
 
 			service.saveToFileHourly(id, multiplier, 0);
-			/*
-			 * if (multiplier != 1) msg = ((int) Math.round(multiplier*60)) +
-			 * " minuti circa"; else msg = "ora";
-			 */
+			
 			return new ResponseEntity<>(
 					service.saveMessage(multiplier) + service.getForecast(service.getJSONForecast(id, true)),
 					HttpStatus.OK);
@@ -182,7 +167,6 @@ public class Controller {
 			@RequestParam(name = "date") String date) {
 		try {
 			statistics = new Statistics(city, date);
-			// TODO aggiunto salvataggio (Funzionante)
 			statistics.saveToFile(statistics.stats());
 			return new ResponseEntity<>(statistics.stats(), HttpStatus.OK);
 		} catch (CityStatisticsNotFoundException | DayNotFoundException e) {

@@ -12,13 +12,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
-
 import it.univpm.pressurestats.service.ServiceImpl;
 
 import it.univpm.pressurestats.exception.CityStatisticsNotFoundException;
 import it.univpm.pressurestats.exception.DayNotFoundException;
 import it.univpm.pressurestats.exception.WrongHoursPeriodException;
-
 
 /**
  * Gestisce i filtri.
@@ -27,12 +25,13 @@ import it.univpm.pressurestats.exception.WrongHoursPeriodException;
  * @author Settimi Diego
  */
 public class Filters {
-/**
- * Costruttore della classe.
- */
+	/**
+	 * Costruttore della classe.
+	 */
 	public Filters() {
-		
+
 	}
+
 	/**
 	 * Prepara un JSONArray delle statistiche di un solo giorno di una città.
 	 * 
@@ -67,7 +66,8 @@ public class Filters {
 	}
 
 	/**
-	 * Prepara un JSONArray delle statistiche filtrate dal giorno attuale a tot giorni passati.
+	 * Prepara un JSONArray delle statistiche filtrate dal giorno attuale a tot
+	 * giorni passati.
 	 * 
 	 * @param city    città scelta
 	 * @param numDays numeri di giorni di cui filtrare statistiche
@@ -137,7 +137,8 @@ public class Filters {
 						ja.add((JSONObject) JSONValue.parseWithException(data));
 				}
 			buff.close();
-			if (ja.size() == 0) throw new DayNotFoundException("Giorno non presente nelle statistiche");
+			if (ja.size() == 0)
+				throw new DayNotFoundException("Giorno non presente nelle statistiche");
 		} catch (IOException e) {
 			throw new CityStatisticsNotFoundException("Città non presente nelle statistiche");
 		} catch (ParseException e1) {

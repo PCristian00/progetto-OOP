@@ -193,6 +193,7 @@ public class Statistics{
 		
 		return object;
 	}
+
 	/**
 	 * Salva le statistiche calcolate su un file di testo.
 	 * 
@@ -203,16 +204,15 @@ public class Statistics{
 	public void saveToFile(JSONObject object) {
 
 		String fileName = "";
-		
+
 		if (this.date.charAt(0) == 'F') {
-			fileName = this.city+ "_stats_MultiDays";
+			fileName = this.city + "_stats_MultiDays";
+		} else {
+			fileName = this.city + "_stats_" + this.date.substring(0, 10);
 		}
-		else {
-			fileName = this.city+ "_stats_"+this.date.substring(0,10);
-		}
-		// Il file viene salvato nella cartella /src/main/resources/
+
 		String path = System.getProperty("user.dir") + "/src/main/resources/" + fileName + ".txt";
-	
+
 		try {
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
 			pw.append(object.toJSONString() + "\n");

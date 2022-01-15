@@ -278,7 +278,7 @@ Per eseguire correttamente le varie richieste, è consigliabile l'utilizzo di [P
 
 Alcune rotte utilizzano l'[`id`](#id) della città anziché il nome.
 
-Per trovare l'`id` della città scelta è possibile cercare la città su [OpenWeather](https://openweathermap.org/find): l'[`id`] comparirà nell'URL.
+Per trovare l'`id` della città scelta è possibile cercare la città su [OpenWeather](https://openweathermap.org/find): l'`id` comparirà nell'URL.
 
 Esempio
 

@@ -124,3 +124,4 @@
 {"country":"IT","name":"Milan","weather":[{"pressure":1035,"visibility":10000,"dt":1642124405,"date":"14-01-2022 02:40:05"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1033,"visibility":10000,"dt":1642141995,"date":"14-01-2022 07:33:15"}],"lon":9.192,"id":6542283,"lat":45.4642}
 {"country":"IT","name":"Milan","weather":[{"pressure":1032,"visibility":8000,"dt":1642145595,"date":"14-01-2022 08:33:15"}],"lon":9.192,"id":6542283,"lat":45.4642}
+{"country":"IT","name":"Milan","weather":[{"pressure":1026,"visibility":10000,"dt":1642177801,"date":"14-01-2022 17:30:01"}],"lon":9.192,"id":6542283,"lat":45.4642}
